@@ -8,7 +8,7 @@ const {
   twitch,
   spotify,
   discord
-} = require('../links.json');
+} = require('../data/links.json');
 
 export default function Links() {
   function copyDiscord() {
