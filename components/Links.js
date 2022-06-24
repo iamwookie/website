@@ -18,23 +18,23 @@ export default function Links() {
 
   return (
     <div className='mt-4 pt-4 border-t-2 text-xl'>
-      <a href={github} target='_blank' className='mx-2' >
+      <a href={github} target='_blank' rel='noreferrer' className='mx-2' >
         <FontAwesomeIcon icon={faGithub} />
       </a>
 
-      <a href={steam} target='_blank' className='mx-2' >
+      <a href={steam} target='_blank' rel='noreferrer' className='mx-2' >
         <FontAwesomeIcon icon={faSteam} />
       </a>
 
-      <a href={twitch} target='_blank' className='mx-2 text-twitch' >
+      <a href={twitch} target='_blank' rel='noreferrer' className='mx-2 text-twitch' >
         <FontAwesomeIcon icon={faTwitch} />
       </a>
 
-      <a href={spotify} target='_blank' className='mx-2 text-spotify' >
+      <a href={spotify} target='_blank' rel='noreferrer' className='mx-2 text-spotify' >
         <FontAwesomeIcon icon={faSpotify} />
       </a>
 
-      <button onClick={copyDiscord} className='mx-2 text-discord' >
+      <button onClick={copyDiscord} rel='noreferrer' className='mx-2 text-discord' >
         <FontAwesomeIcon icon={faDiscord} />
       </button>
     </div >

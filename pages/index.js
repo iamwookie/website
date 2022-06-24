@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Hi! I'm Bilal (A.K.A Wookie)</title>
+        <title>{"Hi! I'm Bilal (A.K.A Wookie)"}</title>
         <meta property="og:title" content="Hi! I'm Bilal (A.K.A Wookie)" />
       </Head>
 
