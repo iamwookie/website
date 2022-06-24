@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Links from "./Links";
 
 export default function Card() {
   return (
     <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito'>
-      <img className='mx-auto w-36 rounded-full border-2 border-white' src="/assets/logo.gif" />
+      <img src='/assets/logo.gif' alt='Logo' className='mx-auto w-36 rounded-full border-2' />
+
       <h1 className='mt-1 text-2xl sm:text'>{"Hi, I'm Bilal (A.K.A Wookie)"}</h1>
       <h2 className='mt-1 text-sm'>Semi Full Stack Developer</h2>
 
