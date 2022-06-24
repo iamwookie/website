@@ -12,7 +12,7 @@ export default function Spotify({ music }) {
   return (
     <div className='mt-4 pt-4 border-t-2'>
       <a href={url} target='_blank' rel='noreferrer'>
-        <div className='flex overflow-hidden bg-darkslate rounded-md'>
+        <div className='flex overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn'>
           <img src={image} className='w-20' />
           <div className='flex flex-col flex-auto justify-center text-left mx-2'>
             <h1 className='my-auto text-sm'>Listening on Spotify...</h1>

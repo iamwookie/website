@@ -3,7 +3,7 @@ import Spotify from "./Spotify";
 
 export default function Card({ musicData }) {
   return (
-    <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito'>
+    <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito animate__animated animate__fadeIn'>
       <img src='/assets/logo.gif' alt='Logo' className='mx-auto w-36 rounded-full border-2' />
 
       <h1 className='mt-1 text-2xl sm:text'>{"Hi, I'm Bilal (A.K.A Wookie)"}</h1>
