@@ -23,7 +23,7 @@ export default function Spotify({ music }) {
             <h1 className='my-auto text-lg'>{name}</h1>
             <h1 className='my-auto text-sm text-spotify'>{artists.join(', ')}</h1>
           </div>
-          <FontAwesomeIcon icon={faSpotify} className='flex-2 self-center mr-2 text-spotify text-3xl' />
+          <FontAwesomeIcon icon={faSpotify} className='flex-2 self-center mr-4 text-spotify text-3xl' />
         </div>
       </a>
     </div>
