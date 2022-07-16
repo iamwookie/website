@@ -1,4 +1,4 @@
-import Links from "./Links";
+import Socials from "./Socials";
 import Spotify from "./Spotify";
 
 export default function Card({ musicData }) {
@@ -14,7 +14,7 @@ export default function Card({ musicData }) {
         📚 Studying: Computer Science
       </p>
 
-      <Links />
+      <Socials />
 
       {musicData && <Spotify music={musicData.item} />}
     </div>

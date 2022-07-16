@@ -11,11 +11,13 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#FFFFFF" />
         <meta name="description" content="Hi, I'm Bilal (A.K.A Wookie)." />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="Hi, I'm Bilal (A.K.A Wookie)." />
+        <meta property="og:title" content="Hello!" key='title' />
+        <meta property="og:description" content="Hi, I'm Bilal (A.K.A Wookie)." key='desc' />
         <meta property="og:url" content="https://wookie.info" />
         <meta property="og:image" content="/assets/favicon.png" />
         <link rel="icon" href="/assets/favicon.png" />
       </Head>
+
       <Component {...pageProps} />
     </>
   );

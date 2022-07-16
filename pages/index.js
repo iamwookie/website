@@ -25,7 +25,6 @@ export default function Home() {
     <>
       <Head>
         <title>{"Hello!"}</title>
-        <meta property="og:title" content="Hello!" />
       </Head>
 
       <main className='grid h-screen place-items-center'>
