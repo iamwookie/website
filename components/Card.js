@@ -1,7 +1,7 @@
 import Socials from "./Socials";
 import Spotify from "./Spotify";
 
-export default function Card({ profileURL, musicData }) {
+export default function Card({ profileURL, discordTag, musicData }) {
     return (
         <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito animate__animated animate__fadeIn'>
             <img src={profileURL} alt='Avatar' className='mx-auto w-36 rounded-full border-2' />
@@ -14,7 +14,7 @@ export default function Card({ profileURL, musicData }) {
                 📚 Studying: Computer Science
             </p>
 
-            <Socials />
+            <Socials discordTag={discordTag} />
 
             {musicData && <Spotify music={musicData.item} />}
         </div>

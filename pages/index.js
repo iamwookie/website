@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Discord from '../libs/discord';
 
-export default function Home({ profileURL }) {
+export default function Home({ profileURL, discordTag }) {
     const [musicData, setMusic] = useState(null);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function Home({ profileURL }) {
             </Head>
 
             <main className='grid h-screen place-items-center'>
-                <Card profileURL={profileURL} musicData={musicData} />
+                <Card profileURL={profileURL} discordTag={discordTag} musicData={musicData} />
             </main>
 
             <ToastContainer
@@ -57,7 +57,8 @@ export async function getServerSideProps() {
 
     return {
         props: {
-            profileURL: user.avatarURL
+            profileURL: user.avatarURL,
+            discordTag: user.tag
         }
     };
 }
