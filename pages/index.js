@@ -12,8 +12,8 @@ export default function Home({ profileURL, discordTag }) {
     useEffect(() => {
         async function fetchPlaying() {
             const data = await fetch('/api/spotify/playing');
-            const json = await data.json();
-            setMusic(json);
+            const parsed = await data.json();
+            setMusic(parsed);
         }
 
         fetchPlaying();
