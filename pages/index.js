@@ -6,14 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Discord from '../libs/discord';
 
-export default function Home({ profileURL, discordTag }) {
+export default function Home({ discordTag, profileURL }) {
     const [musicData, setMusic] = useState(null);
 
     useEffect(() => {
         async function fetchPlaying() {
             const data = await fetch('/api/spotify/playing');
-            const json = await data.json();
-            setMusic(json);
+            const parsed = await data.json();
+            setMusic(parsed);
         }
 
         fetchPlaying();
@@ -29,7 +29,7 @@ export default function Home({ profileURL, discordTag }) {
             </Head>
 
             <main className='grid h-screen place-items-center'>
-                <Card profileURL={profileURL} discordTag={discordTag} musicData={musicData} />
+                <Card discordTag={discordTag} profileURL={profileURL} musicData={musicData} />
             </main>
 
             <ToastContainer
@@ -57,8 +57,8 @@ export async function getServerSideProps() {
 
     return {
         props: {
+            discordTag: user.tag,
             profileURL: user.avatarURL,
-            discordTag: user.tag
         }
     };
 }

@@ -1,7 +1,7 @@
 import Socials from "./Socials";
 import Spotify from "./Spotify";
 
-export default function Card({ profileURL, discordTag, musicData }) {
+export default function Card({ discordTag, profileURL, musicData }) {
     return (
         <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito animate__animated animate__fadeIn'>
             <img src={profileURL} alt='Avatar' className='mx-auto w-36 rounded-full border-2' />
@@ -11,7 +11,7 @@ export default function Card({ profileURL, discordTag, musicData }) {
 
             <p className='mt-4 pt-4 border-t-2 text-base'>
                 🔭 Working On: <a href='https://nebularoleplay.com' target='_blank' rel='noreferrer' className='underline'>Nebula Roleplay</a><br />
-                📚 Studying: Computer Science
+                📚 Studying: Computer Science (no shit)
             </p>
 
             <Socials discordTag={discordTag} />
