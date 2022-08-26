@@ -7,7 +7,4 @@
 main {
   background-color: white;
   background-image: url("/assets/bg.gif");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
