@@ -8,3 +8,8 @@ main {
   background-color: white;
   background-image: url("/assets/bg.gif");
 }
+
+.tippy-box[data-theme~="blur"] {
+  background-color: transparent;
+  @apply backdrop-blur-xl;
+}

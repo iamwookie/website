@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faSteam, faTwitch, faSpotify, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { toast } from 'react-toastify';
 
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+
 import links from '../.data/links.json';
 
 export default function Socials({ discordTag }) {
@@ -11,26 +14,36 @@ export default function Socials({ discordTag }) {
     }
 
     return (
-        <div className='mt-4 pt-4 border-t-2 text-xl'>
-            <a href={links.github} target='_blank' rel='noreferrer' className='mx-2' >
-                <FontAwesomeIcon icon={faGithub} />
-            </a>
+        <div className='mt-4 text-xl'>
+            <Tippy content='GitHub' theme='blur' arrow={false}>
+                <a href={links.github} target='_blank' rel='noreferrer' className='align-middle mx-2' >
+                    <FontAwesomeIcon icon={faGithub} />
+                </a>
+            </Tippy>
 
-            <a href={links.steam} target='_blank' rel='noreferrer' className='mx-2' >
-                <FontAwesomeIcon icon={faSteam} />
-            </a>
+            <Tippy content='Steam' theme='blur' arrow={false}>
+                <a href={links.steam} target='_blank' rel='noreferrer' className='align-middle mx-2' >
+                    <FontAwesomeIcon icon={faSteam} />
+                </a>
+            </Tippy>
 
-            <a href={links.twitch} target='_blank' rel='noreferrer' className='mx-2 text-twitch' >
-                <FontAwesomeIcon icon={faTwitch} />
-            </a>
+            <Tippy content='Twitch' theme='blur' arrow={false}>
+                <a href={links.twitch} target='_blank' rel='noreferrer' className='align-middle mx-2 text-twitch' >
+                    <FontAwesomeIcon icon={faTwitch} />
+                </a>
+            </Tippy>
 
-            <a href={links.spotify} target='_blank' rel='noreferrer' className='mx-2 text-spotify' >
-                <FontAwesomeIcon icon={faSpotify} />
-            </a>
+            <Tippy content='Spotify' theme='blur' arrow={false}>
+                <a href={links.spotify} target='_blank' rel='noreferrer' className='align-middle mx-2 text-spotify' >
+                    <FontAwesomeIcon icon={faSpotify} />
+                </a>
+            </Tippy>
 
-            <button onClick={copyDiscord} rel='noreferrer' className='mx-2 text-discord' >
-                <FontAwesomeIcon icon={faDiscord} />
-            </button>
-        </div >
+            <Tippy content='Discord' theme='blur' arrow={false}>
+                <button onClick={copyDiscord} rel='noreferrer' className='align-middle mx-2 text-discord' >
+                    <FontAwesomeIcon icon={faDiscord} />
+                </button>
+            </Tippy>
+        </div>
     );
 }
