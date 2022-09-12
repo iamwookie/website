@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Card from '../components/Card';
+
 import { ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -25,7 +26,7 @@ export default function Home({ discordTag, profileURL }) {
     return (
         <>
             <Head>
-                <title>{"Hello!"}</title>
+                <title>( ͡° ͜ʖ ͡°)</title>
             </Head>
 
             <main className='grid h-screen place-items-center'>
