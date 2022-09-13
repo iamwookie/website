@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class Discord {
     static api = axios.create({
-        baseURL: 'https://cat.wookie.info/'
+        baseURL: 'https://cat.bil.al/'
     });
 
     static async fetchUser(id) {
