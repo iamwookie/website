@@ -6,7 +6,8 @@
 
 main {
   background-color: white;
-  background-image: url("/assets/bg.gif");
+  background-image: url("/assets/bg.jpg");
+  background-size: cover;
 }
 
 .tippy-box[data-theme~="blur"] {
