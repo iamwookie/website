@@ -17,7 +17,7 @@ export default function Spotify({ music }) {
         <div className='mt-4 pt-4 border-t-2'>
             <a href={url} target='_blank' rel='noreferrer' className='hover:opacity-75'>
                 <div className='flex overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn'>
-                    <Image src={image} width={80} height={80} />
+                    <Image src={image} width={80} height={80} alt='Album Cover' />
                     <div className='flex flex-col flex-auto justify-center text-left mx-2'>
                         <h1 className='my-auto text-sm'>Listening on Spotify...</h1>
                         <h1 className='my-auto text-lg'>{name}</h1>
