@@ -12,7 +12,7 @@ export default function Card({ discordTag, profileURL, musicData }) {
 
             <p className='mt-4 py-4 border-y-2 text-base'>
                 Sometimes make random stuff like this site.<br />
-                🔭 Mostly Working On: <a href='https://nebularoleplay.com' target='_blank' rel='noreferrer' className='underline'>Nebula Roleplay</a> (a business I run)<br />
+                🔭 Mostly Working On: <a href='https://nebularoleplay.com' target='_blank' rel='noreferrer' className='underline'>Nebula Roleplay</a> (a business I run)
             </p>
 
             <Socials discordTag={discordTag} />
