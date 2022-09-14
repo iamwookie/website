@@ -1,10 +1,11 @@
+import Image from 'next/future/image';
 import Socials from "./Socials";
 import Spotify from "./Spotify";
 
 export default function Card({ discordTag, profileURL, musicData }) {
     return (
         <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito animate__animated animate__fadeIn'>
-            <img src={profileURL} alt='Avatar' className='mx-auto w-36 rounded-full border-2' />
+            <Image src={profileURL} width={100} height={100} alt='Avatar' className='mx-auto w-36 rounded-full border-2' />
 
             <h1 className='mt-1 text-2xl sm:text'>{"Hi, I'm Bilal"}</h1>
             <h2 className='mt-1 text-sm'>Code | Media | Design</h2>
