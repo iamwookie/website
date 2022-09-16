@@ -5,12 +5,12 @@
 @tailwind utilities;
 
 main {
-  background-color: white;
-  background-image: url("/assets/bg.jpg");
+  background-image: url('/assets/bg.jpg');
   background-size: cover;
+  background-position: center;
 }
 
-.tippy-box[data-theme~="blur"] {
+.tippy-box[data-theme~='blur'] {
   background-color: transparent;
   @apply backdrop-blur-xl;
 }
