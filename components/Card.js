@@ -1,4 +1,5 @@
 import Image from 'next/future/image';
+import Link from 'next/link';
 import Socials from "./Socials";
 import Spotify from "./Spotify";
 
@@ -15,9 +16,15 @@ export default function Card({ discordTag, profileURL, musicData }) {
                 🔭 Mostly Working On: <a href='https://nebularoleplay.com' target='_blank' rel='noreferrer' className='underline'>Nebula Roleplay</a> (a business I run)
             </p>
 
+            <Link href='/portfolio'>
+                <div className='mt-4'>
+                    <button className='px-2 rounded-lg border-2 hover:bg-white hover:text-black'>Portfolio</button>
+                </div>
+            </Link>
+
             <Socials discordTag={discordTag} />
 
-            {musicData && <Spotify music={musicData.item} />}
+            {musicData && <Spotify data={musicData.item} />}
         </div>
     );
 }

@@ -14,7 +14,7 @@ export default function Socials({ discordTag }) {
     }
 
     return (
-        <div className='mt-4 text-xl'>
+        <div className='mt-4 pt-4 border-t-2 text-xl'>
             <Tippy content='GitHub' theme='blur' arrow={false}>
                 <a href={links.github} target='_blank' rel='noreferrer' className='align-middle mx-2'>
                     <FontAwesomeIcon icon={faGithub} />

@@ -1,15 +1,16 @@
 import Image from 'next/future/image';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
-export default function Spotify({ music }) {
-    const name = music.name;
-    const image = music.album?.images[0]?.url;
-    const url = music.external_urls?.spotify;
+export default function Spotify({ data }) {
+    const name = data.name;
+    const image = data.album?.images[0]?.url;
+    const url = data.external_urls?.spotify;
 
     let artists = [];
 
-    for (const artist of music.artists) {
+    for (const artist of data.artists) {
         artists.push(artist.name);
     }
 

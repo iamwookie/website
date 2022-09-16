@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Nebula Roleplay",
+    "bannerURL": "/assets/portfolio/nebula.png",
+    "link": "https://nebularoleplay.com",
+    "description": "A business I run. We provide game servers, which basically are a type of video game built inside a video game (a little bit like the famous game Roblox). Started this in fall 2020. Working on it actively."
+  },
+  {
+    "name": "This Site",
+    "bannerURL": "/assets/portfolio/site.png",
+    "link": null,
+    "description": "My personal website. Something I work on when I'm bored. My second web dev project. Turned out pretty much like I wanted it to. Probably gonna add more stupid stuff to it gradually."
+  }
+]
