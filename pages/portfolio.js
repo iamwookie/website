@@ -1,27 +1,11 @@
-import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import PortfolioCard from '../components/portfolio/PortfolioCard';
+import Footer from '../components/Footer';
 
 import items from '../.data/portfolio.json';
 
-
 export default function Portfolio() {
-    const [musicData, setMusic] = useState(null);
-
-    useEffect(() => {
-        async function fetchPlaying() {
-            const data = await fetch('/api/spotify/playing');
-            const parsed = await data.json();
-            setMusic(parsed);
-        }
-
-        fetchPlaying();
-
-        let interval = setInterval(() => fetchPlaying(), 5000);
-        return () => clearInterval(interval);
-    }, []);
-
     return (
         <>
             <Head>
@@ -29,12 +13,12 @@ export default function Portfolio() {
             </Head>
 
             <main className='grid min-h-screen place-items-center'>
-                <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito animate__animated animate__fadeIn'>
+                <div className='backdrop-blur-xl rounded-lg p-5 text-center text-white font-nunito animate__animated animate__fadeIn'>
                     <h1 className='text-2xl'>My Portfolio</h1>
                     <h5 className='text-sm'>(stuff I made)</h5>
 
                     <Link href='/'>
-                        <button className='mt-2 px-2 rounded-lg border-2 hover:bg-white hover:text-black'>Home</button>
+                        <button className='rounded-lg mt-2 px-2 border-2 hover:bg-white hover:text-black'>Home</button>
                     </Link>
 
                     <div className='grid gap-5 lg:grid-cols-2 md:grid-cols-1 mt-5'>
@@ -43,6 +27,8 @@ export default function Portfolio() {
                         })}
                     </div>
                 </div>
+
+                <Footer className='lg:fixed md:relative w-screen bottom-4 mt-8 text-center text-white' />
             </main>
         </>
     );
