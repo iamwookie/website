@@ -28,7 +28,7 @@ export default function Portfolio() {
                 <title>My Portfolio</title>
             </Head>
 
-            <main className='grid h-screen place-items-center'>
+            <main className='grid min-h-screen place-items-center'>
                 <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito animate__animated animate__fadeIn'>
                     <h1 className='text-2xl'>My Portfolio</h1>
                     <h5 className='text-sm'>(stuff I made)</h5>

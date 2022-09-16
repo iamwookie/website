@@ -29,7 +29,7 @@ export default function Home({ discordTag, profileURL }) {
                 <title>( ͡° ͜ʖ ͡°)</title>
             </Head>
 
-            <main className='grid h-screen place-items-center'>
+            <main className='grid min-h-screen place-items-center'>
                 <Card discordTag={discordTag} profileURL={profileURL} musicData={musicData} />
             </main>
 
