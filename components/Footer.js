@@ -1,8 +1,8 @@
 import Image from 'next/future/image';
 
-export default function Footer({ className }) {
+export default function Footer() {
     return (
-        <footer className={className}>
+        <footer className='lg:fixed md:relative w-screen bottom-4 mt-8 text-center text-white'>
             <div className='inline-block backdrop-blur-xl rounded-lg p-2'>
                 <div className='flex items-center'>
                     <Image src='/assets/pk_flag.svg' width={32} height={32} alt='Pakistan Flag' className='inline rounded-md' />

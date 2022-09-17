@@ -56,9 +56,9 @@ export default function Home({ discordTag, profileURL }) {
 
                     {musicData && <Spotify data={musicData.item} />}
                 </div>
-            </main>
 
-            <Footer className='fixed w-screen bottom-4 mt-8 text-center text-white' />
+                <Footer />
+            </main>
 
             <ToastContainer
                 limit={3}
