@@ -28,7 +28,7 @@ export default function Portfolio() {
                     </div>
                 </div>
 
-                <Footer className='lg:fixed md:relative w-screen bottom-4 mt-8 text-center text-white' />
+                <Footer />
             </main>
         </>
     );
