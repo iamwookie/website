@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Discord from '../libs/discord';
 
-export default function Home({ discordTag, profileURL }) {
+export default function Home({ discordTag, avatarURL }) {
     const [musicData, setMusic] = useState(null);
 
     useEffect(() => {
@@ -36,14 +36,15 @@ export default function Home({ discordTag, profileURL }) {
 
             <main className='grid min-h-screen place-items-center'>
                 <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito animate__animated animate__fadeIn'>
-                    <Image src={profileURL} width={100} height={100} alt='Avatar' className='mx-auto w-36 rounded-full border-2' />
+                    <Image src={avatarURL} width={100} height={100} alt='Avatar' className='mx-auto w-36 rounded-full border-2' />
 
-                    <h1 className='mt-1 text-2xl sm:text'>{"Hi, I'm Bilal"}</h1>
+                    <h1 className='mt-2 text-2xl sm:text'>{"Hi, I'm Bilal"}</h1>
                     <h2 className='mt-1 text-sm'>Code | Media | Design</h2>
 
                     <p className='mt-4 py-4 border-y-2 text-base'>
-                        Sometimes I make random stuff like this site.<br />
-                        🔭 Mostly Working On: <a href='https://nebularoleplay.com' target='_blank' rel='noreferrer' className='underline'>Nebula Roleplay</a> (a business I run)
+                        18<br />
+                        working on this life and a few other things<br />
+                        check out some of that below
                     </p>
 
                     <Link href='/portfolio'>
@@ -86,7 +87,7 @@ export async function getServerSideProps() {
     return {
         props: {
             discordTag: user.tag,
-            profileURL: user.avatarURL,
+            avatarURL: user.avatarURL,
         }
     };
 }
