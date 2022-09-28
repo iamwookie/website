@@ -42,8 +42,9 @@ export default function Home({ discordTag, profileURL }) {
                     <h2 className='mt-1 text-sm'>Code | Media | Design</h2>
 
                     <p className='mt-4 py-4 border-y-2 text-base'>
-                        Sometimes I make random stuff like this site.<br />
-                        🔭 Mostly Working On: <a href='https://nebularoleplay.com' target='_blank' rel='noreferrer' className='underline'>Nebula Roleplay</a> (a business I run)
+                        18<br />
+                        working on this life and a few other things<br />
+                        check out some of that below
                     </p>
 
                     <Link href='/portfolio'>
