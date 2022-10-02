@@ -9,12 +9,12 @@ export default function Portfolio() {
     return (
         <>
             <Head>
-                <title>My Portfolio</title>
+                <title>Portfolio</title>
             </Head>
 
             <main className='grid min-h-screen place-items-center'>
                 <div className='backdrop-blur-xl rounded-lg p-5 text-center text-white font-nunito animate__animated animate__fadeIn'>
-                    <h1 className='text-2xl'>My Portfolio</h1>
+                    <h1 className='text-2xl'>Portfolio</h1>
                     <h5 className='text-sm'>(stuff I made)</h5>
 
                     <Link href='/'>
