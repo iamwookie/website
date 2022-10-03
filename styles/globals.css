@@ -5,12 +5,17 @@
 @tailwind utilities;
 
 main {
-  background-image: url('/assets/bg.jpg');
+  background-image: url("/assets/bg.jpg");
   background-size: cover;
   background-position: center;
 }
 
-.tippy-box[data-theme~='blur'] {
+.tippy-box[data-theme~="blur"] {
   background-color: transparent;
   @apply backdrop-blur-xl;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--success {
+  @apply rounded-lg;
+  @apply min-h-0;
 }

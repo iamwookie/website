@@ -8,7 +8,7 @@ import Spotify from '../components/Spotify';
 import Footer from '../components/Footer';
 
 import { ToastContainer, Flip } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import Discord from '../libs/discord';
 
