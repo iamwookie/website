@@ -2,7 +2,8 @@ import axios from 'axios';
 
 class Discord {
     static api = axios.create({
-        baseURL: 'https://cat.bil.al/'
+        baseURL: 'https://cat.bil.al/',
+        timeout: 3000,
     });
 
     static async fetchUser(id) {
