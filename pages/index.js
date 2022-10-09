@@ -80,7 +80,7 @@ export default function Home({ discordTag, avatarURL }) {
     );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const user = await Discord.fetchUser('244662779745665026');
 
     if (!user) return { props: {} };
@@ -89,6 +89,7 @@ export async function getServerSideProps() {
         props: {
             discordTag: user.tag,
             avatarURL: user.avatarURL,
-        }
+        },
+        revalidate: 600,
     };
 }
