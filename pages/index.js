@@ -90,6 +90,6 @@ export async function getStaticProps() {
             discordTag: user.tag,
             avatarURL: user.avatarURL,
         },
-        revalidate: 600,
+        revalidate: 300,
     };
 }
