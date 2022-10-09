@@ -36,7 +36,7 @@ export default function Home({ discordTag, avatarURL }) {
 
             <main className='grid min-h-screen place-items-center'>
                 <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito animate__animated animate__fadeIn'>
-                    <Image src={avatarURL} width={100} height={100} alt='Avatar' className='mx-auto w-36 rounded-full border-2' />
+                    {avatarURL && <Image src={avatarURL} width={100} height={100} alt='Avatar' className='mx-auto w-36 rounded-full border-2' />}
 
                     <h1 className='mt-2 text-2xl sm:text'>Bilal</h1>
                     <h2 className='mt-1 text-sm'>Code | Media | Design</h2>
