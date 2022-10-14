@@ -16,6 +16,8 @@ export default function Home({ discordTag, avatarURL }) {
     const [musicData, setMusic] = useState(null);
 
     useEffect(() => {
+        document.querySelector('main').style.backgroundImage = `url("/assets/backgrounds/${Math.floor(Math.random() * 4) + 1}.jpg")`;
+        
         async function fetchPlaying() {
             const data = await fetch('/api/spotify/playing');
             const parsed = await data.json();
@@ -43,8 +45,8 @@ export default function Home({ discordTag, avatarURL }) {
 
                     <p className='mt-4 py-4 border-y-2 text-base'>
                         18<br />
-                        working on life and a few other things<br />
-                        check out some of that below<br />
+                        probably should start studying<br />
+                        more stuff below<br />
                         ▼
                     </p>
 

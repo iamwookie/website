@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import PortfolioCard from '../components/portfolio/PortfolioCard';
@@ -6,6 +7,10 @@ import Footer from '../components/Footer';
 import items from '../.data/portfolio.json';
 
 export default function Portfolio() {
+    useEffect(() => {
+        document.querySelector('main').style.backgroundImage = `url("/assets/backgrounds/${Math.floor(Math.random() * 4) + 1}.jpg")`;
+    }, []);
+
     return (
         <>
             <Head>
@@ -15,7 +20,7 @@ export default function Portfolio() {
             <main className='grid min-h-screen place-items-center'>
                 <div className='backdrop-blur-xl rounded-lg p-5 text-center text-white font-nunito animate__animated animate__fadeIn'>
                     <h1 className='text-2xl'>Portfolio</h1>
-                    <h5 className='text-sm'>(stuff I made)</h5>
+                    <h5 className='text-sm'>(stuff i made)</h5>
 
                     <Link href='/'>
                         <button className='rounded-lg mt-2 px-2 border-2 hover:bg-white hover:text-black'>Home</button>

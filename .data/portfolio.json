@@ -3,12 +3,12 @@
     "name": "This Site",
     "bannerURL": "/assets/portfolio/site.png",
     "link": null,
-    "description": "Basically my internet footprint. Something I work on when I'm bored. Turned out pretty much like I wanted it to. Probably gonna add more gradually."
+    "description": "My internet footprint. Fully customised to my liking. Something I work on when I'm bored."
   },
   {
     "name": "Nebula Roleplay",
     "bannerURL": "/assets/portfolio/nebula.png",
     "link": "https://nebularoleplay.com",
-    "description": "A project I created alongside a friend. Something I used to work on actively and still do sometimes. It's a game server."
+    "description": "A game server project I created with a friend. A pretty successful startup but don't work on it actively."
   }
 ]
