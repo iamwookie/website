@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import PortfolioCard from '../components/portfolio/PortfolioCard';
@@ -6,6 +7,10 @@ import Footer from '../components/Footer';
 import items from '../.data/portfolio.json';
 
 export default function Portfolio() {
+    useEffect(() => {
+        document.querySelector('main').style.backgroundImage = `url("/assets/backgrounds/${Math.floor(Math.random() * 4) + 1}.jpg")`;
+    }, []);
+
     return (
         <>
             <Head>
