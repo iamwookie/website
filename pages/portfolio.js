@@ -20,7 +20,7 @@ export default function Portfolio() {
             <main className='grid min-h-screen place-items-center'>
                 <div className='backdrop-blur-xl rounded-lg p-5 text-center text-white font-nunito animate__animated animate__fadeIn'>
                     <h1 className='text-2xl'>Portfolio</h1>
-                    <h5 className='text-sm'>(stuff I made)</h5>
+                    <h5 className='text-sm'>(stuff i made)</h5>
 
                     <Link href='/'>
                         <button className='rounded-lg mt-2 px-2 border-2 hover:bg-white hover:text-black'>Home</button>
