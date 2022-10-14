@@ -16,6 +16,8 @@ export default function Home({ discordTag, avatarURL }) {
     const [musicData, setMusic] = useState(null);
 
     useEffect(() => {
+        document.querySelector('main').style.backgroundImage = `url("/assets/backgrounds/${Math.floor(Math.random() * 4) + 1}.jpg")`;
+        
         async function fetchPlaying() {
             const data = await fetch('/api/spotify/playing');
             const parsed = await data.json();
