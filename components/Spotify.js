@@ -20,7 +20,7 @@ export default function Spotify({ data }) {
                 <div className='flex overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn'>
                     <Image src={image} width={80} height={80} alt='Album Cover' />
                     <div className='flex flex-col flex-auto justify-center text-left mx-2'>
-                        <h1 className='my-auto text-sm'>Listening on Spotify...</h1>
+                        <h1 className='my-auto text-sm'>Listening to Spotify...</h1>
                         <h1 className='my-auto text-lg'>{name}</h1>
                         <h1 className='my-auto text-sm text-spotify'>{artists.join(', ')}</h1>
                     </div>
