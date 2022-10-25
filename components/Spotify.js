@@ -1,9 +1,34 @@
+import { useState, useEffect } from 'react';
 import Image from 'next/future/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
-export default function Spotify({ data }) {
+export default function Spotify() {
+    const [music, setMusic] = useState(null);
+
+    useEffect(() => {
+        async function fetchPlaying() {
+            try {
+                const data = await fetch('/api/spotify/playing');
+                const parsed = await data.json();
+                setMusic(parsed);
+            } catch (err) {
+                console.error('Error fetching Spotify data.');
+                console.error(err);
+            }
+        }
+
+        fetchPlaying();
+
+        let interval = setInterval(() => fetchPlaying(), 5000);
+        return () => clearInterval(interval);
+    }, []);
+
+    if (!music) return null;
+
+    const data = music.item;
+
     const name = data.name;
     const image = data.album?.images[0]?.url;
     const url = data.external_urls?.spotify;

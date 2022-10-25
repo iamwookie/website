@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/future/image';
 import Link from 'next/link';
@@ -13,21 +12,6 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import Discord from '../libs/discord';
 
 export default function Home({ discordTag, avatarURL }) {
-    const [musicData, setMusic] = useState(null);
-
-    useEffect(() => {
-        async function fetchPlaying() {
-            const data = await fetch('/api/spotify/playing');
-            const parsed = await data.json();
-            setMusic(parsed);
-        }
-
-        fetchPlaying();
-
-        let interval = setInterval(() => fetchPlaying(), 5000);
-        return () => clearInterval(interval);
-    }, []);
-
     return (
         <>
             <Head>
@@ -55,7 +39,7 @@ export default function Home({ discordTag, avatarURL }) {
 
                     <Socials discordTag={discordTag} />
 
-                    {musicData && <Spotify data={musicData.item} />}
+                    <Spotify />
                 </div>
 
                 <Footer />
