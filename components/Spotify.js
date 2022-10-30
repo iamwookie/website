@@ -54,7 +54,7 @@ export default function Spotify() {
                         </div>
                         <FontAwesomeIcon icon={faSpotify} className='flex-2 self-center mr-4 text-spotify text-3xl' />
                     </div>
-                    <div className='h-1 bg-spotify rounded-sm' style={{ width: `${progress}%` }} />
+                    <div className='h-1 bg-spotify' style={{ width: `${progress}%` }} />
                 </div>
             </a>
         </div>
