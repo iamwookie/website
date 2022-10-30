@@ -21,7 +21,7 @@ export default function Spotify() {
 
         fetchPlaying();
 
-        let interval = setInterval(() => fetchPlaying(), 5000);
+        let interval = setInterval(() => fetchPlaying(), 1000);
         return () => clearInterval(interval);
     }, []);
 
@@ -33,6 +33,8 @@ export default function Spotify() {
     const image = data.album?.images[0]?.url;
     const url = data.external_urls?.spotify;
 
+    const progress = (music.progress_ms / data.duration_ms * 100).toFixed(1);
+
     let artists = [];
 
     for (const artist of data.artists) {
@@ -42,14 +44,17 @@ export default function Spotify() {
     return (
         <div className='mt-4 pt-4 border-t-2'>
             <a href={url} target='_blank' rel='noreferrer' className='hover:opacity-75'>
-                <div className='flex overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn'>
-                    <Image src={image} width={80} height={80} alt='Album Cover' />
-                    <div className='flex flex-col flex-auto justify-center text-left mx-2'>
-                        <h1 className='my-auto text-sm'>Listening to Spotify...</h1>
-                        <h1 className='my-auto text-lg'>{name}</h1>
-                        <h1 className='my-auto text-sm text-spotify'>{artists.join(', ')}</h1>
+                <div className='overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn'>
+                    <div className='flex'>
+                        <Image src={image} width={80} height={80} alt='Album Cover' />
+                        <div className='flex flex-col flex-auto justify-center text-left mx-2'>
+                            <h1 className='my-auto text-sm'>Listening on Spotify...</h1>
+                            <h1 className='my-auto text-lg'>{name}</h1>
+                            <h1 className='my-auto text-sm text-spotify'>{artists.join(', ')}</h1>
+                        </div>
+                        <FontAwesomeIcon icon={faSpotify} className='flex-2 self-center mr-4 text-spotify text-3xl' />
                     </div>
-                    <FontAwesomeIcon icon={faSpotify} className='flex-2 self-center mr-4 text-spotify text-3xl' />
+                    <div className='h-1 bg-spotify rounded-sm' style={{ width: `${progress}%` }} />
                 </div>
             </a>
         </div>
