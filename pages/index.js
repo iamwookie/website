@@ -23,6 +23,7 @@ export default function Home({ discordTag, avatarURL }) {
 
                     <h1 className='mt-2 text-2xl sm:text'>Bilal</h1>
                     <h2 className='mt-1 text-sm'>Code | Media | Design</h2>
+                    <Image src='/assets/pk_flag.svg' width={24} height={24} alt='Pakistan Flag' className='mt-2 mx-auto rounded-md' />
 
                     <p className='mt-4 py-4 border-y-2 text-base'>
                         18<br />
