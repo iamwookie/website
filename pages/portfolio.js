@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import PortfolioCard from '../components/portfolio/PortfolioCard';
-import Footer from '../components/Footer';
 
 import items from '../.data/portfolio.json';
 
@@ -27,8 +26,6 @@ export default function Portfolio() {
                         })}
                     </div>
                 </div>
-
-                <Footer />
             </main>
         </>
     );

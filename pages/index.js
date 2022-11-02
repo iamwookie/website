@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import Socials from '../components/Socials';
 import Spotify from '../components/Spotify';
-import Footer from '../components/Footer';
 
 import { ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -41,8 +40,6 @@ export default function Home({ discordTag, avatarURL }) {
 
                     <Spotify />
                 </div>
-
-                <Footer />
             </main>
 
             <ToastContainer
