@@ -27,7 +27,7 @@ export default function Home({ discordTag, avatarURL }) {
 
                     <p className='mt-4 py-4 border-y-2 text-base'>
                         18<br />
-                        probably should start studying<br />
+                        nothing interesting<br />
                         ✦
                     </p>
 
