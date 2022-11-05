@@ -1,14 +1,20 @@
 [
-  {
-    "name": "This Site",
-    "bannerURL": "/assets/portfolio/site.png",
-    "link": null,
-    "description": "My internet footprint. Fully customised to my liking. Something I work on when I'm bored."
-  },
-  {
-    "name": "Nebula Roleplay",
-    "bannerURL": "/assets/portfolio/nebula.png",
-    "link": "https://nebularoleplay.com",
-    "description": "A game server project I created with a friend. A pretty successful startup but don't work on it actively anymore."
-  }
+    {
+        "name": "ASAP Gaming",
+        "bannerURL": "/assets/portfolio/asap.png",
+        "link": "https://asapgaming.co",
+        "description": "A game server project that has been around for 4 years which has recently resurfaced. Founded by a friend of mines. Currently working as a voluntary developer on there."
+    },
+    {
+        "name": "Nebula Roleplay",
+        "bannerURL": "/assets/portfolio/nebula.png",
+        "link": "https://nebularoleplay.com",
+        "description": "A game server project I founded with a friend. A successful startup at first, but eventually had to be shut down due to complications."
+    },
+    {
+        "name": "This Site",
+        "bannerURL": "/assets/portfolio/site.png",
+        "link": null,
+        "description": "My internet footprint. Fully customised to my liking. Something I work on when I'm bored. Contains a history of my projects and information about them."
+    }
 ]
