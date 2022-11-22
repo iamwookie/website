@@ -8,11 +8,11 @@
     {
         "name": "Nebula Roleplay",
         "bannerURL": "/assets/portfolio/nebula.png",
-        "link": "https://nebularoleplay.com",
+        "link": "https://github.com/NebulaProjectRP",
         "description": "A game server project I founded with a friend. A successful startup at first, but eventually had to be shut down due to complications."
     },
     {
-        "name": "This Site",
+        "name": "This Website",
         "bannerURL": "/assets/portfolio/site.png",
         "link": null,
         "description": "My internet footprint. Fully customised to my liking. Something I work on when I'm bored. Contains a history of my projects and information about them."
