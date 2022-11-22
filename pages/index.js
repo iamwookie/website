@@ -21,7 +21,7 @@ export default function Home({ discordTag, avatarURL }) {
                 <div className='backdrop-blur-xl p-5 rounded-lg text-center text-white font-nunito animate__animated animate__fadeIn'>
                     {avatarURL && <Image src={avatarURL} width={100} height={100} alt='Avatar' className='mx-auto w-36 rounded-full border-2' />}
 
-                    <h1 className='mt-2 text-2xl sm:text'>Bilal</h1>
+                    <h1 className='mt-2 text-2xl sm:text'>Bilal Mustafa</h1>
                     <h2 className='mt-1 text-sm'>Code | Media | Design</h2>
                     <Image src='/assets/pk_flag.svg' width={24} height={24} alt='Pakistan Flag' className='mt-2 mx-auto rounded-sm' />
 
