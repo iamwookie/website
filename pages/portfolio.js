@@ -2,9 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import PortfolioCard from '../components/portfolio/PortfolioCard';
 
-import items from '../.data/portfolio.json';
-
-export default function Portfolio() {
+export default function Portfolio({ items }) {
     return (
         <>
             <Head>
@@ -29,4 +27,12 @@ export default function Portfolio() {
             </main>
         </>
     );
+}
+
+export async function getStaticProps() {
+    const data = await import('../.data/portfolio.json');
+
+    return {
+        props: { items: data.default }
+    };
 }
