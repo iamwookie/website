@@ -21,7 +21,7 @@ export default function Spotify() {
 
         fetchPlaying();
 
-        let interval = setInterval(() => fetchPlaying(), 1000);
+        const interval = setInterval(() => fetchPlaying(), 1000);
         return () => clearInterval(interval);
     }, []);
 

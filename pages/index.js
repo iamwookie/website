@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/future/image';
 import Link from 'next/link';
 
+import Button from '../components/Button';
 import Socials from '../components/Socials';
 import Spotify from '../components/Spotify';
 
@@ -31,11 +32,12 @@ export default function Home({ discordTag, avatarURL }) {
                         ✦
                     </p>
 
-                    <Link href='/portfolio'>
-                        <div className='mt-4'>
-                            <button className='rounded-lg px-2 border-2 hover:bg-white hover:text-black'>Portfolio</button>
-                        </div>
-                    </Link>
+                    <div className='mt-4'>
+                        <Link href='/portfolio'>
+                            <Button>Portfolio</Button>
+                        </Link>
+                    </div>
+
 
                     <Socials discordTag={discordTag} />
 
