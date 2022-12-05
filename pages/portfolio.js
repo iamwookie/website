@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
+
+import Button from '../components/Button';
 import PortfolioCard from '../components/portfolio/PortfolioCard';
 
-export default function Portfolio({ items }) {
+export default function Portfolio({ items, }) {
     return (
         <>
             <Head>
@@ -14,9 +16,11 @@ export default function Portfolio({ items }) {
                     <h1 className='text-2xl'>Portfolio</h1>
                     <h5 className='text-sm'>(stuff i made)</h5>
 
-                    <Link href='/'>
-                        <button className='rounded-lg mt-2 px-2 border-2 hover:bg-white hover:text-black'>Home</button>
-                    </Link>
+                    <div className='mt-2'>
+                        <Link href='/'>
+                            <Button>Home</Button>
+                        </Link>
+                    </div>
 
                     <div className='grid gap-5 lg:grid-cols-2 md:grid-cols-1 mt-5'>
                         {items.map(item => {
