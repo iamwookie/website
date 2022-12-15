@@ -69,10 +69,7 @@ export async function getStaticProps() {
     if (!user) return { props: {} };
 
     return {
-        props: {
-            discordTag: user.tag,
-            avatarURL: user.avatarURL,
-        },
-        revalidate: 60,
+        props: { discordTag: user.tag },
+        revalidate: 600,
     };
 }
