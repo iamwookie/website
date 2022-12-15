@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class Discord {
     static api = axios.create({
-        baseURL: 'https://cat.bil.al/',
+        baseURL: 'http://145.239.205.161:3030/',
         timeout: 3000,
     });
 
