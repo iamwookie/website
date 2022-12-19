@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics';
+
 import Head from 'next/head';
 import '../styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -19,6 +21,8 @@ function MyApp({ Component, pageProps }) {
             </Head>
 
             <Component {...pageProps} />
+
+            <Analytics />
         </>
     );
 }
