@@ -1,5 +1,11 @@
 [
     {
+        "name": "KAT",
+        "bannerURL": "/assets/portfolio/kat.png",
+        "link": null,
+        "description": "My very first project. KAT is a multi-purpose bot developed for the Discord platform, currently serving over 3500 users."
+    },
+    {
         "name": "ASAP Gaming",
         "bannerURL": "/assets/portfolio/asap.png",
         "link": "https://asapgaming.co",
