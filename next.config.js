@@ -10,6 +10,15 @@ const nextConfig = {
             'cdn.discordapp.com',
             'i.scdn.co'
         ]
+    },
+    async redirects() {
+        return [
+            {
+                source: '/kat/invite',
+                destination: 'http://145.239.205.161:3030/invite',
+                permanent: true,
+            }
+        ]
     }
 };
 
