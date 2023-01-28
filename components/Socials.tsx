@@ -3,12 +3,11 @@ import { faGithub, faSteam, faTwitch, faSpotify, faDiscord } from '@fortawesome/
 import { toast } from 'react-toastify';
 
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 
 import links from '../.data/links.json';
 
-export default function Socials({ discordTag }) {
-    function copyDiscord() {
+export default function Socials({ discordTag }: { discordTag: string }) {
+    function copyDiscord(): void {
         navigator.clipboard.writeText(discordTag);
         toast.success('Copied Discord!');
     }
@@ -48,7 +47,7 @@ export default function Socials({ discordTag }) {
             </Tippy>
 
             <Tippy content='Discord' theme='blur' arrow={false}>
-                <button onClick={copyDiscord} rel='noreferrer' className='align-middle mx-2 text-discord'>
+                <button onClick={copyDiscord} className='align-middle mx-2 text-discord'>
                     <FontAwesomeIcon icon={faDiscord} />
                 </button>
             </Tippy>

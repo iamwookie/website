@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function Button(props) {
+export default function Button(props: any) {
     return (
         <motion.button
             className='rounded-lg px-2 border-2 hover:bg-white hover:text-black'

@@ -11,7 +11,14 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 import Discord from '../libs/discord';
 
-export default function Home({ discordTag, avatarURL }) {
+import type { GetStaticProps } from 'next';
+
+type Props = {
+    discordTag?: string;
+    avatarURL?: string;
+};
+
+export default function Home({ discordTag, avatarURL }: Props) {
     return (
         <>
             <Head>
@@ -63,7 +70,7 @@ export default function Home({ discordTag, avatarURL }) {
     );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
     const user = await Discord.fetchUser('244662779745665026');
 
     if (!user) return { props: {} };

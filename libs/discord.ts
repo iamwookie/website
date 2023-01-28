@@ -1,12 +1,12 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 class Discord {
-    static api = axios.create({
+    private static api: AxiosInstance = axios.create({
         baseURL: 'http://145.239.205.161:3030/',
         timeout: 3000,
     });
 
-    static async fetchUser(id) {
+    static async fetchUser(id: string | number): Promise<any> {
         try {
             const { data } = await this.api.get(`users/${id}`);
             return data;
