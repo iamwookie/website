@@ -4,7 +4,9 @@ import Link from 'next/link';
 import Button from '../components/Button';
 import PortfolioCard from '../components/portfolio/PortfolioCard';
 
-export default function Portfolio({ items, }) {
+import type { GetStaticProps } from 'next';
+
+export default function Portfolio({ items }) {
     return (
         <>
             <Head>
@@ -33,7 +35,7 @@ export default function Portfolio({ items, }) {
     );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
     const data = await import('../.data/portfolio.json');
 
     return {

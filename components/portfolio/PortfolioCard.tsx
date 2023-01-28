@@ -2,7 +2,14 @@ import Image from 'next/future/image';
 
 import { motion } from 'framer-motion';
 
-export default function PortfolioCard({ name, description, bannerURL, link }) {
+type Props = {
+    name: string;
+    description: string;
+    bannerURL: string;
+    link?: string;
+};
+
+export default function PortfolioCard({ name, description, bannerURL, link }: Props) {
     return (
         <motion.a
             whileHover={{ scale: 1.05 }}
