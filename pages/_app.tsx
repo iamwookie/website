@@ -4,6 +4,7 @@ import Head from 'next/head';
 import '../styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'animate.css';
+import 'tippy.js/dist/tippy.css';
 
 import type { AppProps } from 'next/app';
 

@@ -3,7 +3,6 @@ import { faGithub, faSteam, faTwitch, faSpotify, faDiscord } from '@fortawesome/
 import { toast } from 'react-toastify';
 
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 
 import links from '../.data/links.json';
 
