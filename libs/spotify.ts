@@ -1,13 +1,13 @@
-import axios, { AxiosInstance, AxiosResponse } from "axios";
+import axios from "axios";
 import qs from "qs";
 
 class Spotify {
-    private static api: AxiosInstance = axios.create({
-        baseURL: "https://api.spotify.com/v1/",
+    private static api = axios.create({
+        baseURL: "https://api.spotify.com/v1",
     });
 
-    private static accounts: AxiosInstance = axios.create({
-        baseURL: "https://accounts.spotify.com/",
+    private static accounts = axios.create({
+        baseURL: "https://accounts.spotify.com",
     });
 
     private static clientId: string = process.env.SPOTIFY_CLIENT_ID;
@@ -18,8 +18,8 @@ class Spotify {
 
     private static async refreshToken(): Promise<void> {
         try {
-            const { data }: AxiosResponse = await this.accounts.post(
-                "api/token",
+            const { data } = await this.accounts.post(
+                "/api/token",
                 qs.stringify({
                     grant_type: "refresh_token",
                     refresh_token: this.refresh_token,
@@ -47,8 +47,8 @@ class Spotify {
         if (!this.access_token) await this.refreshToken();
 
         try {
-            const { data }: AxiosResponse = await this.api.get(
-                "me/player/currently-playing",
+            const { data } = await this.api.get(
+                "/me/player/currently-playing",
                 {
                     headers: {
                         Authorization: `Bearer ${this.access_token}`,
