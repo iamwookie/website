@@ -64,7 +64,7 @@ export default function KAT({ avatarURL, stats }: Props) {
                     <br />
                 </p>
 
-                <div className="pt-2">
+                <div className="pt-2 text-lg">
                     <Button>
                         <a href="/kat/invite" target="_blank">
                             Invite
