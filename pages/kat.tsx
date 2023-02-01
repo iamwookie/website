@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/future/image";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
+import TextButton from "../components/buttons/TextButton";
 
 import Tippy from "@tippyjs/react";
 
@@ -65,11 +65,11 @@ export default function KAT({ avatarURL, stats }: Props) {
                 </p>
 
                 <div className="pt-2 text-lg">
-                    <Button>
+                    <TextButton>
                         <a href="/kat/invite" target="_blank">
                             Invite
                         </a>
-                    </Button>
+                    </TextButton>
                 </div>
             </Layout>
         </>

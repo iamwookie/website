@@ -5,3 +5,10 @@ export type Stats = {
     guilds: number;
     users: number;
 };
+
+export type PortfolioItem = {
+    name: string;
+    description: string;
+    bannerURL: string;
+    link?: string;
+}
