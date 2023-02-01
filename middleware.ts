@@ -8,7 +8,7 @@ export const config = {
     ],
 };
 
-export default (req: NextRequest, res: NextResponse) => {
+export default (req: NextRequest) => {
     const url = req.nextUrl;
     const host = req.headers.get("host");
     const sub = host.split(".")[0];
