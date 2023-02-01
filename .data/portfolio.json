@@ -1,26 +1,26 @@
 [
     {
         "name": "KAT",
+        "description": "My very first project. KAT is a multi-purpose bot developed for the Discord platform, currently serving over 3500 users.",
         "bannerURL": "/assets/portfolio/kat.png",
-        "link": "/kat",
-        "description": "My very first project. KAT is a multi-purpose bot developed for the Discord platform, currently serving over 3500 users."
+        "link": "/kat"
     },
     {
         "name": "ASAP Gaming",
+        "description": "A game server project that has been around for 4 years which has recently resurfaced. Founded by a friend. Currently a voluntary developer on there.",
         "bannerURL": "/assets/portfolio/asap.png",
-        "link": "https://asapgaming.co",
-        "description": "A game server project that has been around for 4 years which has recently resurfaced. Founded by a friend. Currently a voluntary developer on there."
+        "link": "https://asapgaming.co"
     },
     {
         "name": "Nebula Roleplay",
+        "description": "A game server project I founded with a friend. A successful startup at first, but eventually had to be shut down due to complications.",
         "bannerURL": "/assets/portfolio/nebula.png",
-        "link": "https://github.com/NebulaProjectRP",
-        "description": "A game server project I founded with a friend. A successful startup at first, but eventually had to be shut down due to complications."
+        "link": "https://github.com/NebulaProjectRP"
     },
     {
         "name": "This Website",
+        "description": "My internet footprint. Created from scratch. Something I work on when I'm bored. Contains a history of my projects and information about them.",
         "bannerURL": "/assets/portfolio/site.png",
-        "link": null,
-        "description": "My internet footprint. Created from scratch. Something I work on when I'm bored. Contains a history of my projects and information about them."
+        "link": null
     }
 ]

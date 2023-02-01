@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/future/image";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
+import TextButton from "../components/buttons/TextButton";
 import Socials from "../components/Socials";
 import Spotify from "../components/Spotify";
 
@@ -55,10 +55,10 @@ export default function Home({ discordTag, avatarURL }: Props) {
 
                 <div className="mt-4">
                     <Link href="/portfolio">
-                        <Button>Portfolio</Button>
+                        <TextButton>Portfolio</TextButton>
                     </Link>
                     <Link href="/kat">
-                        <Button>KAT</Button>
+                        <TextButton>KAT</TextButton>
                     </Link>
                 </div>
 
