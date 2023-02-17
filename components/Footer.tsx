@@ -1,6 +1,6 @@
 import Image from "next/future/image";
 
-const link = "https://donate.unhcr.org/int/en/turkiye-syria-earthquake-emergency?utm_source=timemag&utm_medium=referral&utm_campaign=HQ_PI_EN_teq";
+const link = "https://donate.unhcr.org/int/en/turkiye-syria-earthquake-emergency";
 
 export default function Footer() {
     return (
