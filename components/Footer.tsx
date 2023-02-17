@@ -22,7 +22,7 @@ export default function Footer() {
                         className="inline rounded-md mx-1"
                     />
                     <p className="inline ml-1 text-lg">
-                        More than 11,000 have died due to recent earthquakes in
+                        Thousands have been affected by recent earthquakes in
                         Turkey, Syria and neighboring countries.{" "}
                         <a
                             href={link}
