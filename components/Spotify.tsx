@@ -56,6 +56,7 @@ export default function Spotify() {
                             width={80}
                             height={80}
                             alt="Album Cover"
+                            className="animate__animated animate__fadeIn"
                         />
                         <div className="flex flex-col flex-auto justify-center text-left mx-2">
                             <h1 className="my-auto text-sm">
