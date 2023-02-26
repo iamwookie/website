@@ -4,8 +4,8 @@ const link = "https://donate.unhcr.org/int/en/turkiye-syria-earthquake-emergency
 
 export default function Footer() {
     return (
-        <footer className="lg:fixed md:relative w-screen bottom-4 mt-8 text-center text-white">
-            <div className="inline-block backdrop-blur-xl rounded-lg p-2">
+        <footer className="lg:fixed md:relative w-screen bottom-4 mt-8 text-center">
+            <div className="inline-block backdrop-blur-xl rounded-lg p-2 animate__animated animate__fadeIn">
                 <div className="flex items-center">
                     <Image
                         src="/assets/tr_flag.svg"
