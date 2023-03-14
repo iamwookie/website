@@ -1,14 +1,15 @@
+import { GetStaticProps } from "next";
+
 import Head from "next/head";
 import Image from "next/future/image";
-import Layout from "../components/Layout";
-import TextButton from "../components/buttons/TextButton";
+import Layout from "components/Layout";
+import TextButton from "components/buttons/TextButton";
 
 import Tippy from "@tippyjs/react";
 
-import Discord from "../libs/discord";
+import Discord from "libs/discord";
 
-import type { GetStaticProps } from "next";
-import type { Stats } from "../types";
+import { Stats } from "types";
 
 type Props = {
     avatarURL?: any;

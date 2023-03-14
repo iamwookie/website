@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import type { Stats } from "../types";
+import { Stats } from "types";
 
 class Discord {
     private static api = axios.create({
