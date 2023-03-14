@@ -1,6 +1,6 @@
-import Spotify from '../../../libs/spotify';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-import type { NextApiRequest, NextApiResponse } from 'next';
+import Spotify from 'libs/spotify';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method !== 'GET') {

@@ -1,12 +1,13 @@
+import { GetStaticProps } from "next";
+
 import Head from "next/head";
 import Link from "next/link";
 
-import Layout from "../components/Layout";
-import PortfolioCard from "../components/portfolio/PortfolioCard";
-import BackButton from "../components/buttons/BackButton";
+import Layout from "components/Layout";
+import PortfolioCard from "components/portfolio/PortfolioCard";
+import BackButton from "components/buttons/BackButton";
 
-import type { GetStaticProps } from "next";
-import type { PortfolioItem } from "../types";
+import { PortfolioItem } from "types";
 
 export default function Portfolio({ items }: { items: PortfolioItem[] }) {
     return (
@@ -42,7 +43,7 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data = await import("../.data/portfolio.json");
+    const data = await import(".data/portfolio.json");
 
     return {
         props: { items: data.default },

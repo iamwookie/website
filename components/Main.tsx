@@ -1,6 +1,6 @@
-import Footer from "./Footer";
+import { ReactNode } from "react";
 
-import type { ReactNode } from "react";
+import Footer from "./Footer";
 
 export default function Main({ children }: { children: ReactNode }) {
     return (
