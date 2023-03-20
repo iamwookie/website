@@ -47,7 +47,7 @@ export default function Home({ discordTag, avatarURL }: Props) {
                 />
 
                 <p className="mt-4 py-4 border-y-2 text-base">
-                    18
+                    19
                     <br />
                     it is what it is
                     <br />✦
@@ -56,9 +56,6 @@ export default function Home({ discordTag, avatarURL }: Props) {
                 <div className="mt-4">
                     <Link href="/portfolio">
                         <TextButton>Portfolio</TextButton>
-                    </Link>
-                    <Link href="/kat">
-                        <TextButton>KAT</TextButton>
                     </Link>
                 </div>
 
