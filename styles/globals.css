@@ -4,15 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
+body {
   background-image: url("/assets/bg.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center;   
+  @apply text-white;
+  @apply font-nunito;
 }
 
 .tippy-box[data-theme~="blur"] {
   background-color: transparent;
-  @apply backdrop-blur-xl;
+  @apply backdrop-blur-sm;
 }
 
 .Toastify__toast-theme--colored.Toastify__toast--success {

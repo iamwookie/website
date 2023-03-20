@@ -16,8 +16,7 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
                 <title>Portfolio</title>
             </Head>
 
-            <Layout>
-                <Link href="/">
+            <Link href="/">
                     <BackButton />
                 </Link>
                 
@@ -37,7 +36,6 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
                         );
                     })}
                 </div>
-            </Layout>
         </>
     );
 }

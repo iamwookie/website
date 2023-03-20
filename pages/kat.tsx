@@ -27,8 +27,7 @@ export default function KAT({ avatarURL, stats }: Props) {
                 <meta property="og:description" content="✨ A multi-purpose Discord bot providing solutions to most problems." key="desc" />
             </Head>
 
-            <Layout>
-                {avatarURL && (
+            {avatarURL && (
                     <Image
                         src={avatarURL}
                         width={100}
@@ -72,7 +71,6 @@ export default function KAT({ avatarURL, stats }: Props) {
                         </a>
                     </TextButton>
                 </div>
-            </Layout>
         </>
     );
 }

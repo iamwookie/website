@@ -25,8 +25,7 @@ export default function Home({ discordTag, avatarURL }: Props) {
                 <title>( ͡° ͜ʖ ͡°)</title>
             </Head>
 
-            <Layout>
-                {avatarURL && (
+            {avatarURL && (
                     <Image
                         src={avatarURL}
                         width={100}
@@ -62,7 +61,6 @@ export default function Home({ discordTag, avatarURL }: Props) {
                 <Socials discordTag={discordTag} />
 
                 <Spotify />
-            </Layout>
 
             <ToastContainer
                 limit={3}
