@@ -3,7 +3,6 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/future/image";
 import Link from "next/link";
-import Layout from "components/Layout";
 import TextButton from "components/buttons/TextButton";
 import Socials from "components/Socials";
 import Spotify from "components/Spotify";
