@@ -14,12 +14,12 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Head>
                 <meta name="author" content="Bilal" />
                 <meta name="theme-color" content="#FFFFFF" />
-                <meta name="description" content="A person on this planet." />
+                <meta name="description" content="A person on this planet."/>
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="( ͡° ͜ʖ ͡°)" key="title" />
                 <meta property="og:description" content="A person on this planet." key="desc" />
-                <meta property="og:url" content="https://bil.al" />
-                <meta property="og:image" content="/assets/favicon.png" />
+                <meta property="og:url" content="https://bil.al" key="url" />
+                <meta property="og:image" content="/assets/favicon.png" key="image" />
                 <link rel="icon" href="/assets/favicon.png" />
             </Head>
 

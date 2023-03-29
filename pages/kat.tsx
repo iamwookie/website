@@ -20,10 +20,12 @@ export default function KAT({ avatarURL, stats }: Props) {
         <>
             <Head>
                 <title>KAT</title>
-                <meta name="theme-color" content="#C167ED" />
+                <meta name="theme-color" content="#FFFFFF" />
                 <meta name="description" content="✨ A multi-purpose Discord bot providing solutions to most problems." />
                 <meta property="og:title" content="KAT" key="title" />
                 <meta property="og:description" content="✨ A multi-purpose Discord bot providing solutions to most problems." key="desc" />
+                <meta property="og:url" content="https://kat.bil.al" key="url" />
+                <meta property="og:image" content={avatarURL} key="url" />
             </Head>
 
             {avatarURL && (
