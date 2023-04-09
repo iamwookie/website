@@ -59,9 +59,9 @@ export default function KAT({ avatarURL, stats }: Props) {
                 </div>
 
                 <p className="py-4 border-y-2 text-sm">
-                    ✨ A multi-purpose Discord bot providing solutions to most problems.
+                    ✨ KAT is a multi-purpose Discord bot that provides custom solutions to various different servers.
                     <br />
-                    🎵 KAT plays high quality music from YouTube and Spotify.
+                    🎵 KAT also plays high quality music from YouTube and Spotify.
                     <br />
                 </p>
 
