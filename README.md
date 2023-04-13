@@ -1,6 +1,6 @@
-Wookie's Personal Website
+# My Personal Website
 
-This project is built with [Next.js](https://nextjs.org/).
+This project is built with [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/) in [TypeScript](https://www.typescriptlang.org/).
 
 ## Testing
 
