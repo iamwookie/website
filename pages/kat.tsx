@@ -81,7 +81,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const stats = await Discord.fetchStats();
 
     return {
-        props: { avatarURL: user?.avatarURL, stats },
+        props: { avatarURL: user?.avatarURL ?? null, stats: stats ?? null },
         revalidate: 600,
     };
 };
