@@ -15,7 +15,7 @@ const nextConfig = {
         return [
             {
                 source: '/kat/invite',
-                destination: 'http://145.239.205.161:3030/invite',
+                destination: 'http://3.68.33.222:3030/invite',
                 permanent: true,
             }
         ]

@@ -4,7 +4,7 @@ import { Stats } from "types";
 
 class Discord {
     private static api = axios.create({
-        baseURL: "http://145.239.205.161:3030",
+        baseURL: "http://3.68.33.222:3030",
         timeout: 3000,
     });
 
