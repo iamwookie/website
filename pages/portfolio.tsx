@@ -7,6 +7,8 @@ import TechStack from "components/TechStack";
 import PortfolioCard from "components/portfolio/PortfolioCard";
 import BackButton from "components/buttons/BackButton";
 
+import { getPlaiceholder } from "plaiceholder";
+
 import { PortfolioItem } from "types";
 
 export default function Portfolio({ items }: { items: PortfolioItem[] }) {
@@ -36,6 +38,7 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
                                 name={item.name}
                                 description={item.description}
                                 bannerURL={item.bannerURL}
+                                blurDataURL={item.blurDataURL}
                                 link={item.link}
                                 key={item.name}
                             />
@@ -47,9 +50,10 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data = await import(".data/portfolio.json");
+    const data: Omit<PortfolioItem, "blurDataURL">[] = (await import(".data/portfolio.json")).default;
+    const items = await Promise.all(data.map(async (item: PortfolioItem) => { return { ...item, blurDataURL: (await getPlaiceholder(item.bannerURL)).base64 } }));
 
     return {
-        props: { items: data.default },
+        props: { items },
     };
 };
