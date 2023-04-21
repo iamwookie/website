@@ -5,19 +5,19 @@
 @tailwind utilities;
 
 body {
-  background-image: url("/assets/bg.jpg");
-  background-size: cover;
-  background-position: center;   
-  @apply text-white;
-  @apply font-nunito;
+    background-image: url("/assets/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    @apply text-white;
+    @apply font-nunito;
 }
 
 .tippy-box[data-theme~="blur"] {
-  background-color: transparent;
-  @apply backdrop-blur-sm;
+    background-color: transparent;
+    @apply backdrop-blur-sm;
 }
 
 .Toastify__toast-theme--colored.Toastify__toast--success {
-  @apply rounded-lg;
-  @apply min-h-0;
+    @apply rounded-lg;
+    @apply min-h-0;
 }
