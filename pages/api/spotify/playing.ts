@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-import Spotify from 'libs/spotify';
+import Spotify from '@/lib/spotify';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.headers["sec-fetch-site"] != "same-origin") return res.status(403).end("403 Forbidden");

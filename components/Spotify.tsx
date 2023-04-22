@@ -1,6 +1,5 @@
 import Image from "next/future/image";
 import { useState, useEffect } from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 
@@ -43,39 +42,18 @@ export default function Spotify() {
 
     return (
         <div className="mt-4 pt-4 border-t-2">
-            <a
-                href={url}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:opacity-75"
-            >
+            <a href={url} target="_blank" rel="noreferrer" className="hover:opacity-75">
                 <div className="overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn">
                     <div className="flex">
-                        <Image
-                            src={image}
-                            width={80}
-                            height={80}
-                            alt="Album Cover"
-                            className="animate__animated animate__fadeIn"
-                        />
+                        <Image src={image} width={80} height={80} alt="Album Cover" className="animate__animated animate__fadeIn" />
                         <div className="flex flex-col flex-auto justify-center text-left mx-2">
-                            <h1 className="my-auto text-sm">
-                                Listening to Spotify...
-                            </h1>
+                            <h1 className="my-auto text-sm">Listening to Spotify...</h1>
                             <h1 className="my-auto text-lg">{name}</h1>
-                            <h1 className="my-auto text-sm text-spotify">
-                                {artists.join(", ")}
-                            </h1>
+                            <h1 className="my-auto text-sm text-spotify">{artists.join(", ")}</h1>
                         </div>
-                        <FontAwesomeIcon
-                            icon={faSpotify}
-                            className="flex-2 self-center mr-4 text-spotify text-3xl"
-                        />
+                        <FontAwesomeIcon icon={faSpotify} className="flex-2 self-center mr-4 text-spotify text-3xl" />
                     </div>
-                    <div
-                        className="h-1 bg-spotify"
-                        style={{ width: `${progress}%` }}
-                    />
+                    <div className="h-1 bg-spotify" style={{ width: `${progress}%` }} />
                 </div>
             </a>
         </div>

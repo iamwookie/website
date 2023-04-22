@@ -1,12 +1,14 @@
-import { AppProps } from "next/app";
-import { Analytics } from "@vercel/analytics/react";
-
-import Head from "next/head";
 import "styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "animate.css";
 import "tippy.js/dist/tippy.css";
-import Layout from "@/components/Layout";
+import "react-toastify/dist/ReactToastify.min.css";
+
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
+import Layout from "@components/Layout";
+import { ToastContainer, Flip } from "react-toastify";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -26,6 +28,21 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Layout>
                 <Component {...pageProps} />
             </Layout>
+
+            <ToastContainer
+                limit={3}
+                theme="colored"
+                transition={Flip}
+                position="bottom-center"
+                autoClose={3000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={false}
+                pauseOnHover={false}
+            />
 
             <Analytics />
         </>

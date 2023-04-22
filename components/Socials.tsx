@@ -6,10 +6,8 @@ import {
     faSpotify,
     faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
-
 import Tippy from "@tippyjs/react";
 import { toast } from "react-toastify";
-
 import links from ".data/links.json";
 
 export default function Socials({ discordTag }: { discordTag: string }) {

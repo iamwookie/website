@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-
 import Main from "./Main";
 import Box from "./Box";
 

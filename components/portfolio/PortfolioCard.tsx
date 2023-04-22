@@ -1,7 +1,5 @@
 import Image from "next/future/image";
-
 import { motion } from "framer-motion";
-
 import { PortfolioItem } from "types";
 
 export default function PortfolioCard({ name, description, bannerURL, blurDataURL, link }: PortfolioItem) {
