@@ -1,16 +1,11 @@
 import { GetStaticProps } from "next";
-
 import Head from "next/head";
 import Image from "next/future/image";
 import Link from "next/link";
 import TextButton from "components/buttons/TextButton";
-import Socials from "components/Socials";
-import Spotify from "components/Spotify";
-
-import { ToastContainer, Flip } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
-
-import Discord from "libs/discord";
+import Socials from "@components/Socials";
+import Spotify from "@components/Spotify";
+import Discord from "@lib/discord";
 
 type Props = {
     discordTag?: string;
@@ -60,21 +55,6 @@ export default function Home({ discordTag, avatarURL }: Props) {
                 <Socials discordTag={discordTag} />
 
                 <Spotify />
-
-            <ToastContainer
-                limit={3}
-                theme="colored"
-                transition={Flip}
-                position="bottom-center"
-                autoClose={3000}
-                hideProgressBar
-                newestOnTop={false}
-                closeOnClick={false}
-                rtl={false}
-                pauseOnFocusLoss
-                draggable={false}
-                pauseOnHover={false}
-            />
         </>
     );
 }
@@ -82,10 +62,8 @@ export default function Home({ discordTag, avatarURL }: Props) {
 export const getStaticProps: GetStaticProps = async () => {
     const user = await Discord.fetchUser("244662779745665026");
 
-    if (!user) return { props: {} };
-
     return {
-        props: { discordTag: user.tag },
+        props: { discordTag: user?.tag ?? null },
         revalidate: 600
     };
 };
