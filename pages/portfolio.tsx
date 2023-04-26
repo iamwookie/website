@@ -19,39 +19,36 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
             </Head>
 
             <Link href="/">
-                    <BackButton />
-                </Link>
-                
-                <h1 className="text-2xl">Portfolio</h1>
-                <h5 className="text-sm">{"(projects & stuff)"}</h5>
+                <BackButton />
+            </Link>
 
-                <TechStack stack={[
+            <h1 className="text-2xl">Portfolio</h1>
+            <h5 className="text-sm">{"(projects & stuff)"}</h5>
+
+            <TechStack
+                stack={[
                     { name: "JavaScript", bgColor: "#93810d", borderColor: "#F0DB4F" },
                     { name: "TypeScript", bgColor: "#003D66", borderColor: "#007ACC" },
                     { name: "NodeJS", bgColor: "#345031", borderColor: "#68A063" },
-                ]}/>
+                ]}
+            />
 
-                <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-1 mt-5">
-                    {items.map(item => {
-                        return (
-                            <PortfolioCard
-                                name={item.name}
-                                description={item.description}
-                                bannerURL={item.bannerURL}
-                                blurDataURL={item.blurDataURL}
-                                link={item.link}
-                                key={item.name}
-                            />
-                        );
-                    })}
-                </div>
+            <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-1 mt-5">
+                {items.map((item) => {
+                    return <PortfolioCard name={item.name} description={item.description} bannerURL={item.bannerURL} blurDataURL={item.blurDataURL} link={item.link} key={item.name} />;
+                })}
+            </div>
         </>
     );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data: Omit<PortfolioItem, "blurDataURL">[] = (await import(".data/portfolio.json")).default;
-    const items = await Promise.all(data.map(async (item: PortfolioItem) => { return { ...item, blurDataURL: (await getPlaiceholder(item.bannerURL)).base64 } }));
+    const data = (await import(".data/portfolio.json")).default;
+    const items: PortfolioItem[] = await Promise.all(
+        data.map(async (item: Omit<PortfolioItem, "blurDataURL">) => {
+            return { ...item, blurDataURL: (await getPlaiceholder(item.bannerURL)).base64 };
+        })
+    );
 
     return {
         props: { items },

@@ -12,7 +12,7 @@ class Discord {
             return data;
         } catch (err) {
             console.error("[Discord] Error Fetching User");
-            console.error(err.message);
+            console.error(err);
         }
     }
 }

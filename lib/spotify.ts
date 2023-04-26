@@ -2,6 +2,11 @@ import axios from "axios";
 import qs from "qs";
 
 class Spotify {
+    private static clientId: string = process.env.SPOTIFY_CLIENT_ID!;
+    private static clientSecret: string = process.env.SPOTIFY_CLIENT_SECRET!;
+    private static refresh_token: string = process.env.SPOTIFY_REFRESH_TOKEN!;
+    private static access_token?: string;
+
     private static api = axios.create({
         baseURL: "https://api.spotify.com/v1",
     });
@@ -9,12 +14,6 @@ class Spotify {
     private static accounts = axios.create({
         baseURL: "https://accounts.spotify.com",
     });
-
-    private static clientId: string = process.env.SPOTIFY_CLIENT_ID;
-    private static clientSecret: string = process.env.SPOTIFY_CLIENT_SECRET;
-
-    private static refresh_token: string = process.env.SPOTIFY_REFRESH_TOKEN;
-    private static access_token: string;
 
     private static async refreshToken(): Promise<void> {
         try {
@@ -35,15 +34,15 @@ class Spotify {
             this.access_token = data.access_token;
 
             setTimeout(() => {
-                this.access_token = null;
+                this.access_token = undefined;
             }, data.expires_in * 1000);
         } catch (err) {
             console.error("[Spotify] Error Refreshing Token");
-            console.error(err.message);
+            console.error(err);
         }
     }
 
-    static async currentlyPlaying(): Promise<SpotifyApi.CurrentlyPlayingObject> {
+    static async currentlyPlaying(): Promise<SpotifyApi.CurrentlyPlayingObject | undefined> {
         if (!this.access_token) await this.refreshToken();
 
         try {
@@ -59,9 +58,9 @@ class Spotify {
             return data;
         } catch (err) {
             console.error("[Spotify] Error Getting Currently Playing");
-            console.error(err.message);
+            console.error(err);
 
-            return null;
+            return undefined;
         }
     }
 }
