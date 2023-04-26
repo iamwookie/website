@@ -27,9 +27,10 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
 
             <TechStack
                 stack={[
-                    { name: "JavaScript", bgColor: "#93810d", borderColor: "#F0DB4F" },
-                    { name: "TypeScript", bgColor: "#003D66", borderColor: "#007ACC" },
-                    { name: "NodeJS", bgColor: "#345031", borderColor: "#68A063" },
+                    { name: "JavaScript", bgColor: "#93810d", borderColor: "#f0Db4f" },
+                    { name: "TypeScript", bgColor: "#003d66", borderColor: "#007acc" },
+                    { name: "NodeJS", bgColor: "#345031", borderColor: "#68a063" },
+                    { name: "React", bgColor: "#0486aa", borderColor: "#61dafb" },
                 ]}
             />
 
