@@ -5,9 +5,6 @@
 @tailwind utilities;
 
 body {
-    background-image: url("/assets/bg.jpg");
-    background-size: cover;
-    background-position: center;
     @apply text-white;
     @apply font-nunito;
 }
