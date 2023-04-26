@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Image from "next/future/image";
+import Image from "next/image";
 import Main from "./Main";
 import Box from "./Box";
 

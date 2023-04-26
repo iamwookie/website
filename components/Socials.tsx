@@ -10,8 +10,9 @@ import Tippy from "@tippyjs/react";
 import { toast } from "react-toastify";
 import links from ".data/links.json";
 
-export default function Socials({ discordTag }: { discordTag: string }) {
+export default function Socials({ discordTag }: { discordTag?: string }) {
     function copyDiscord(): void {
+        if (!discordTag) return;
         navigator.clipboard.writeText(discordTag);
         toast.success("Copied Discord!");
     }

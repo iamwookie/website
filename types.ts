@@ -3,5 +3,9 @@ export type PortfolioItem = {
     description: string;
     bannerURL: string;
     blurDataURL: string;
-    link?: string;
+    link?: string | null;
+}
+
+export type SpotifyData = {
+    isPlaying: boolean;
 }

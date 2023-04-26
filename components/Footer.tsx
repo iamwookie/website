@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 
 const link = "https://donate.unhcr.org/int/en/turkiye-syria-earthquake-emergency";
 

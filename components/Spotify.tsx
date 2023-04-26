@@ -1,16 +1,16 @@
-import Image from "next/future/image";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 
 export default function Spotify() {
-    const [music, setMusic] = useState(null);
+    const [music, setMusic] = useState<SpotifyApi.CurrentlyPlayingObject | null>(null);
 
     useEffect(() => {
         async function fetchPlaying() {
             try {
-                const res: Response = await fetch("/api/spotify/playing");
-                const data = await res.json();
+                const res = await fetch("/api/spotify/playing");
+                const data: SpotifyApi.CurrentlyPlayingObject = await res.json();
                 setMusic(data);
             } catch (err) {
                 console.error("Error fetching Spotify data.");
@@ -24,15 +24,15 @@ export default function Spotify() {
         return () => clearInterval(interval);
     }, []);
 
-    if (!music) return null;
+    if (!music || !music.item) return null;
 
-    const data: SpotifyApi.TrackObjectFull = music.item;
+    const data = music.item as SpotifyApi.TrackObjectFull;
 
-    const name: string = data.name;
-    const image: string = data.album?.images[0]?.url;
-    const url: string = data.external_urls?.spotify;
+    const name = data.name;
+    const image = data.album?.images[0]?.url;
+    const url = data.external_urls?.spotify;
 
-    const progress: string | number = ((music.progress_ms / data.duration_ms) * 100).toFixed(1);
+    const progress = ((music.progress_ms ?? 0 / data.duration_ms) * 100).toFixed(1);
 
     let artists = [];
 
