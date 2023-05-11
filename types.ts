@@ -7,5 +7,10 @@ export type PortfolioItem = {
 }
 
 export type SpotifyData = {
-    isPlaying: boolean;
+    url?: string;
+    name?: string;
+    image?: string;
+    artists?: string;
+    progress?: number;
+    duration?: number;
 }

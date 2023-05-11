@@ -1,3 +1,4 @@
+import type { SpotifyData } from "types";
 import axios from "axios";
 import qs from "qs";
 
@@ -42,7 +43,7 @@ class Spotify {
         }
     }
 
-    static async currentlyPlaying(): Promise<SpotifyApi.CurrentlyPlayingObject | undefined> {
+    static async currentlyPlaying(): Promise<SpotifyData | undefined> {
         if (!this.access_token) await this.refreshToken();
 
         try {
@@ -55,7 +56,16 @@ class Spotify {
                 }
             );
 
-            return data;
+            if (!data) return undefined;
+
+            return {
+                url: data.item?.external_urls.spotify,
+                name: data.item?.name,
+                image: data.item?.album?.images[0]?.url,
+                artists: data.item?.artists.map((artist: any) => artist.name).join(", "),
+                progress: data.progress_ms,
+                duration: data.item?.duration_ms,
+            };
         } catch (err) {
             console.error("[Spotify] Error Getting Currently Playing");
             console.error(err);
