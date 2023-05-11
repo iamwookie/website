@@ -23,7 +23,7 @@ export default function Socials({ discordTag }: { discordTag?: string }) {
                 <a
                     href={links.vsco}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
                     className="align-middle mx-2"
                 >
                     <svg
@@ -44,7 +44,7 @@ export default function Socials({ discordTag }: { discordTag?: string }) {
                 <a
                     href={links.github}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
                     className="align-middle mx-2"
                 >
                     <FontAwesomeIcon icon={faGithub} />
@@ -55,7 +55,7 @@ export default function Socials({ discordTag }: { discordTag?: string }) {
                 <a
                     href={links.steam}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
                     className="align-middle mx-2"
                 >
                     <FontAwesomeIcon icon={faSteam} />
@@ -66,7 +66,7 @@ export default function Socials({ discordTag }: { discordTag?: string }) {
                 <a
                     href={links.twitch}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
                     className="align-middle mx-2 text-twitch"
                 >
                     <FontAwesomeIcon icon={faTwitch} />
@@ -77,7 +77,7 @@ export default function Socials({ discordTag }: { discordTag?: string }) {
                 <a
                     href={links.spotify}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
                     className="align-middle mx-2 text-spotify"
                 >
                     <FontAwesomeIcon icon={faSpotify} />

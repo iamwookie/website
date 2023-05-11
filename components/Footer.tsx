@@ -27,7 +27,7 @@ export default function Footer() {
                         <a
                             href={link}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noreferrer noopener"
                             className="underline hover:opacity-50"
                         >
                             Click here

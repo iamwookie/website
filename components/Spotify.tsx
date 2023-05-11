@@ -42,7 +42,7 @@ export default function Spotify() {
 
     return (
         <div className="mt-4 pt-4 border-t-2">
-            <a href={url} target="_blank" rel="noreferrer" className="hover:opacity-75">
+            <a href={url} target="_blank" rel="noreferrer noopener" className="hover:opacity-75">
                 <div className="overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn">
                     <div className="flex">
                         <Image src={image} width={80} height={80} alt="Album Cover" className="animate__animated animate__fadeIn" />

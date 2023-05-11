@@ -10,7 +10,9 @@ import Box from "./Box";
 export default function Layout({ children }: { children: ReactNode }) {
     return (
         <>
-            <Image alt="Background Image" src={"/assets/bg.jpg"} fill={true} priority={true} />
+            <div className="fixed h-full w-full overflow-hidden">
+                <Image alt="Background Image" src={"/assets/bg.jpg"} fill priority sizes="100vw" className="object-cover" />
+            </div>
 
             <Main>
                 <Box>{children}</Box>
