@@ -1,6 +1,6 @@
 import type { SpotifyData } from "types";
-import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 
@@ -30,7 +30,7 @@ export default function Spotify() {
     const progress = (((music.progress ?? 0) / (music.duration ?? 0)) * 100).toFixed(1);
 
     return (
-        <div className="mt-4 pt-4 border-t-2">
+        <div className="inline-block">
             <a href={music.url} target="_blank" rel="noreferrer noopener" className="hover:opacity-75">
                 <div className="overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn">
                     <div className="flex">

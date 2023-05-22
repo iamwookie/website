@@ -1,11 +1,7 @@
 import { ReactNode } from "react";
 import Image from "next/image";
 import Main from "./Main";
-import Box from "./Box";
-
-// background-image: url("/assets/bg.jpg");
-// background-size: cover;
-// background-position: center;
+import Footer from "./Footer";
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (
@@ -15,8 +11,10 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
 
             <Main>
-                <Box>{children}</Box>
+                <div className="relative m-5 lg:m-0 text-center animate__animated animate__fadeIn">{children}</div>
             </Main>
+
+            <Footer />
         </>
     );
 }

@@ -18,7 +18,7 @@ export default function Socials({ discordTag }: { discordTag?: string }) {
     }
 
     return (
-        <div className="mt-4 pt-4 border-t-2 text-2xl">
+        <div className="inline-block p-1 bg-black bg-opacity-50 rounded-md text-2xl">
             <Tippy content="VSCO" theme="blur" arrow={false}>
                 <a
                     href={links.vsco}
