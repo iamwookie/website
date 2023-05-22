@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import TextButton from "components/buttons/TextButton";
 import Socials from "@components/Socials";
@@ -12,49 +11,26 @@ type Props = {
     avatarURL?: string;
 };
 
-export default function Home({ discordTag, avatarURL }: Props) {
+export default function Home({ discordTag }: Props) {
     return (
         <>
             <Head>
                 <title>( ͡° ͜ʖ ͡°)</title>
             </Head>
 
-            {avatarURL && (
-                    <Image
-                        src={avatarURL}
-                        width={100}
-                        height={100}
-                        alt="Avatar"
-                        className="mx-auto w-36 rounded-full border-2"
-                    />
-                )}
+            <h1 className="text-9xl">Bilal Mustafa</h1>
 
-                <h1 className="mt-2 text-2xl sm:text">Bilal</h1>
-                <h2 className="mt-1 text-sm">Code | Media | Design</h2>
-                <Image
-                    src="/assets/pk_flag.svg"
-                    width={24}
-                    height={24}
-                    alt="Pakistan Flag"
-                    className="mt-2 mx-auto rounded-sm"
-                />
+            <Socials discordTag={discordTag} />
 
-                <p className="mt-4 py-4 border-y-2 text-base">
-                    19
-                    <br />
-                    it is what it is
-                    <br />✦
-                </p>
-
-                <div className="mt-4">
-                    <Link href="/portfolio">
-                        <TextButton>Portfolio</TextButton>
-                    </Link>
-                </div>
-
-                <Socials discordTag={discordTag} />
-
+            <div className="mt-3">
                 <Spotify />
+            </div>
+
+            <div className="mt-3">
+                <Link href="/portfolio">
+                    <TextButton>Portfolio</TextButton>
+                </Link>
+            </div>
         </>
     );
 }
@@ -64,6 +40,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
     return {
         props: { discordTag: user?.tag ?? null },
-        revalidate: 600
+        revalidate: 600,
     };
 };

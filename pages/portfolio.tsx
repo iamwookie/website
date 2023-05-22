@@ -1,14 +1,10 @@
 import { GetStaticProps } from "next";
-
 import Head from "next/head";
 import Link from "next/link";
-
 import TechStack from "components/TechStack";
 import PortfolioCard from "components/portfolio/PortfolioCard";
 import BackButton from "components/buttons/BackButton";
-
 import { getPlaiceholder } from "plaiceholder";
-
 import { PortfolioItem } from "types";
 
 export default function Portfolio({ items }: { items: PortfolioItem[] }) {
