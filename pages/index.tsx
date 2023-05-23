@@ -18,7 +18,7 @@ export default function Home({ discordTag }: Props) {
                 <title>( ͡° ͜ʖ ͡°)</title>
             </Head>
 
-            <h1 className="text-9xl">Bilal Mustafa</h1>
+            <h1 className="text-7xl lg:text-9xl">Bilal Mustafa</h1>
 
             <Socials discordTag={discordTag} />
 
