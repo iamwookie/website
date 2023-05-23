@@ -43,7 +43,7 @@ class Spotify {
         }
     }
 
-    static async currentlyPlaying(): Promise<SpotifyData | undefined> {
+    static async currentlyPlaying(): Promise<SpotifyData | null> {
         if (!this.access_token) await this.refreshToken();
 
         try {
@@ -56,7 +56,7 @@ class Spotify {
                 }
             );
 
-            if (!data) return undefined;
+            if (!data) return null;
 
             return {
                 url: data.item?.external_urls.spotify,
@@ -70,7 +70,7 @@ class Spotify {
             console.error("[Spotify] Error Getting Currently Playing");
             console.error(err);
 
-            return undefined;
+            return null;
         }
     }
 }

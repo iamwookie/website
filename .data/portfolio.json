@@ -21,6 +21,6 @@
         "name": "This Website",
         "description": "My internet footprint. Created from scratch. Something I work on when I'm bored. Contains a history of my projects and information about them.",
         "bannerURL": "/assets/portfolio/site.png",
-        "link": null
+        "link": "https://github.com/iamwookie/website"
     }
 ]
