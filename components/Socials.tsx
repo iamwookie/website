@@ -27,7 +27,7 @@ export default function Socials({ discordTag }: { discordTag?: string }) {
                     className="align-middle mx-2"
                 >
                     <svg
-                        aria-hidden={true}
+                        aria-hidden
                         focusable={false}
                         className="svg-inline--fa"
                         role="img"
