@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 class Discord {
     private static api = axios.create({
@@ -11,7 +11,7 @@ class Discord {
             const { data } = await this.api.get(`/users/${id}`);
             return data;
         } catch (err) {
-            console.error("[Discord] Error Fetching User");
+            console.error('[Discord] Error Fetching User');
             console.error(err);
         }
     }

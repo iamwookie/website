@@ -1,10 +1,10 @@
-import { GetStaticProps } from "next";
-import Head from "next/head";
-import Link from "next/link";
-import TextButton from "components/buttons/TextButton";
-import Socials from "@components/Socials";
-import Spotify from "@components/Spotify";
-import Discord from "@lib/discord";
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import TextButton from 'components/buttons/TextButton';
+import Socials from '@components/Socials';
+import Spotify from '@components/Spotify';
+import Discord from '@lib/discord';
 
 type Props = {
     discordTag?: string;
@@ -36,7 +36,7 @@ export default function Home({ discordTag }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const user = await Discord.fetchUser("244662779745665026");
+    const user = await Discord.fetchUser('244662779745665026');
 
     return {
         props: { discordTag: user?.tag ?? null },
