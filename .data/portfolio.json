@@ -1,25 +1,25 @@
 [
     {
         "name": "KAT",
-        "description": "My very first project. KAT is a multi-purpose bot developed for the Discord platform, currently serving over 30 servers.",
+        "description": "My very first project. KAT is a multi-purpose bot developed for the Discord platform, currently serving over 50 servers.",
         "bannerURL": "/assets/portfolio/kat.png",
         "link": "https://kat.bil.al"
     },
     {
         "name": "ASAP Gaming",
-        "description": "A game server project that has been around for 4 years which has recently resurfaced. Founded by a friend. Currently a voluntary developer on there.",
+        "description": "A game server project that has been around for 4 years which has recently resurfaced. Founded by a friend. Retired as the chief backend engineer.",
         "bannerURL": "/assets/portfolio/asap.png",
         "link": "https://asapgaming.co"
     },
     {
         "name": "Nebula Roleplay",
-        "description": "A game server project I founded with a friend. A successful startup at first, but eventually had to be shut down due to complications.",
+        "description": "A game server project I founded with a friend. A successful startup, later merged with another game server business.",
         "bannerURL": "/assets/portfolio/nebula.png",
         "link": "https://github.com/NebulaProjectRP"
     },
     {
         "name": "This Website",
-        "description": "My internet footprint. Created from scratch. Something I work on when I'm bored. Contains a history of my projects and information about them.",
+        "description": "My internet footprint. Created from scratch in NextJS. Something I work on when I'm bored. Contains a portfolio of my projects and information about them.",
         "bannerURL": "/assets/portfolio/site.png",
         "link": "https://github.com/iamwookie/website"
     }

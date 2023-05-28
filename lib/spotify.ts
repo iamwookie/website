@@ -1,6 +1,6 @@
-import type { SpotifyData } from "types";
-import axios from "axios";
-import qs from "qs";
+import type { SpotifyData } from 'types';
+import axios from 'axios';
+import qs from 'qs';
 
 class Spotify {
     private static clientId: string = process.env.SPOTIFY_CLIENT_ID!;
@@ -9,19 +9,19 @@ class Spotify {
     private static access_token?: string;
 
     private static api = axios.create({
-        baseURL: "https://api.spotify.com/v1",
+        baseURL: 'https://api.spotify.com/v1',
     });
 
     private static accounts = axios.create({
-        baseURL: "https://accounts.spotify.com",
+        baseURL: 'https://accounts.spotify.com',
     });
 
     private static async refreshToken(): Promise<void> {
         try {
             const { data } = await this.accounts.post(
-                "/api/token",
+                '/api/token',
                 qs.stringify({
-                    grant_type: "refresh_token",
+                    grant_type: 'refresh_token',
                     refresh_token: this.refresh_token,
                 }),
                 {
@@ -38,7 +38,7 @@ class Spotify {
                 this.access_token = undefined;
             }, data.expires_in * 1000);
         } catch (err) {
-            console.error("[Spotify] Error Refreshing Token");
+            console.error('[Spotify] Error Refreshing Token');
             console.error(err);
         }
     }
@@ -47,14 +47,11 @@ class Spotify {
         if (!this.access_token) await this.refreshToken();
 
         try {
-            const { data } = await this.api.get(
-                "/me/player/currently-playing",
-                {
-                    headers: {
-                        Authorization: `Bearer ${this.access_token}`,
-                    },
-                }
-            );
+            const { data } = await this.api.get('/me/player/currently-playing', {
+                headers: {
+                    Authorization: `Bearer ${this.access_token}`,
+                },
+            });
 
             if (!data) return null;
 
@@ -62,12 +59,12 @@ class Spotify {
                 url: data.item?.external_urls.spotify,
                 name: data.item?.name,
                 image: data.item?.album?.images[0]?.url,
-                artists: data.item?.artists.map((artist: any) => artist.name).join(", "),
+                artists: data.item?.artists.map((artist: any) => artist.name).join(', '),
                 progress: data.progress_ms,
                 duration: data.item?.duration_ms,
             };
         } catch (err) {
-            console.error("[Spotify] Error Getting Currently Playing");
+            console.error('[Spotify] Error Getting Currently Playing');
             console.error(err);
 
             return null;

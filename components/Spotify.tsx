@@ -1,8 +1,8 @@
-import type { SpotifyData } from "types";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+import type { SpotifyData } from 'types';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
 export default function Spotify() {
     const [music, setMusic] = useState<SpotifyData | null>(null);
@@ -11,9 +11,9 @@ export default function Spotify() {
     useEffect(() => {
         async function fetchPlaying() {
             try {
-                const res = await fetch("/api/spotify/playing");
+                const res = await fetch('/api/spotify/playing');
                 const data: SpotifyData | null = await res.json();
-                
+
                 if (data) {
                     setFetchInterval(2000);
                 } else {
@@ -22,7 +22,7 @@ export default function Spotify() {
 
                 setMusic(data);
             } catch (err) {
-                console.error("Error fetching Spotify data.");
+                console.error('Error fetching Spotify data.');
                 console.error(err);
             }
         }
@@ -42,7 +42,9 @@ export default function Spotify() {
             <a href={music.url} target="_blank" rel="noreferrer noopener" className="hover:opacity-75">
                 <div className="overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn">
                     <div className="flex">
-                        {music.image && <Image src={music.image} width={80} height={80} alt="Album Cover" className="animate__animated animate__fadeIn" />}
+                        {music.image && (
+                            <Image src={music.image} width={80} height={80} alt="Album Cover" className="animate__animated animate__fadeIn" />
+                        )}
                         <div className="flex flex-col flex-auto justify-center text-left mx-2">
                             <h1 className="my-auto text-sm">Listening to Spotify...</h1>
                             <h1 className="my-auto text-lg">{music.name}</h1>
