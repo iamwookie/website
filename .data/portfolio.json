@@ -1,13 +1,13 @@
 [
     {
         "name": "KAT",
-        "description": "My very first project. KAT is a multi-purpose bot developed for the Discord platform, currently serving over 50 servers.",
+        "description": "KAT is a music bot developed for the Discord platform, currently serving over 50 servers. Also does some other cool things.",
         "bannerURL": "/assets/portfolio/kat.png",
         "link": "https://kat.bil.al"
     },
     {
         "name": "ASAP Gaming",
-        "description": "A game server project that has been around for 4 years which has recently resurfaced. Founded by a friend. Retired as the chief backend engineer.",
+        "description": "A game server project that has been around for 4 years. Founded by a friend. Worked as a full stack engineer and game developer.",
         "bannerURL": "/assets/portfolio/asap.png",
         "link": "https://asapgaming.co"
     },
