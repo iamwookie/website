@@ -1,7 +1,7 @@
 [
     {
         "name": "KAT",
-        "description": "KAT is a multi-purpose bot developed for the Discord platform, currently serving over 50 servers.",
+        "description": "KAT is a music bot developed for the Discord platform, currently serving over 50 servers. Also does some other cool things.",
         "bannerURL": "/assets/portfolio/kat.png",
         "link": "https://kat.bil.al"
     },
