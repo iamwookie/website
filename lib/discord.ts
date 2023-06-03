@@ -1,3 +1,4 @@
+import type { DiscordUser } from 'types';
 import axios from 'axios';
 
 class Discord {
@@ -6,9 +7,9 @@ class Discord {
         timeout: 3000,
     });
 
-    static async fetchUser(id: string | number) {
+    static async fetchUser(id: string | number): Promise<DiscordUser | undefined> {
         try {
-            const { data } = await this.api.get(`/users/${id}`);
+            const { data } = await this.api.get<DiscordUser>(`/users/${id}`);
             return data;
         } catch (err) {
             console.error('[Discord] Error Fetching User');

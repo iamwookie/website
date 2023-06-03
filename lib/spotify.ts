@@ -43,7 +43,7 @@ class Spotify {
         }
     }
 
-    static async currentlyPlaying(): Promise<SpotifyData | null> {
+    static async currentlyPlaying(): Promise<SpotifyData | undefined> {
         if (!this.access_token) await this.refreshToken();
 
         try {
@@ -53,21 +53,17 @@ class Spotify {
                 },
             });
 
-            if (!data) return null;
-
-            return {
+            return data ? {
                 url: data.item?.external_urls.spotify,
                 name: data.item?.name,
                 image: data.item?.album?.images[0]?.url,
                 artists: data.item?.artists.map((artist: any) => artist.name).join(', '),
                 progress: data.progress_ms,
                 duration: data.item?.duration_ms,
-            };
+            } : undefined;
         } catch (err) {
             console.error('[Spotify] Error Getting Currently Playing');
             console.error(err);
-
-            return null;
         }
     }
 }

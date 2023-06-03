@@ -5,22 +5,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
 export default function Spotify() {
-    const [music, setMusic] = useState<SpotifyData | null>(null);
+    const [music, setMusic] = useState<SpotifyData>();
     const [fetchInterval, setFetchInterval] = useState<number>(10_000);
 
     useEffect(() => {
         async function fetchPlaying() {
             try {
                 const res = await fetch('/api/spotify/playing');
-                const data: SpotifyData | null = await res.json();
 
-                if (data) {
+                if (res.status == 200) {
+                    const data: SpotifyData = await res.json();
                     setFetchInterval(2000);
+                    setMusic(data);
                 } else {
                     setFetchInterval(10_000);
+                    setMusic(undefined);
                 }
-
-                setMusic(data);
             } catch (err) {
                 console.error('Error fetching Spotify data.');
                 console.error(err);
