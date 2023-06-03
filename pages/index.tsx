@@ -6,12 +6,7 @@ import Socials from '@components/Socials';
 import Spotify from '@components/Spotify';
 import Discord from '@lib/discord';
 
-type Props = {
-    discordTag?: string;
-    avatarURL?: string;
-};
-
-export default function Home({ discordTag }: Props) {
+export default function Home({ discordTag }: { discordTag?: string }) {
     return (
         <>
             <Head>

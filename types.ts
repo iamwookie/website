@@ -6,6 +6,16 @@ export type PortfolioItem = {
     link?: string | null;
 }
 
+export type DiscordUser = {
+    id: string;
+    tag: string;
+    username: string;
+    discriminator: string;
+    avatarURL?: string;
+    bannerURL?: string;
+    accentHex?: string;
+}
+
 export type SpotifyData = {
     url?: string;
     name?: string;

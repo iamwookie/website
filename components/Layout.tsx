@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     return (
         <>
             <div className="fixed h-full w-full overflow-hidden">
-                <Image alt="Background Image" src={'/assets/bg.jpg'} fill priority sizes="100vw" className="object-cover" />
+                <Image alt="Background Image" src={'/assets/bg.jpg'} sizes="100vw" className="object-cover" fill priority />
             </div>
 
             <Main>
