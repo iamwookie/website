@@ -23,4 +23,5 @@ export type SpotifyData = {
     artists?: string;
     progress?: number;
     duration?: number;
+    blurDataURL?: string;
 }
