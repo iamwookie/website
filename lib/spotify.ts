@@ -1,6 +1,7 @@
 import type { SpotifyData } from 'types';
 import axios from 'axios';
 import qs from 'qs';
+import { getPlaiceholder } from 'plaiceholder';
 
 class Spotify {
     private static clientId: string = process.env.SPOTIFY_CLIENT_ID!;
@@ -52,15 +53,19 @@ class Spotify {
                     Authorization: `Bearer ${this.access_token}`,
                 },
             });
+            if (!data) return undefined;
 
-            return data ? {
+            const blurDataURL = (await getPlaiceholder(data.item?.album?.images[0]?.url)).base64;
+
+            return {
                 url: data.item?.external_urls.spotify,
                 name: data.item?.name,
                 image: data.item?.album?.images[0]?.url,
                 artists: data.item?.artists.map((artist: any) => artist.name).join(', '),
                 progress: data.progress_ms,
                 duration: data.item?.duration_ms,
-            } : undefined;
+                blurDataURL,
+            };
         } catch (err) {
             console.error('[Spotify] Error Getting Currently Playing');
             console.error(err);

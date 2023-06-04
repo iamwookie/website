@@ -43,7 +43,14 @@ export default function Spotify() {
                 <div className="overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn">
                     <div className="flex">
                         {music.image && (
-                            <Image src={music.image} width={80} height={80} alt="Album Cover" className="animate__animated animate__fadeIn" />
+                            <Image
+                                src={music.image}
+                                width={80}
+                                height={80}
+                                alt="Album Cover"
+                                placeholder="blur"
+                                blurDataURL={music.blurDataURL}
+                            />
                         )}
                         <div className="flex flex-col flex-auto justify-center text-left mx-2">
                             <h1 className="my-auto text-sm">Listening to Spotify...</h1>
