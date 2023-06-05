@@ -23,7 +23,7 @@ export default function Home({ discordTag }: { discordTag?: string }) {
 
             <div className="mt-3">
                 <Link href="/portfolio">
-                    <TextButton>Portfolio</TextButton>
+                    <TextButton>portfolio</TextButton>
                 </Link>
             </div>
         </>

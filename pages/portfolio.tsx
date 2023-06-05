@@ -11,15 +11,15 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
     return (
         <>
             <Head>
-                <title>Portfolio</title>
+                <title>portfolio</title>
             </Head>
 
             <Link href="/">
                 <BackButton />
             </Link>
 
-            <h1 className="text-2xl">Portfolio</h1>
-            <h5 className="text-sm">{'(projects & stuff)'}</h5>
+            <h1 className="text-2xl">portfolio</h1>
+            <h5 className="text-sm">{'(random stuff)'}</h5>
 
             <TechStack
                 stack={[
