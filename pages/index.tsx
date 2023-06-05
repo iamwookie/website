@@ -13,7 +13,7 @@ export default function Home({ discordTag }: { discordTag?: string }) {
                 <title>( ͡° ͜ʖ ͡°)</title>
             </Head>
 
-            <h1 className="text-7xl lg:text-9xl">Bilal Mustafa</h1>
+            <h1 className="text-7xl lg:text-9xl">bilal mustafa</h1>
 
             <Socials discordTag={discordTag} />
 
@@ -23,7 +23,7 @@ export default function Home({ discordTag }: { discordTag?: string }) {
 
             <div className="mt-3">
                 <Link href="/portfolio">
-                    <TextButton>Portfolio</TextButton>
+                    <TextButton>portfolio</TextButton>
                 </Link>
             </div>
         </>
