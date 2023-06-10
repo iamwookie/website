@@ -1,11 +1,13 @@
+import type { PortfolioItem } from 'types';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import TechStack from 'components/TechStack';
 import PortfolioCard from 'components/portfolio/PortfolioCard';
-import BackButton from 'components/buttons/BackButton';
+import { motion } from 'framer-motion';
 import { getPlaiceholder } from 'plaiceholder';
-import { PortfolioItem } from 'types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function Portfolio({ items }: { items: PortfolioItem[] }) {
     return (
@@ -15,7 +17,13 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
             </Head>
 
             <Link href="/">
-                <BackButton />
+                <motion.button
+                    className="absolute top-4 left-4 text-md"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: 'spring', stiffness: 350, damping: 15 }}
+                >
+                    <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+                </motion.button>
             </Link>
 
             <h1 className="text-2xl">portfolio</h1>
