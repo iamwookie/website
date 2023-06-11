@@ -1,5 +1,4 @@
 import type { DiscordUser } from 'types';
-import axios from 'axios';
 
 class Discord {
     static async fetchUser(id: string | number): Promise<DiscordUser | undefined> {
