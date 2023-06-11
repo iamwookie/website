@@ -8,6 +8,8 @@ import { Nunito } from 'next/font/google';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Footer from '@components/Footer';
+import Toast from '@components/ui/Toast';
+import Analytics from '@components/Analytics';
 
 const nunito = Nunito({ subsets: ['latin'] });
 
@@ -37,7 +39,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </main>
 
                 <Footer />
+
+                <Toast />
             </body>
+
+            <Analytics />
         </html>
     );
 }
