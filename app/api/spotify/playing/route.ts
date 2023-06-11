@@ -1,5 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import Spotify from 'app/lib/spotify';
+
+export const revalidate = 0;
 
 export async function GET() {
     const data = await Spotify.currentlyPlaying();
