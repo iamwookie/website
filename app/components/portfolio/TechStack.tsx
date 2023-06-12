@@ -4,8 +4,8 @@ export default function TechStack({ stack }: { stack: { name: string; bgColor: s
             {stack.map((tech) => (
                 <span
                     key={tech.name}
-                    className={`py-0.5 px-2 mx-1 rounded-full text-sm border-2`}
-                    style={{ backgroundColor: tech.bgColor, borderColor: tech.borderColor }}
+                    className='py-0.5 px-2 mx-1 rounded-full text-sm border-2'
+                    style={{ backgroundColor: tech.bgColor, borderColor: tech.borderColor, boxShadow: `0 4px 6px -2px ${tech.borderColor}` }}
                 >
                     {tech.name}
                 </span>
