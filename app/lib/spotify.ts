@@ -45,19 +45,23 @@ class Spotify {
                 },
                 next: { revalidate: 0 },
             });
-
             if (res.status !== 200) return;
+
             const data = await res.json();
-            const blurDataURL = (await getPlaiceholder(data.item?.album?.images[0]?.url)).base64;
+            if (!data?.item) return;
+
+            const imageRes = await fetch(data.item.album?.images[0]?.url, { next: { revalidate: data.item.duration_ms / 1000 } });
+            const buffer = Buffer.from(await imageRes.arrayBuffer());
+            const { base64 } = await getPlaiceholder(buffer);
 
             return {
-                url: data.item?.external_urls.spotify,
-                name: data.item?.name,
-                image: data.item?.album?.images[0]?.url,
-                artists: data.item?.artists.map((artist: any) => artist.name).join(', '),
+                url: data.item.external_urls.spotify,
+                name: data.item.name,
+                image: data.item.album?.images[0]?.url,
+                artists: data.item.artists.map((artist: any) => artist.name).join(', '),
                 progress: data.progress_ms,
-                duration: data.item?.duration_ms,
-                blurDataURL,
+                duration: data.item.duration_ms,
+                blurDataURL: base64,
             };
         } catch (err) {
             console.error('[Spotify] Error Getting Currently Playing');

@@ -2,14 +2,27 @@ import Link from 'next/link';
 import TechStack from '@components/portfolio/TechStack';
 import PortfolioCard from '@components/portfolio/PortfolioCard';
 import BackButton from '@components/ui/BackButton';
-
 import data from '@data/portfolio.json';
+import fs from 'fs';
+import { getPlaiceholder } from 'plaiceholder';
+import { PortfolioItem } from 'types';
 
 export const metadata = {
     title: 'portfolio',
 };
 
+const getImages = async (): Promise<PortfolioItem[]> =>
+    Promise.all(
+        data.map(async (item) => {
+            const buffer = fs.readFileSync('public' + item.bannerURL);
+            const { base64 } = await getPlaiceholder(buffer);
+            return { ...item, blurDataURL: base64 };
+        })
+    );
+
 export default async function Portfolio() {
+    const images = await getImages();
+
     return (
         <>
             <Link href="/">
@@ -29,14 +42,15 @@ export default async function Portfolio() {
             />
 
             <div className="grid gap-5 lg:grid-cols-2 md:grid-cols-1 mt-5">
-                {data.map((item) => {
+                {images.map((image) => {
                     return (
                         <PortfolioCard
-                            name={item.name}
-                            description={item.description}
-                            bannerURL={item.bannerURL}
-                            link={item.link}
-                            key={item.name}
+                            name={image.name}
+                            description={image.description}
+                            bannerURL={image.bannerURL}
+                            blurDataURL={image.blurDataURL}
+                            link={image.link}
+                            key={image.name}
                         />
                     );
                 })}

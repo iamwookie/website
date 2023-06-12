@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { PortfolioItem } from 'types';
 import Image from 'next/image';
 
-export default function PortfolioCard({ name, description, bannerURL, link }: PortfolioItem) {
+export default function PortfolioCard({ name, description, bannerURL, blurDataURL, link }: PortfolioItem) {
     return (
         <motion.a
             whileHover={{ scale: 1.05 }}
@@ -14,7 +14,7 @@ export default function PortfolioCard({ name, description, bannerURL, link }: Po
             rel="noreferrer noopener"
         >
             <div className="max-w-sm rounded-lg overflow-hidden bg-black bg-opacity-50 border-2 shadow-md shadow-white/50">
-                <Image src={bannerURL} width={380} height={213.75} alt="Project Banner" priority />
+                <Image src={bannerURL} width={380} height={213.75} alt="Project Banner" placeholder="blur" blurDataURL={blurDataURL} priority />
                 <div className="my-2 mx-2 text-left">
                     <h3 className="text-xl">{name}</h3>
                     <p className="text-sm" dangerouslySetInnerHTML={{ __html: description }} />
