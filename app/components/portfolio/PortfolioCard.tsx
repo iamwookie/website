@@ -13,7 +13,7 @@ export default function PortfolioCard({ name, description, bannerURL, link }: Po
             target="_blank"
             rel="noreferrer noopener"
         >
-            <div className="max-w-sm rounded-lg overflow-hidden bg-black bg-opacity-50 border-2">
+            <div className="max-w-sm rounded-lg overflow-hidden bg-black bg-opacity-50 border-2 shadow-md shadow-white/50">
                 <Image src={bannerURL} width={380} height={213.75} alt="Project Banner" priority />
                 <div className="my-2 mx-2 text-left">
                     <h3 className="text-xl">{name}</h3>
