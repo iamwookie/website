@@ -1,25 +1,25 @@
 [
     {
         "name": "KAT",
-        "description": "KAT is a music bot developed for the Discord platform, currently serving over 50 servers. Also does some other cool things.",
+        "description": "A Discord bot that plays music.",
         "bannerURL": "/assets/portfolio/kat.png",
         "link": "https://kat.bil.al"
     },
     {
         "name": "ASAP Gaming",
-        "description": "A game server project that has been around for 4 years. Founded by a friend. Worked as a full stack engineer and game developer.",
+        "description": "A massive game server project that I used to work on.",
         "bannerURL": "/assets/portfolio/asap.png",
         "link": "https://asapgaming.co"
     },
     {
         "name": "Nebula Roleplay",
-        "description": "A game server project I founded with a friend. A successful startup, later merged with another game server business.",
+        "description": "Another game server project that I owned but wasn't that big.",
         "bannerURL": "/assets/portfolio/nebula.png",
         "link": "https://github.com/NebulaProjectRP"
     },
     {
         "name": "This Website",
-        "description": "My internet footprint. Created from scratch in NextJS. Something I work on when I'm bored. Contains a portfolio of my projects and information about them.",
+        "description": "Literally what the name above says.",
         "bannerURL": "/assets/portfolio/site.png",
         "link": "https://github.com/iamwookie/website"
     }
