@@ -7,7 +7,7 @@ import Tooltip from './Tooltip';
 
 export default function DiscordButton({ discordTag }: { discordTag: string }) {
     function copyDiscord(): void {
-        navigator.clipboard.writeText(discordTag);
+        navigator.clipboard.writeText(discordTag.replace('#0', ''));
         toast.success('Copied Discord!');
     }
 
