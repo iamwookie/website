@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import Spotify from 'app/lib/spotify';
 import { rateLimiter } from '@api/middlewares/limiter.middleware';
 
 export const revalidate = 0;
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     const { success } = await rateLimiter.limit('spotify:playing');
     if (!success) return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
 
