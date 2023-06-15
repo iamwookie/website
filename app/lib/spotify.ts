@@ -45,7 +45,7 @@ class Spotify {
                 },
                 next: { revalidate: 0 },
             });
-            if (res.status !== 200) return;
+            if (res.status != 200) return;
 
             const data = await res.json();
             if (!data?.item) return;
