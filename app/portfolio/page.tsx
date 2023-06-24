@@ -25,9 +25,7 @@ export default async function Portfolio() {
 
     return (
         <>
-            <Link href="/">
-                <BackButton />
-            </Link>
+            <BackButton />
 
             <h1 className="text-2xl">portfolio</h1>
             <h5 className="text-sm">{'(random stuff)'}</h5>

@@ -5,5 +5,5 @@ export const rateLimiter = new Ratelimit({
     redis: Redis.fromEnv(),
     limiter: Ratelimit.slidingWindow(50, '1 s'),
     analytics: true,
-    prefix: 'kat:limiter'
+    prefix: 'web:limiter'
 });
