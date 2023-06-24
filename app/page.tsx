@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import Socials from '@components/Socials';
 import Spotify from '@components/Spotify';
-import Button from '@components/ui/Button';
+import LinkButton from '@components/ui/LinkButton';
 
 export default async function Home() {
     return (
@@ -14,10 +13,8 @@ export default async function Home() {
                 <Spotify />
             </div>
 
-            <div className="mt-3">
-                <Link href="/portfolio">
-                    <Button>portfolio</Button>
-                </Link>
+            <div className="mt-3 text-lg">
+                <LinkButton href="/portfolio">portfolio</LinkButton>
             </div>
         </>
     );
