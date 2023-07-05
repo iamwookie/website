@@ -1,14 +1,17 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { PortfolioItem } from 'types';
+import { motion } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 
 export default function PortfolioCard({ name, description, bannerURL, blurDataURL, link }: PortfolioItem) {
+    const isDesktop = useMediaQuery({ minWidth: 768 });
+
     return (
         <motion.a
             whileTap={{ scale: 0.95 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={isDesktop ? { scale: 1.05 } : {}}
             transition={{ type: 'spring', stiffness: 350, damping: 15 }}
             href={link ?? undefined}
             target="_blank"
