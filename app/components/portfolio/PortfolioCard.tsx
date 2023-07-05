@@ -7,6 +7,7 @@ import Image from 'next/image';
 export default function PortfolioCard({ name, description, bannerURL, blurDataURL, link }: PortfolioItem) {
     return (
         <motion.a
+            whileTap={{ scale: 0.95 }}
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 350, damping: 15 }}
             href={link ?? undefined}
