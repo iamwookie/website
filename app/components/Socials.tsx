@@ -1,18 +1,22 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faSteam, faTwitch, faSpotify } from '@fortawesome/free-brands-svg-icons';
-import Tooltip from './ui/Tooltip';
-import DiscordButton from './ui/DiscordButton';
-import Discord from 'app/lib/discord';
+'use client';
 
-import links from '@data/links.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faSteam, faTwitch, faSpotify, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { toast } from 'react-toastify';
+import Tooltip from './ui/Tooltip';
+
+import data from '@data/social.json';
 
 export default async function Socials() {
-    const user = await Discord.fetchUser('244662779745665026');
+    function copyDiscord(): void {
+        navigator.clipboard.writeText(data.discord);
+        toast.success('Copied Discord!');
+    }
 
     return (
         <div className="inline-block p-1 bg-black bg-opacity-50 rounded-md text-2xl">
             <Tooltip content="VSCO" theme="blur" arrow={false}>
-                <a href={links.vsco} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
+                <a href={data.vsco} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
                     <svg
                         aria-hidden
                         focusable={false}
@@ -28,30 +32,34 @@ export default async function Socials() {
             </Tooltip>
 
             <Tooltip content="GitHub" theme="blur" arrow={false}>
-                <a href={links.github} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
+                <a href={data.github} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
             </Tooltip>
 
             <Tooltip content="Steam" theme="blur" arrow={false}>
-                <a href={links.steam} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
+                <a href={data.steam} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
                     <FontAwesomeIcon icon={faSteam} />
                 </a>
             </Tooltip>
 
             <Tooltip content="Twitch" theme="blur" arrow={false}>
-                <a href={links.twitch} target="_blank" rel="noreferrer noopener" className="align-middle mx-2 text-twitch">
+                <a href={data.twitch} target="_blank" rel="noreferrer noopener" className="align-middle mx-2 text-twitch">
                     <FontAwesomeIcon icon={faTwitch} />
                 </a>
             </Tooltip>
 
             <Tooltip content="Spotify" theme="blur" arrow={false}>
-                <a href={links.spotify} target="_blank" rel="noreferrer noopener" className="align-middle mx-2 text-spotify">
+                <a href={data.spotify} target="_blank" rel="noreferrer noopener" className="align-middle mx-2 text-spotify">
                     <FontAwesomeIcon icon={faSpotify} />
                 </a>
             </Tooltip>
 
-            {user && <DiscordButton discordTag={user.tag} />}
+            <Tooltip content="Discord">
+                <button onClick={copyDiscord} className="align-middle mx-2 text-discord">
+                    <FontAwesomeIcon icon={faDiscord} />
+                </button>
+            </Tooltip>
         </div>
     );
 }
