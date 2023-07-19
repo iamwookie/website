@@ -3,9 +3,9 @@ import { getPlaiceholder } from 'plaiceholder';
 import qs from 'querystring';
 
 class Spotify {
-    private static clientId: string = process.env.SPOTIFY_CLIENT_ID!;
-    private static clientSecret: string = process.env.SPOTIFY_CLIENT_SECRET!;
-    private static refresh_token: string = process.env.SPOTIFY_REFRESH_TOKEN!;
+    private static clientId: string = process.env.SPOTIFY_CLIENT_ID;
+    private static clientSecret: string = process.env.SPOTIFY_CLIENT_SECRET;
+    private static refresh_token: string = process.env.SPOTIFY_REFRESH_TOKEN;
     private static access_token?: string;
 
     private static async refreshToken(): Promise<void> {
