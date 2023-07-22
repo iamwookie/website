@@ -1,15 +1,26 @@
-export default function TechStack({ stack }: { stack: { name: string; bgColor: string; borderColor: string }[] }) {
+import Image from 'next/image';
+import Tooltip from '@components/ui/Tooltip';
+
+export default function TechStack() {
     return (
         <div className="mt-3">
-            {stack.map((tech) => (
-                <span
-                    key={tech.name}
-                    className='py-0.5 px-2 mx-1 rounded-full text-sm border-2'
-                    style={{ backgroundColor: tech.bgColor, borderColor: tech.borderColor, boxShadow: `0 4px 6px -2px ${tech.borderColor}` }}
-                >
-                    {tech.name}
-                </span>
-            ))}
+            <div className="flex justify-center">
+                <Tooltip content="JavaScript">
+                    <Image priority src="/assets/icons/javascript.svg" width={48} height={48} alt="JavaScript" />
+                </Tooltip>
+
+                <Tooltip content="TypeScript">
+                    <Image priority src="/assets/icons/typescript.svg" width={48} height={48} alt="TypeScript" />
+                </Tooltip>
+
+                <Tooltip content="NodeJS">
+                    <Image priority src="/assets/icons/nodejs.svg" width={48} height={48} alt="NodeJS" />
+                </Tooltip>
+
+                <Tooltip content="React">
+                    <Image priority src="/assets/icons/react.svg" width={48} height={48} alt="React" />
+                </Tooltip>
+            </div>
         </div>
     );
 }
