@@ -5,6 +5,14 @@ export default function TechStack() {
     return (
         <div className="mt-3">
             <div className="flex justify-center">
+                <Tooltip content="HTML">
+                    <Image priority src="/assets/icons/html.svg" width={48} height={48} alt="HTML" />
+                </Tooltip>
+
+                <Tooltip content="CSS">
+                    <Image priority src="/assets/icons/css.svg" width={48} height={48} alt="CSS" />
+                </Tooltip>
+
                 <Tooltip content="JavaScript">
                     <Image priority src="/assets/icons/javascript.svg" width={48} height={48} alt="JavaScript" />
                 </Tooltip>

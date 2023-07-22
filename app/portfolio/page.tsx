@@ -45,6 +45,13 @@ export default async function Portfolio() {
                     );
                 })}
             </div>
+
+            <p className='mt-5'>
+                icons provided by{' '}
+                <a href="https://icons8.com/" target="_blank" className="underline hover:opacity-50">
+                    icons8
+                </a>
+            </p>
         </>
     );
 }
