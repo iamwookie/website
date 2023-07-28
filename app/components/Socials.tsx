@@ -31,25 +31,24 @@ export default async function Socials() {
                 </a>
             </Tooltip>
 
-            <Tooltip content="GitHub" theme="blur" arrow={false}>
+            <Tooltip content="GitHub">
                 <a href={data.github} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
             </Tooltip>
-
-            <Tooltip content="Steam" theme="blur" arrow={false}>
+            <Tooltip content="Steam">
                 <a href={data.steam} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
                     <FontAwesomeIcon icon={faSteam} />
                 </a>
             </Tooltip>
 
-            <Tooltip content="Twitch" theme="blur" arrow={false}>
+            <Tooltip content="Twitch">
                 <a href={data.twitch} target="_blank" rel="noreferrer noopener" className="align-middle mx-2 text-twitch">
                     <FontAwesomeIcon icon={faTwitch} />
                 </a>
             </Tooltip>
 
-            <Tooltip content="Spotify" theme="blur" arrow={false}>
+            <Tooltip content="Spotify">
                 <a href={data.spotify} target="_blank" rel="noreferrer noopener" className="align-middle mx-2 text-spotify">
                     <FontAwesomeIcon icon={faSpotify} />
                 </a>
