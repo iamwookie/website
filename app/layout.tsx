@@ -34,9 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <Image alt="Background Image" src={'/assets/bg.jpg'} sizes="100vw" className="object-cover" fill priority />
                 </div>
 
-                <main className="grid place-items-center min-h-screen">
-                    <div className="relative m-5 lg:m-0 text-center animate__animated animate__fadeIn">{children}</div>
-                </main>
+                {children}
 
                 <Footer />
 
