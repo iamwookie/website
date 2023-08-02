@@ -4,25 +4,19 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'tippy.js/dist/tippy.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 
+import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
-import { Metadata } from 'next';
 import Image from 'next/image';
-import Footer from '@components/Footer';
-import Toast from '@components/ui/Toast';
 import Analytics from '@components/Analytics';
 
 const nunito = Nunito({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: '( ͡° ͜ʖ ͡°)',
-    description: 'A person on this planet.',
     authors: [{ name: 'Bilal' }],
     themeColor: '#FFFFFF',
     openGraph: {
         type: 'website',
         url: 'https://bil.al',
-        title: '( ͡° ͜ʖ ͡°)',
-        description: 'A person on this planet.',
     },
 };
 
@@ -35,10 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </div>
 
                 {children}
-
-                <Footer />
-
-                <Toast />
             </body>
 
             <Analytics />
