@@ -60,8 +60,8 @@ export default function Spotify() {
     if (!state.music) return null;
 
     return (
-        <div className="inline-block">
-            <a href={state.music.url} target="_blank" rel="noreferrer noopener" className="hover:opacity-75">
+        <div className="flex justify-center items-center mt-3">
+            <a href={state.music.url} target="_blank" rel="noreferrer noopener" className="hover:opacity-75 mx-auto">
                 <div className="overflow-hidden bg-darkslate rounded-md animate__animated animate__fadeIn">
                     <div className="flex">
                         {state.music.image && (
