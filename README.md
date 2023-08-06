@@ -1,6 +1,7 @@
 # My Personal Website
 
 This project is built with [Next.js](https://nextjs.org/) and [TailwindCSS](https://tailwindcss.com/) in [TypeScript](https://www.typescriptlang.org/).
+NOTE: This project is licensed under the MIT open-source license.
 
 ## Testing
 
