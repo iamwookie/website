@@ -7,7 +7,7 @@ import Tooltip from './ui/Tooltip';
 
 import data from '@data/social.json';
 
-export default async function Socials() {
+export default function Socials() {
     function copyDiscord(): void {
         navigator.clipboard.writeText(data.discord);
         toast.success('Copied Discord!');
@@ -36,6 +36,7 @@ export default async function Socials() {
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
             </Tooltip>
+            
             <Tooltip content="Steam">
                 <a href={data.steam} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
                     <FontAwesomeIcon icon={faSteam} />
