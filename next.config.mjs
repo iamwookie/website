@@ -10,7 +10,7 @@ const nextConfig = {
     reactStrictMode: true,
     images: {
         domains: [
-            'cdn.discordapp.com',
+            'skillicons.dev',
             'i.scdn.co'
         ]
     },
