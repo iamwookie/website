@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import Spotify from 'app/lib/spotify';
 import { rateLimiter } from '@api/middlewares/limiter.middleware';
+import Spotify from '@lib/spotify';
 
 export const revalidate = 0;
 
