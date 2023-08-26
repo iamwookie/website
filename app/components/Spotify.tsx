@@ -28,7 +28,7 @@ export default function Spotify() {
 
         const intervalId = setInterval(() => fetchPlaying(), 5_000);
         return () => clearInterval(intervalId);
-    });
+    }, []);
 
     if (!music) return null;
 
