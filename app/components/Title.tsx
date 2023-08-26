@@ -25,8 +25,8 @@ export default function Title() {
     const [showLine, setShowLine] = useState(false);
 
     useEffect(() => {
-        setItems(final);
-        setTimeout(() => setShowLine(true), 1000);
+        setTimeout(() => setItems(final), 1000);
+        setTimeout(() => setShowLine(true), 2000);
     }, []);
 
     return (
