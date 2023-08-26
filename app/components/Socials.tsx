@@ -1,9 +1,10 @@
 'use client';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faSteam, faTwitch, faSpotify, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { toast } from 'react-toastify';
 import Tooltip from './ui/Tooltip';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faSteam, faTwitch, faSpotify, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 import data from '@data/social.json';
 
@@ -36,7 +37,7 @@ export default function Socials() {
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
             </Tooltip>
-            
+
             <Tooltip content="Steam">
                 <a href={data.steam} target="_blank" rel="noreferrer noopener" className="align-middle mx-2">
                     <FontAwesomeIcon icon={faSteam} />

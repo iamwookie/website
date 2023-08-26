@@ -59,8 +59,6 @@ class Spotify {
                 name: data.item.name,
                 image: data.item.album?.images[0]?.url,
                 artists: data.item.artists.map((artist: any) => artist.name).join(', '),
-                progress: data.progress_ms,
-                duration: data.item.duration_ms,
                 blurDataURL: base64,
             };
         } catch (err) {
