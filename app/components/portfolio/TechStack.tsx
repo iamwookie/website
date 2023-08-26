@@ -25,7 +25,7 @@ export default function TechStack() {
                     <Image priority src="/assets/icons/python.svg" width={48} height={48} alt="Python" />
                 </Tooltip>
 
-                <Tooltip content="NodeJS">
+                <Tooltip content="Node.js">
                     <Image priority src="/assets/icons/nodejs.svg" width={48} height={48} alt="NodeJS" />
                 </Tooltip>
 
@@ -33,8 +33,8 @@ export default function TechStack() {
                     <Image priority src="/assets/icons/react.svg" width={48} height={48} alt="React" />
                 </Tooltip>
 
-                <Tooltip content="Next">
-                    <Image priority src="/assets/icons/next.svg" width={48} height={48} alt="Next" />
+                <Tooltip content="Next.js">
+                    <Image priority src="/assets/icons/nextjs.svg" width={48} height={48} alt="NextJS" />
                 </Tooltip>
             </div>
         </div>
