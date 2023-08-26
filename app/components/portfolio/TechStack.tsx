@@ -32,6 +32,10 @@ export default function TechStack() {
                 <Tooltip content="React">
                     <Image priority src="/assets/icons/react.svg" width={48} height={48} alt="React" />
                 </Tooltip>
+
+                <Tooltip content="Next">
+                    <Image priority src="/assets/icons/next.svg" width={48} height={48} alt="Next" />
+                </Tooltip>
             </div>
         </div>
     );
