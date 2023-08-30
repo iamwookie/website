@@ -1,19 +1,19 @@
 [
     {
         "name": "Robly",
-        "description": "A customizable economy and game bot for Discord. Work as a part time developer.",
+        "description": "A customizable economy and game bot for Discord.",
         "bannerURL": "/assets/portfolio/robly.png",
         "link": "https://roblybot.xyz"
     },
     {
         "name": "Captics",
-        "description": "A startup that provides multiple services. Work as a full stack developer.",
+        "description": "A startup that provides multiple services.",
         "bannerURL": "/assets/portfolio/captics.png",
         "link": "https://captics.co"
     },
     {
         "name": "KAT",
-        "description": "A Discord bot that would play music, and do other things. Discontinued.",
+        "description": "A Discord bot that would play music, and do other things.",
         "bannerURL": "/assets/portfolio/kat.png",
         "link": "https://github.com/iamwookie/kat"
     },

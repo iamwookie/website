@@ -23,7 +23,7 @@ export default async function Portfolio() {
             <BackButton />
 
             <h1 className="text-2xl">portfolio</h1>
-            <h5 className="text-sm">{'(random stuff)'}</h5>
+            <h5 className="text-sm">{'(random stuff I do)'}</h5>
 
             <TechStack />
 
