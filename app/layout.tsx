@@ -12,6 +12,7 @@ import Analytics from '@components/Analytics';
 const nunito = Nunito({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://bil.al'),
     authors: [{ name: 'Bilal' }],
     themeColor: '#FFFFFF',
     openGraph: {
