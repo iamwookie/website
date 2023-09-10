@@ -22,8 +22,8 @@ export default async function Portfolio() {
         <div className="relative m-5 text-center animate__animated animate__fadeIn">
             <BackButton />
 
-            <h1 className="text-2xl">portfolio</h1>
-            <h5 className="text-sm">{'(random stuff I do)'}</h5>
+            <h1 className="text-3xl">portfolio</h1>
+            <h5 className="text-sm">{'(if you don\'t know what this means, you shouldn\'t be here)'}</h5>
 
             <TechStack />
 
@@ -41,13 +41,6 @@ export default async function Portfolio() {
                     );
                 })}
             </div>
-
-            <p className="mt-5">
-                icons provided by{' '}
-                <a href="https://icons8.com/" target="_blank" className="underline hover:opacity-50">
-                    icons8
-                </a>
-            </p>
         </div>
     );
 }
