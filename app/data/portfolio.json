@@ -1,37 +1,37 @@
 [
     {
         "name": "Robly",
-        "description": "A customizable economy and game bot for Discord.",
+        "description": "Customizable economy and game bot for Discord.",
         "bannerURL": "/assets/portfolio/robly.png",
         "link": "https://roblybot.xyz"
     },
     {
         "name": "Captics",
-        "description": "A startup that provides multiple services.",
+        "description": "Startup that provides multiple services.",
         "bannerURL": "/assets/portfolio/captics.png",
         "link": "https://captics.co"
     },
     {
         "name": "KAT",
-        "description": "A Discord bot that would play music, and do other things.",
+        "description": "Scalable music bot for Discord.",
         "bannerURL": "/assets/portfolio/kat.png",
         "link": "https://github.com/iamwookie/kat"
     },
     {
         "name": "ASAP Gaming",
-        "description": "A massive game server project that I used to work on.",
+        "description": "Massive game server project that I used to work on.",
         "bannerURL": "/assets/portfolio/asap.png",
         "link": "https://asapgaming.co"
     },
     {
         "name": "Nebula Roleplay",
-        "description": "Another game server project that I used to own.",
+        "description": "Fully custom game server project startup.",
         "bannerURL": "/assets/portfolio/nebula.png",
         "link": "https://github.com/NebulaProjectRP"
     },
     {
         "name": "This Website",
-        "description": "Literally what the name above says.",
+        "description": "The source code for this website.",
         "bannerURL": "/assets/portfolio/site.png",
         "link": "https://github.com/iamwookie/website"
     }
