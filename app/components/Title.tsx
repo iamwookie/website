@@ -22,11 +22,11 @@ const final = [
 
 export default function Title() {
     const [items, setItems] = useState(initial);
-    const [showLine, setShowLine] = useState(false);
+    const [finale, setFinale] = useState(false);
 
     useEffect(() => {
         setTimeout(() => setItems(final), 1000);
-        setTimeout(() => setShowLine(true), 2000);
+        setTimeout(() => setFinale(true), 2000);
     }, []);
 
     return (
@@ -40,7 +40,7 @@ export default function Title() {
                     ))}
                 </AnimatePresence>
             </div>
-            {showLine && (
+            {finale && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
                     <span>mustafa</span>
                 </motion.div>
