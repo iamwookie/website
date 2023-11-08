@@ -30,7 +30,7 @@ export default function Title() {
     }, []);
 
     return (
-        <div className="flex flex-col sm:flex-row gap-0 sm:gap-6 justify-center items-center text-7xl dt:text-9xl">
+        <div className="flex flex-col md:flex-row gap-0 md:gap-6 justify-center items-center text-8xl md:text-9xl">
             <div className="flex">
                 <AnimatePresence>
                     {items.map(({ id, content }) => (
