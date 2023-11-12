@@ -4,7 +4,7 @@ export type PortfolioItem = {
     bannerURL: string;
     blurDataURL: string;
     link?: string | null;
-}
+};
 
 export type DiscordUser = {
     id: string;
@@ -14,7 +14,7 @@ export type DiscordUser = {
     avatarURL?: string;
     bannerURL?: string;
     accentHex?: string;
-}
+};
 
 export type SpotifyData = {
     url?: string;
@@ -22,4 +22,4 @@ export type SpotifyData = {
     image?: string;
     artists?: string;
     blurDataURL?: string;
-}
+};

@@ -28,11 +28,5 @@
         "description": "Fully custom game server project startup.",
         "bannerURL": "/assets/portfolio/nebula.png",
         "link": "https://github.com/NebulaProjectRP"
-    },
-    {
-        "name": "This Website",
-        "description": "The source code for this website.",
-        "bannerURL": "/assets/portfolio/site.png",
-        "link": "https://github.com/iamwookie/website"
     }
 ]

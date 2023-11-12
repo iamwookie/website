@@ -15,7 +15,7 @@ export default function PortfolioLayout({ children }: { children: React.ReactNod
         <>
             <main className="grid place-items-center min-h-screen">{children}</main>
 
-            <Footer className="relative dt:fixed" />
+            <Footer className="relative" />
         </>
     );
 }
