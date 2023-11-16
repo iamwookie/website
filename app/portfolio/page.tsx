@@ -23,12 +23,12 @@ export default async function Portfolio() {
             <BackButton />
 
             <h1 className="text-3xl">portfolio</h1>
-            <h5 className="text-sm">{'(if you don\'t know what this means, you shouldn\'t be here)'}</h5>
+            <h5 className="text-sm">{"(if you don't know what this means, you shouldn't be here)"}</h5>
 
             <TechStack />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
-                {images.map((image) => {
+            <div className="flex flex-col items-center md:items-stretch gap-5 mt-5">
+                {images.map((image, index) => {
                     return (
                         <PortfolioCard
                             name={image.name}
@@ -36,11 +36,20 @@ export default async function Portfolio() {
                             bannerURL={image.bannerURL}
                             blurDataURL={image.blurDataURL}
                             link={image.link}
-                            key={image.name}
+                            key={index}
                         />
                     );
                 })}
             </div>
+
+            <a
+                href="https://github.com/iamwookie/website"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-block mt-5 underline hover:opacity-50"
+            >
+                website source
+            </a>
         </div>
     );
 }
