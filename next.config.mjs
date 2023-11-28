@@ -9,10 +9,16 @@ const withAnalyzer = withBundleAnalyzer({
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: [
-            'skillicons.dev',
-            'i.scdn.co'
-        ]
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'skillicons.dev',
+            },
+            {
+                protocol: 'https',
+                hostname: 'i.scdn.co',
+            },
+        ],
     },
 };
 
