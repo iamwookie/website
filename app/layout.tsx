@@ -4,7 +4,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'tippy.js/dist/tippy.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Nunito } from 'next/font/google';
 import Image from 'next/image';
 import Analytics from '@components/Analytics';
@@ -14,11 +14,14 @@ const nunito = Nunito({ subsets: ['latin'] });
 export const metadata: Metadata = {
     metadataBase: new URL('https://bil.al'),
     authors: [{ name: 'Bilal' }],
-    themeColor: '#FFFFFF',
     openGraph: {
         type: 'website',
         url: 'https://bil.al',
     },
+};
+
+export const viewport: Viewport = {
+    themeColor: '#FFFFFF',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
