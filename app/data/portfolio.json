@@ -6,12 +6,6 @@
         "link": "https://roblybot.xyz"
     },
     {
-        "name": "Captics",
-        "description": "Startup that provides multiple services.",
-        "bannerURL": "/assets/portfolio/captics.png",
-        "link": "https://captics.co"
-    },
-    {
         "name": "KAT",
         "description": "Scalable music bot for Discord.",
         "bannerURL": "/assets/portfolio/kat.png",
