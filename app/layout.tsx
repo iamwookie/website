@@ -1,6 +1,5 @@
 import './globals.css';
 import 'animate.css';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'tippy.js/dist/tippy.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 

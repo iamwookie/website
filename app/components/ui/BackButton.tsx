@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import ArrowLeft from '../../../public/assets/ui/arrow-left-solid.svg';
 
 export default function BackButton() {
     const isDesktop = useMediaQuery({ minWidth: 768 });
@@ -18,7 +17,7 @@ export default function BackButton() {
             transition={{ type: 'spring', stiffness: 350, damping: 15 }}
         >
             <Link href="/">
-                <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+                <ArrowLeft width={20} height={20} fill="currentColor" />
             </Link>
         </motion.div>
     );
