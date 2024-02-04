@@ -5,8 +5,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+import SpotifyIcon from '../../public/assets/icons/spotify.svg';
 
 export default function Spotify() {
     const [music, setMusic] = useState<SpotifyData | null>(null);
@@ -50,7 +49,7 @@ export default function Spotify() {
                             <h1 className="my-auto text-lg">{music.name}</h1>
                             <h1 className="my-auto text-sm text-spotify">{music.artists}</h1>
                         </div>
-                        <FontAwesomeIcon icon={faSpotify} className="flex-2 self-center mr-4 text-spotify text-3xl" />
+                        <SpotifyIcon width={32} height={32} fill="currentColor" className="flex-2 self-center mr-4 text-spotify" />
                     </div>
                 </div>
             </a>

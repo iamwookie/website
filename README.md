@@ -1,20 +1,14 @@
-<p align="center">
-  <a href="https://bil.al">
-    <picture>
-      <img src="https://bil.al/assets/portfolio/site.png" alt="Bilal" width="600" />
-    </picture>
-    <h1 align="center">My Website</h1>
-    <p align="center">My footprint on the internet.</p>
-  </a>
-</p>
+<a href="https://bil.al">
+    <h1 align="center">My Website :)</h1>
+</a>
 
 <p align="center">
-  <a href="https://github.com/iamwookie/website/blob/main/LICENSE">
-    <img alt="License" src="https://img.shields.io/github/license/iamwookie/website" />
-  </a>
+    <a href="https://github.com/iamwookie/website/blob/main/LICENSE">
+        <img alt="License" src="https://img.shields.io/github/license/iamwookie/website" />
+    </a>
 </p>
 
-## Live Site
+## Live Demo
 
 You can view the live site deployed at [bil.al](https://bil.al).
 
@@ -51,5 +45,3 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-NOTE: This project uses [Next.js 13](https://nextjs.org/blog/next-13) and uses the experimental app directory.

@@ -30,7 +30,7 @@ export default function Title() {
     }, []);
 
     return (
-        <div className="flex flex-col md:flex-row gap-0 md:gap-6 justify-center items-center text-8xl md:text-9xl">
+        <div className="flex justify-center items-center text-8xl md:text-9xl">
             <div className="flex">
                 <AnimatePresence>
                     {items.map(({ id, content }) => (
@@ -42,7 +42,7 @@ export default function Title() {
             </div>
             {finale && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-                    <span>mustafa</span>
+                    <span className="text-7xl md:text-8xl">&nbsp;😈</span>
                 </motion.div>
             )}
         </div>
