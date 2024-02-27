@@ -20,7 +20,7 @@ class Spotify {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     Authorization: `Basic ${btoa(`${this.clientId}:${this.clientSecret}`)}`,
                 },
-                next: { revalidate: 0 },
+                cache: 'no-cache',
             });
 
             const data = await res.json();
@@ -40,10 +40,8 @@ class Spotify {
 
         try {
             const res = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
-                headers: {
-                    Authorization: `Bearer ${this.access_token}`,
-                },
-                next: { revalidate: 0 },
+                headers: { Authorization: `Bearer ${this.access_token}` },
+                cache: 'no-cache',
             });
             if (res.status != 200) return;
 
