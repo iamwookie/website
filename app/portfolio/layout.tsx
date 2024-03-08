@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function PortfolioLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
-            <main className="grid place-items-center min-h-screen">{children}</main>
+            <main className="grid place-items-center h-screen">{children}</main>
 
             <Footer className="relative" />
         </>

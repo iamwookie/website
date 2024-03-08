@@ -7,6 +7,7 @@
     background-color: transparent;
 }
 
+/* min-height overides the height property */
 .Toastify__toast-theme--colored.Toastify__toast--success {
     @apply rounded-lg;
     @apply min-h-0;

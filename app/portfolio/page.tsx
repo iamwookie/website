@@ -12,44 +12,48 @@ const getImages = async (): Promise<PortfolioItem[]> =>
             const buffer = fs.readFileSync('public' + item.bannerURL);
             const { base64 } = await getPlaiceholder(buffer);
             return { ...item, blurDataURL: base64 };
-        })
+        }),
     );
 
 export default async function Portfolio() {
     const images = await getImages();
 
     return (
-        <div className="relative m-5 text-center animate__animated animate__fadeIn">
-            <BackButton />
+        <div className="container animate__animated animate__fadeIn">
+            <div className="relative flex flex-col justify-center gap-4 m-5">
+                <BackButton />
 
-            <h1 className="text-3xl">portfolio</h1>
-            <h5 className="text-sm">{"(if you don't know what this means, you shouldn't be here)"}</h5>
+                <div className="text-center">
+                    <h1 className="text-3xl">portfolio</h1>
+                    <h5 className="text-sm">{"(if you don't know what this means, you shouldn't be here)"}</h5>
+                </div>
 
-            <TechStack />
+                <TechStack />
 
-            <div className="flex flex-col items-center md:items-stretch gap-5 mt-5">
-                {images.map((image, index) => {
-                    return (
-                        <PortfolioCard
-                            name={image.name}
-                            description={image.description}
-                            bannerURL={image.bannerURL}
-                            blurDataURL={image.blurDataURL}
-                            link={image.link}
-                            key={index}
-                        />
-                    );
-                })}
+                <div className="flex flex-wrap justify-center gap-6">
+                    {images.map((image, index) => {
+                        return (
+                            <PortfolioCard
+                                name={image.name}
+                                description={image.description}
+                                bannerURL={image.bannerURL}
+                                blurDataURL={image.blurDataURL}
+                                link={image.link}
+                                key={index}
+                            />
+                        );
+                    })}
+                </div>
+
+                <a
+                    href="https://github.com/iamwookie/website"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-block text-center underline hover:opacity-50"
+                >
+                    website source
+                </a>
             </div>
-
-            <a
-                href="https://github.com/iamwookie/website"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-block mt-5 underline hover:opacity-50"
-            >
-                website source
-            </a>
         </div>
     );
 }

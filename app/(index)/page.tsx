@@ -5,7 +5,7 @@ import LinkButton from '@components/ui/LinkButton';
 
 export default function Home() {
     return (
-        <div className="relative min-w-full m-5 dt:m-0 text-center animate__animated animate__fadeIn">
+        <div className="w-full m-5 dt:m-0 text-center animate__animated animate__fadeIn">
             <Title />
 
             <Socials />

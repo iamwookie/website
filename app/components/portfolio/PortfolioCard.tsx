@@ -16,23 +16,22 @@ export default function PortfolioCard({ name, description, bannerURL, blurDataUR
             href={link ?? undefined}
             target="_blank"
             rel="noreferrer noopener"
+            className="flex gap-4 w-[380px]"
         >
-            <div className={`flex flex-col md:flex-row gap-4 md:w-[50rem]`}>
+            <div className="grow rounded-lg overflow-hidden bg-black bg-opacity-50 border-2 shadow-md shadow-white/50">
                 <Image
                     src={bannerURL}
                     width={380}
-                    height={213.75}
+                    height={0}
                     alt="Project Banner"
                     placeholder="blur"
                     blurDataURL={blurDataURL}
                     priority
-                    className="rounded-lg overflow-hidden bg-black bg-opacity-50 border-2 shadow-md shadow-white/50"
+                    className="overflow-hidden border-b-2"
                 />
-                <div className="grow rounded-lg overflow-hidden bg-black bg-opacity-50 border-2 shadow-md shadow-white/50">
-                    <div className="m-2.5 text-left">
-                        <h3 className="text-xl">{name}</h3>
-                        <p className="text-sm" dangerouslySetInnerHTML={{ __html: description }} />
-                    </div>
+                <div className="m-2.5">
+                    <h3 className="text-xl">{name}</h3>
+                    <p className="text-sm" dangerouslySetInnerHTML={{ __html: description }} />
                 </div>
             </div>
         </motion.a>
