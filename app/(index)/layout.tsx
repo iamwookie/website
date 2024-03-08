@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
-            <main className="grid place-items-center min-h-screen">{children}</main>
+            <main className="grid place-items-center h-screen">{children}</main>
 
             <Footer className="fixed" />
 
