@@ -4,9 +4,10 @@ import 'tippy.js/dist/tippy.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 import type { Metadata, Viewport } from 'next';
+
 import { Nunito } from 'next/font/google';
 import Image from 'next/image';
-import Analytics from '@components/Analytics';
+import { Analytics } from '@vercel/analytics/react';
 
 const nunito = Nunito({ subsets: ['latin'] });
 
@@ -32,9 +33,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </div>
 
                 {children}
-            </body>
 
-            <Analytics />
+                <Analytics />
+            </body>
         </html>
     );
 }
