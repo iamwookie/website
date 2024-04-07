@@ -22,7 +22,7 @@ export default function PortfolioCard({ name, description, bannerURL, blurDataUR
                 <Image
                     src={bannerURL}
                     width={380}
-                    height={0}
+                    height={214}
                     alt="Project Banner"
                     placeholder="blur"
                     blurDataURL={blurDataURL}
