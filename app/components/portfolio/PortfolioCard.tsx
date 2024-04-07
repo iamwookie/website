@@ -26,7 +26,6 @@ export default function PortfolioCard({ name, description, bannerURL, blurDataUR
                     alt="Project Banner"
                     placeholder="blur"
                     blurDataURL={blurDataURL}
-                    priority
                     className="overflow-hidden border-b-2"
                 />
                 <div className="m-2.5">
