@@ -44,11 +44,13 @@ export default function Spotify() {
                         {music.image && (
                             <Image src={music.image} width={80} height={80} alt="Album Cover" placeholder="blur" blurDataURL={music.blurDataURL} />
                         )}
+
                         <div className="flex flex-col flex-auto justify-center text-left mx-2">
                             <h1 className="my-auto text-sm">Listening to Spotify...</h1>
                             <h1 className="my-auto text-lg">{music.name}</h1>
                             <h1 className="my-auto text-sm text-spotify">{music.artists}</h1>
                         </div>
+
                         <SpotifyIcon width={32} height={32} fill="currentColor" className="flex-2 self-center mr-4 text-spotify" />
                     </div>
                 </div>
