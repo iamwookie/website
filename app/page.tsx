@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Title from '@components/Title';
 import Socials from '@components/Socials';
 import Spotify from '@components/Spotify';
-import LinkButton from '@components/ui/LinkButton';
+import PortfolioButton from '@components/ui/PortfolioButton';
 import Footer from '@components/Footer';
 
 export const metadata: Metadata = {
@@ -18,21 +18,17 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <>
-            <main className="relative grid place-items-center h-screen">
-                <div className="w-full m-5 dt:m-0 text-center animate__animated animate__fadeIn">
-                    <Title />
+            <main className="flex flex-col justify-center items-center h-screen p-5 text-center animate__animated animate__fadeIn">
+                <Title />
 
+                <div className="flex flex-col justify-center items-center gap-2">
                     <Socials />
-
                     <Spotify />
-
-                    <div className="mt-3 text-lg">
-                        <LinkButton href="/portfolio">portfolio</LinkButton>
-                    </div>
+                    <PortfolioButton />
                 </div>
             </main>
 
-            <Footer />
+            <Footer className="fixed bottom-0" />
         </>
     );
 }

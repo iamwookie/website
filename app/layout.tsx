@@ -7,6 +7,7 @@ import type { Metadata, Viewport } from 'next';
 
 import { Nunito } from 'next/font/google';
 import Image from 'next/image';
+import Toast from '@components/ui/Toast';
 import { Analytics } from '@vercel/analytics/react';
 
 const nunito = Nunito({ subsets: ['latin'] });
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                 {children}
 
+                <Toast />
                 <Analytics />
             </body>
         </html>
