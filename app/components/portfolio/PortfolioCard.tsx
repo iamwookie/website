@@ -16,13 +16,13 @@ export default function PortfolioCard({ name, description, bannerURL, blurDataUR
             href={link ?? undefined}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex gap-4 w-[380px]"
+            className="flex gap-4"
         >
             <div className="grow rounded-lg overflow-hidden bg-black bg-opacity-50 border-2">
                 <Image
                     src={bannerURL}
-                    width={380}
-                    height={214}
+                    width={384}
+                    height={216}
                     alt="Project Banner"
                     placeholder="blur"
                     blurDataURL={blurDataURL}
