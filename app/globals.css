@@ -9,6 +9,6 @@
 
 /* min-height overides the height property */
 .Toastify__toast-theme--colored.Toastify__toast--success {
-    @apply rounded-lg;
+    @apply rounded-md;
     @apply min-h-0;
 }

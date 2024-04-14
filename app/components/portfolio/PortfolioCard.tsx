@@ -18,7 +18,7 @@ export default function PortfolioCard({ name, description, bannerURL, blurDataUR
             rel="noreferrer noopener"
             className="flex gap-4 w-[380px]"
         >
-            <div className="grow rounded-lg overflow-hidden bg-black bg-opacity-50 border-2 shadow-md shadow-white/50">
+            <div className="grow rounded-lg overflow-hidden bg-black bg-opacity-50 border-2">
                 <Image
                     src={bannerURL}
                     width={380}
@@ -28,6 +28,7 @@ export default function PortfolioCard({ name, description, bannerURL, blurDataUR
                     blurDataURL={blurDataURL}
                     className="overflow-hidden border-b-2"
                 />
+
                 <div className="m-2.5">
                     <h3 className="text-xl">{name}</h3>
                     <p className="text-sm" dangerouslySetInnerHTML={{ __html: description }} />

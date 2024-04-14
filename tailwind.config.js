@@ -11,7 +11,7 @@ module.exports = {
             },
             screens: {
                 dt: {
-                    raw: '(min-width: 1280px) and (min-height: 900px)',
+                    raw: '(min-width: 1280px) and (min-height: 720px)',
                 },
             },
         },
