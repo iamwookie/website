@@ -38,7 +38,7 @@ export default function Spotify() {
             transition={{ duration: 0.5 }}
             className="flex justify-center items-center mt-3"
         >
-            <a href={music.url} target="_blank" rel="noreferrer noopener" className="hover:opacity-75 mx-auto">
+            <a href={music.url} target="_blank" rel="noreferrer noopener" className="mx-auto hover:opacity-75 transition-opacity">
                 <div className="overflow-hidden bg-darkslate rounded-md">
                     <div className="flex">
                         {music.image && (

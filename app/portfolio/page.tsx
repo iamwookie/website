@@ -65,7 +65,7 @@ export default async function Portfolio() {
                             href="https://github.com/iamwookie/website"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="inline-block text-center underline hover:opacity-50"
+                            className="inline-block text-center underline hover:opacity-50 transition-opacity"
                         >
                             website source
                         </a>
