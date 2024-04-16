@@ -22,14 +22,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-    themeColor: '#FFFFFF',
+    themeColor: '#000000',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
             <body className={`${nunito.className} bg-black text-white`}>
-                <div className="fixed h-full w-full overflow-hidden opacity-75 -z-10">
+                <div className="fixed h-full w-full opacity-75 blur-sm overflow-hidden -z-10">
                     <Image alt="Background Image" src={'/assets/bg.jpg'} sizes="100vw" className="object-cover" fill priority />
                 </div>
 

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const initial = [
+const letters = [
     { id: 0, content: 'b' },
     { id: 1, content: 'i' },
     { id: 2, content: 'l' },
@@ -12,20 +12,12 @@ const initial = [
     { id: 5, content: 'l' },
 ];
 
-const final = [
-    { id: 0, content: 'b' },
-    { id: 1, content: 'i' },
-    { id: 2, content: 'l' },
-    { id: 4, content: 'a' },
-    { id: 5, content: 'l' },
-];
-
 export default function Title() {
-    const [items, setItems] = useState(initial);
+    const [items, setItems] = useState(letters);
     const [finale, setFinale] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => setItems(final), 1000);
+        setTimeout(() => setItems(letters.filter(({ id }) => id != 3)), 1000);
         setTimeout(() => setFinale(true), 2000);
     }, []);
 
@@ -34,7 +26,7 @@ export default function Title() {
             <div className="flex">
                 <AnimatePresence>
                     {items.map(({ id, content }) => (
-                        <motion.span key={id} exit={{ opacity: 0 }} layout>
+                        <motion.span key={id} layout exit={{ opacity: 0 }}>
                             {content}
                         </motion.span>
                     ))}
