@@ -43,7 +43,7 @@ class Spotify {
                 headers: { Authorization: `Bearer ${this.access_token}` },
                 cache: 'no-cache',
             });
-    
+
             if (res.status != 200) return;
 
             const data = await res.json();
