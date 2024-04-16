@@ -1,4 +1,4 @@
-<a align="center" href="https://bil.al">
+<a href="https://bil.al">
     My Website
 </a>
 
