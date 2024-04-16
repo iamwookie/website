@@ -1,5 +1,5 @@
 <a href="https://bil.al">
-    <h1 align="center">My Website :)</h1>
+    My Website
 </a>
 
 <p align="center">
