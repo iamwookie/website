@@ -12,7 +12,7 @@ export default function Toast() {
             autoClose={3000}
             hideProgressBar
             closeOnClick={false}
-            pauseOnFocusLoss
+            pauseOnFocusLoss={false}
             draggable={false}
             pauseOnHover={false}
         />
