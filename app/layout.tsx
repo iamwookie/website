@@ -10,6 +10,8 @@ import Image from 'next/image';
 import Toast from '@components/ui/Toast';
 import { Analytics } from '@vercel/analytics/react';
 
+import background from '../public/assets/bg.jpg';
+
 const nunito = Nunito({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -29,8 +31,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={`${nunito.className} bg-black text-white`}>
-                <div className="fixed h-full w-full opacity-75 blur-sm overflow-hidden -z-10">
-                    <Image alt="Background Image" src={'/assets/bg.jpg'} sizes="100vw" className="object-cover" fill priority />
+                <div className="fixed h-screen w-screen overflow-hidden -z-10">
+                    <Image alt="Background Image" src={background} sizes="100vw" fill priority className="object-cover" />
                 </div>
 
                 {children}
