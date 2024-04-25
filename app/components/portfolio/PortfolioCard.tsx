@@ -21,9 +21,9 @@ export default function PortfolioCard({ name, description, bannerURL, blurDataUR
             <div className="grow rounded-lg overflow-hidden bg-black bg-opacity-50 border-2">
                 <Image
                     src={bannerURL}
-                    width={384}
-                    height={216}
                     alt="Project Banner"
+                    width={400}
+                    height={225}
                     placeholder="blur"
                     blurDataURL={blurDataURL}
                     className="overflow-hidden border-b-2"
