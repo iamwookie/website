@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 
+import testPic from '../../../public/assets/portfolio/asap.png';
+
 export default function PortfolioCard({ name, description, bannerURL, blurDataURL, link }: PortfolioItem) {
     const isDesktop = useMediaQuery({ minWidth: 768 });
 
@@ -16,18 +18,10 @@ export default function PortfolioCard({ name, description, bannerURL, blurDataUR
             href={link ?? undefined}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex gap-4"
+            className="flex gap-4 w-[400px]"
         >
             <div className="grow rounded-lg overflow-hidden bg-black bg-opacity-50 border-2">
-                <Image
-                    src={bannerURL}
-                    width={384}
-                    height={216}
-                    alt="Project Banner"
-                    placeholder="blur"
-                    blurDataURL={blurDataURL}
-                    className="overflow-hidden border-b-2"
-                />
+                <Image src={bannerURL} alt="Project Banner" width={0} height={0} placeholder="blur" className="overflow-hidden border-b-2" />
 
                 <div className="m-2.5">
                     <h3 className="text-xl">{name}</h3>

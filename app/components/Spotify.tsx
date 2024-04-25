@@ -36,7 +36,7 @@ export default function Spotify() {
             <a href={music.url} target="_blank" rel="noreferrer noopener" className="mx-auto hover:opacity-75 transition-opacity">
                 <div className="flex bg-darkslate rounded-md overflow-hidden">
                     {music.image && (
-                        <Image src={music.image} width={80} height={80} alt="Album Cover" placeholder="blur" blurDataURL={music.blurDataURL} />
+                        <Image src={music.image} alt="Album Cover" width={80} height={80} placeholder="blur" blurDataURL={music.blurDataURL} />
                     )}
 
                     <div className="flex flex-col flex-auto justify-center text-left mx-2">
