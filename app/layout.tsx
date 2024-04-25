@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en">
             <body className={`${nunito.className} bg-black text-white`}>
                 <div className="fixed h-full w-full opacity-75 blur-sm overflow-hidden -z-10">
-                    <Image src={backgroundImage} alt="Background Image" placeholder="blur" fill sizes="100vw" className="object-cover" />
+                    <Image src={backgroundImage} alt="Background Image" placeholder="blur" fill className="object-cover" />
                 </div>
 
                 {children}
