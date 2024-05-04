@@ -34,18 +34,26 @@ export default function Spotify() {
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="flex justify-center items-center">
             <a href={music.url} target="_blank" rel="noreferrer noopener" className="mx-auto hover:opacity-75 transition-opacity">
-                <div className="flex bg-darkslate rounded-md overflow-hidden">
+                <div className="flex bg-darkslate rounded-full overflow-hidden">
                     {music.image && (
-                        <Image src={music.image} alt="Album Cover" width={80} height={80} placeholder="blur" blurDataURL={music.blurDataURL} />
+                        <Image
+                            src={music.image}
+                            alt="Album Cover"
+                            width={80}
+                            height={80}
+                            placeholder="blur"
+                            blurDataURL={music.blurDataURL}
+                            className="rounded-full p-2"
+                        />
                     )}
 
-                    <div className="flex flex-col flex-auto justify-center text-left mx-2">
+                    <div className="flex flex-col flex-auto justify-center text-left">
                         <h1 className="my-auto text-sm">Listening to Spotify...</h1>
                         <h1 className="my-auto text-lg">{music.name}</h1>
                         <h1 className="my-auto text-sm text-spotify">{music.artists}</h1>
                     </div>
 
-                    <SpotifyIcon width={32} height={32} fill="currentColor" className="self-center mx-4 text-spotify" />
+                    <SpotifyIcon width={40} height={40} fill="currentColor" className="self-center mx-4 text-spotify" />
                 </div>
             </a>
         </motion.div>
