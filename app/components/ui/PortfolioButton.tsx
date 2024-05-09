@@ -15,7 +15,7 @@ export default function PortfolioButton() {
             whileTap={{ scale: 0.95 }}
             whileHover={isDesktop ? { scale: 1.05 } : {}}
             transition={{ type: 'spring', stiffness: 350, damping: 15 }}
-            className="rounded-lg px-2 border-2 hover:bg-white hover:text-black"
+            className="rounded-full px-2 border-2 hover:bg-white hover:text-black"
         >
             portfolio
         </MotionLink>
