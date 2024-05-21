@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import type { PortfolioItem } from 'types';
 
-import { getPlaiceholder } from 'plaiceholder';
-import fs from 'fs';
-
 import BackButton from '@components/ui/BackButton';
 import Badge from '@components/ui/Badge';
 import TechStack from '@components/portfolio/TechStack';
 import PortfolioCard from '@components/portfolio/PortfolioCard';
 import Footer from '@components/Footer';
+import { getPlaiceholder } from 'plaiceholder';
+import fs from 'fs';
 
 import data from '@data/portfolio.json';
 
