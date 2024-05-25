@@ -19,7 +19,7 @@ export default function Socials() {
     }
 
     return (
-        <div className="flex justify-center items-center gap-3 py-2 px-4 rounded-full bg-black bg-opacity-75">
+        <div className="flex justify-center items-center gap-3 py-2 px-4 rounded-full bg-black/75">
             <Tooltip content="VSCO" theme="blur" arrow={false}>
                 <a href={data.vsco} target="_blank" rel="noreferrer noopener" aria-label="VSCO Link">
                     <VscoIcon width={32} height={32} fill="currentColor" />

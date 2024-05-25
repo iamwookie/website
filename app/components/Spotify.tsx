@@ -32,9 +32,9 @@ export default function Spotify() {
     if (!music) return null;
 
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="flex justify-center items-center">
-            <a href={music.url} target="_blank" rel="noreferrer noopener" className="mx-auto hover:opacity-75 transition-opacity">
-                <div className="flex bg-darkslate rounded-full overflow-hidden">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+            <a href={music.url} target="_blank" rel="noreferrer noopener" className="hover:opacity-75 transition-opacity">
+                <div className="flex bg-black/75 rounded-full overflow-hidden">
                     {music.image && (
                         <Image
                             src={music.image}
