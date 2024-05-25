@@ -14,7 +14,7 @@ export default function BackButton() {
     return (
         <MotionLink
             href="/"
-            className="absolute top-2 left-2 text-md"
+            className="absolute top-2 left-2"
             whileTap={{ scale: 0.95 }}
             whileHover={isDesktop ? { scale: 1.05 } : {}}
             transition={{ type: 'spring', stiffness: 350, damping: 15 }}
