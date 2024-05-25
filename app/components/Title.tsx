@@ -35,7 +35,7 @@ export default function Title() {
 
             {finale && (
                 <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-6xl md:text-7xl">
-                    &nbsp;😈
+                    &nbsp;🥂
                 </motion.span>
             )}
         </div>
