@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                darkslate: '#252525',
+                // darkslate: '#252525', -- Removed as part of black theme.
                 twitch: '#6441A5',
                 spotify: '#1ED760',
                 discord: '#7289DA',
