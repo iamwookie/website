@@ -8,7 +8,6 @@ const withAnalyzer = withBundleAnalyzer({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-
     images: {
         remotePatterns: [
             {
@@ -21,7 +20,40 @@ const nextConfig = {
             },
         ],
     },
-
+    async headers() {
+        return [
+            {
+                source: '/api/:path*',
+                headers: [
+                    {
+                        key: 'Access-Control-Allow-Origin',
+                        value: '*',
+                    },
+                    {
+                        key: 'Access-Control-Allow-Methods',
+                        value: 'GET, OPTIONS',
+                    },
+                    {
+                        key: 'Access-Control-Allow-Headers',
+                        value: 'Content-Type',
+                    },
+                ],
+            },
+            {
+                source: '/api/avgeek/:path*',
+                headers: [
+                    {
+                        key: 'Access-Control-Allow-Origin',
+                        value: 'https://' + process.env.AVGEEK_HOSTNAME,
+                    },
+                    {
+                        key: 'Access-Control-Allow-Methods',
+                        value: 'POST, OPTIONS',
+                    },
+                ],
+            },
+        ];
+    },
     webpack(config) {
         // Grab the existing rule that handles SVG imports
         const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));

@@ -26,9 +26,7 @@ class Spotify {
             const data = await res.json();
             this.access_token = data.access_token;
 
-            setTimeout(() => {
-                this.access_token = undefined;
-            }, data.expires_in * 1000);
+            setTimeout(() => (this.access_token = undefined), data.expires_in * 1000);
         } catch (err) {
             console.error('[Spotify] Error refreshing token');
             console.error(err);

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import type { PortfolioItem } from 'types';
 
 import BackButton from '@components/ui/BackButton';
-import Badge from '@components/ui/Badge';
 import TechStack from '@components/portfolio/TechStack';
 import PortfolioCard from '@components/portfolio/PortfolioCard';
 import Footer from '@components/Footer';
@@ -41,12 +40,7 @@ export default async function Portfolio() {
 
                         <div className="flex flex-col gap-2 text-center">
                             <h1 className="text-3xl">portfolio</h1>
-
-                            <div className="flex flex-wrap justify-center gap-2 text-sm">
-                                <Badge color="#dd8a2f">AMD Ryzen 5 3600X</Badge>
-                                <Badge color="#76b900">Nvidia RTX 3070</Badge>
-                                <Badge color="#ece81a">Corsair 32GB DDR4</Badge>
-                            </div>
+                            <h2 className="text-md">a collection of stuff i&#39;ve dabbled with</h2>
                         </div>
 
                         <TechStack />
