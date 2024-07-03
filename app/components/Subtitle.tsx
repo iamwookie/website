@@ -3,52 +3,32 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const letters = [
-    { id: 0, content: 'p' },
-    { id: 1, content: 'r' },
-    { id: 2, content: 'o' },
-    { id: 3, content: '\xa0' },
-    { id: 4, content: 'g' },
-    { id: 5, content: 'r' },
-    { id: 6, content: 'a' },
-    { id: 7, content: 'm' },
-    { id: 8, content: 'm' },
-    { id: 9, content: 'e' },
-    { id: 10, content: 'r' },
-];
+const headings = ['gamer', 'programmer', 'engineer', 'student', 'analyst'];
 
 export default function Subtitle() {
-    const [items, setItems] = useState(letters.filter(({ id }) => id != 5 && id != 8));
+    const [index, setIndex] = useState(0);
+    const [direction, setDirection] = useState(-1);
 
     useEffect(() => {
-        setTimeout(() => setItems(letters), 2000);
-        setTimeout(() => setItems(letters.filter(({ id }) => id != 3)), 4000);
-    }, []);
+        setDirection((d) => -d);
+        const intervalId = setInterval(() => setIndex((i) => (i + 1) % headings.length), 2000);
+        return () => clearInterval(intervalId);
+    }, [index]);
 
     return (
-        <div className="flex justify-center items-center relative bottom-2 text-md md:text-xl">
-            <div className="flex">
-                <AnimatePresence>
-                    {items.map(({ id, content }) => {
-                        return items == letters && (id == 5 || id == 8) ? (
-                            <motion.span
-                                key={id}
-                                layout
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 1 }}
-                                className="mx-0.5"
-                            >
-                                {content}
-                            </motion.span>
-                        ) : (
-                            <motion.span key={id} layout className="mx-0.5">
-                                {content}
-                            </motion.span>
-                        );
-                    })}
-                </AnimatePresence>
-            </div>
+        <div className="relative bottom-2 w-full h-6 md:h-7 text-center overflow-hidden">
+            <AnimatePresence initial={false}>
+                <motion.div
+                    key={headings[index]}
+                    initial={{ y: direction == 1 ? 100 : -100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: direction == 1 ? -100 : 100, opacity: 0 }}
+                    transition={{ type: 'spring', mass: 0.5 }}
+                    className="absolute w-full text-md md:text-xl tracking-[0.25rem] z-10"
+                >
+                    {headings[index]}
+                </motion.div>
+            </AnimatePresence>
         </div>
     );
 }
