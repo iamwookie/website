@@ -3,11 +3,20 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const headings = ['gamer', 'programmer', 'engineer', 'student', 'analyst'];
+const headings = [
+    'professional yapper',
+    'average gamer',
+    'internet explorer',
+    'caffeine addict',
+    'programmer',
+    'engineer',
+    'student',
+    "can't think of more",
+];
 
 export default function Subtitle() {
     const [index, setIndex] = useState(0);
-    const [direction, setDirection] = useState(-1);
+    const [direction, setDirection] = useState(1);
 
     useEffect(() => {
         setDirection((d) => -d);
