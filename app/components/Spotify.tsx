@@ -48,9 +48,9 @@ export default function Spotify() {
                     )}
 
                     <div className="flex flex-col flex-auto justify-center items-center">
-                        <h1 className="text-xs">Listening to Spotify...</h1>
-                        <h1 className="text-sm md:text-lg">{music.name}</h1>
-                        <h1 className="text-spotify text-sm">{music.artists}</h1>
+                        <h2 className="text-xs">Listening to Spotify...</h2>
+                        <h1 className={music.name && music.name.length > 24 ? 'text-sm md:text-lg' : 'text-lg'}>{music.name}</h1>
+                        <h2 className="text-spotify text-sm">{music.artists}</h2>
                     </div>
 
                     <SpotifyIcon width={40} height={40} fill="currentColor" className="self-center mx-4 text-spotify" />
