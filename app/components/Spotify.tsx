@@ -49,7 +49,7 @@ export default function Spotify() {
 
                     <div className="flex flex-col flex-auto justify-center items-center">
                         <h1 className="text-xs">Listening to Spotify...</h1>
-                        <h1 className="text-lg">{music.name}</h1>
+                        <h1 className="text-sm md:text-lg">{music.name}</h1>
                         <h1 className="text-spotify text-sm">{music.artists}</h1>
                     </div>
 
