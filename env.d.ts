@@ -8,9 +8,6 @@ declare global {
             // UPSTASH
             UPSTASH_REDIS_REST_URL: string;
             UPSTASH_REDIS_REST_TOKEN: string;
-            // AVGEEK API
-            AVGEEK_HOSTNAME: string;
-            AVGEEK_EVENTS_WEBHOOK_URL: string;
         }
     }
 }
