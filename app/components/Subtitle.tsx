@@ -19,7 +19,7 @@ export default function Subtitle() {
                 transition={{ type: 'spring', mass: 0.5, delay: 2.2 }}
                 className="absolute w-full text-md md:text-xl tracking-[0.25rem] z-10"
             >
-                skibidi toilet
+                technical shenanigans
             </motion.div>
         </motion.div>
     );

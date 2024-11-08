@@ -3,8 +3,9 @@
 import { toast } from 'react-toastify';
 import Tooltip from './ui/Tooltip';
 
-import VscoIcon from '../../public/assets/icons/vsco.svg';
-import GithubIcon from '../../public/assets/icons/github.svg';
+import LinkedInIcon from '../../public/assets/icons/linkedin.svg';
+import GitHubIcon from '../../public/assets/icons/github.svg';
+import VSCOIcon from '../../public/assets/icons/vsco.svg';
 import SteamIcon from '../../public/assets/icons/steam.svg';
 import TwitchIcon from '../../public/assets/icons/twitch.svg';
 import SpotifyIcon from '../../public/assets/icons/spotify.svg';
@@ -20,15 +21,21 @@ export default function Socials() {
 
     return (
         <div className="flex justify-center items-center gap-3 py-2 px-4 rounded-full bg-black/75">
-            <Tooltip content="VSCO" theme="blur" arrow={false}>
-                <a href={data.vsco} target="_blank" rel="noreferrer noopener" aria-label="VSCO Link">
-                    <VscoIcon width={32} height={32} fill="currentColor" />
+            <Tooltip content="LinkedIn">
+                <a href={data.linkedin} target="_blank" rel="noreferrer noopener" aria-label="Steam Link">
+                    <LinkedInIcon width={32} height={32} fill="currentColor" />
                 </a>
             </Tooltip>
 
             <Tooltip content="GitHub">
                 <a href={data.github} target="_blank" rel="noreferrer noopener" aria-label="GitHub Link">
-                    <GithubIcon width={32} height={32} fill="currentColor" />
+                    <GitHubIcon width={32} height={32} fill="currentColor" />
+                </a>
+            </Tooltip>
+
+            <Tooltip content="VSCO" theme="blur" arrow={false}>
+                <a href={data.vsco} target="_blank" rel="noreferrer noopener" aria-label="VSCO Link">
+                    <VSCOIcon width={32} height={32} fill="currentColor" />
                 </a>
             </Tooltip>
 
