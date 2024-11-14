@@ -14,6 +14,15 @@ module.exports = {
                     raw: '(min-width: 1280px) and (min-height: 720px)',
                 },
             },
+            keyframes: {
+                fadeIn: {
+                    from: { opacity: 0 },
+                    to: { opacity: 1 }
+                }
+            },
+            animation: {
+                fadeIn: 'fadeIn 1s'
+            },
         },
     },
     plugins: [],

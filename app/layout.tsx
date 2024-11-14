@@ -1,5 +1,4 @@
 import './globals.css';
-import 'animate.css';
 import 'tippy.js/dist/tippy.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 

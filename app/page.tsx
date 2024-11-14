@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <>
-            <main className="flex flex-col justify-center items-center h-screen p-5 text-center animate__animated animate__fadeIn">
+            <main className="flex flex-col justify-center items-center h-screen p-5 text-center animate-fadeIn">
                 <Title />
                 <Subtitle />
 
