@@ -34,7 +34,7 @@ export default async function Portfolio() {
     return (
         <>
             <main className="flex justify-center items-center h-full dt:h-screen">
-                <div className="container animate__animated animate__fadeIn">
+                <div className="container animate-fadeIn">
                     <div className="relative flex flex-col justify-center gap-4 m-4 sm:m-8">
                         <BackButton />
 

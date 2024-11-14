@@ -5,7 +5,7 @@ import PSFlag from '../../public/assets/ps_flag.svg';
 
 export default function Footer({ className }: { className?: string }) {
     return (
-        <footer className={cn('flex justify-center items-center gap-2 w-full mb-4 text-center animate__animated animate__fadeIn', className)}>
+        <footer className={cn('flex justify-center items-center gap-2 w-full mb-4 text-center animate-fadeIn', className)}>
             <PKFlag width={32} height={24} className="rounded-sm" />
             <PSFlag width={32} height={24} className="rounded-sm" />
         </footer>
