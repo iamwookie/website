@@ -8,6 +8,7 @@ import { Nunito } from 'next/font/google';
 import Image from 'next/image';
 import Toast from '@components/ui/Toast';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const nunito = Nunito({ subsets: ['latin'] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                 <Toast />
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );
