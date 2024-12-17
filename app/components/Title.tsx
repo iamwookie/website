@@ -16,7 +16,7 @@ export default function Title() {
     const [items, setItems] = useState(letters);
 
     useEffect(() => {
-        setTimeout(() => setItems(letters.filter(({ id }) => id != 3)), 1000);
+        setTimeout(() => setItems(letters.filter(({ id }) => id != 3)), 1500);
     }, []);
 
     return (
