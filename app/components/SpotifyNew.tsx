@@ -38,7 +38,7 @@ export default function Spotify() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative max-w-md bg-zinc-900 shadow-lg rounded-2xl overflow-hidden p-6"
+            className="relative bg-zinc-900 shadow-lg rounded-2xl overflow-hidden p-6 mr-auto"
         >
             <div className="absolute inset-0 bg-gradient-to-br from-spotify/10 to-blue-500/10" />
 
