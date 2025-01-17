@@ -3,7 +3,7 @@
 import type { SpotifyData } from 'types';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { cn } from '@lib/utils';
 import Image from 'next/image';
 
@@ -38,7 +38,7 @@ export default function Spotify() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative bg-zinc-900 shadow-lg rounded-2xl overflow-hidden p-6 mr-auto"
+            className="relative bg-zinc-900 shadow-lg rounded-2xl overflow-hidden p-6 mx-auto"
         >
             <div className="absolute inset-0 bg-gradient-to-br from-spotify/10 to-blue-500/10" />
 

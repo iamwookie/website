@@ -1,7 +1,7 @@
 'use client';
 
 import { PortfolioItem } from 'types';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 
