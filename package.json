@@ -27,7 +27,7 @@
         "clsx": "^2.1.1",
         "eslint": "^8.57.1",
         "eslint-config-next": "^14.2.18",
-        "framer-motion": "^11.11.15",
+        "motion": "^12.4.1",
         "next": "^14.2.18",
         "plaiceholder": "^3.0.0",
         "postcss": "^8.4.49",

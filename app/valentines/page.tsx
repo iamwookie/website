@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Fireworks, FireworksHandlers } from '@fireworks-js/react';
 import Button from '@components/ui/Button';
 
