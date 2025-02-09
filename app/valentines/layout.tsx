@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
-    title: "💗",
+    title: '💗',
     description: 'Will you be my special someone?',
     openGraph: {
-        title: "💗",
+        title: '💗',
         description: 'Will you be that special someone?',
     },
 };

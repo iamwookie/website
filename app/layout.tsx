@@ -8,7 +8,7 @@ import { Nunito } from 'next/font/google';
 import Image from 'next/image';
 import Toast from '@components/ui/Toast';
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next'
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const nunito = Nunito({ subsets: ['latin'] });
 
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en">
             <body className={`${nunito.className} bg-black text-white`}>
                 <div className="fixed w-full h-full opacity-75 blur-sm overflow-hidden -z-10">
-                    <Image src="/assets/bg.jpg" alt="Background Image" sizes="100vw" fill priority className="object-cover" />
+                    <Image src="/assets/bg.jpg" alt="Background Image" sizes="100vw" className="object-cover" fill priority />
                 </div>
 
                 {children}
