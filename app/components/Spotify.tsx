@@ -2,7 +2,7 @@
 
 import type { SpotifyData } from 'types';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 
 import SpotifyIcon from '../../public/assets/icons/spotify.svg';

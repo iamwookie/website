@@ -1,7 +1,7 @@
 'use client';
 
 import { useMediaQuery } from 'react-responsive';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 export default function Subtitle() {
     const isDesktop = useMediaQuery({ minWidth: 768 });
