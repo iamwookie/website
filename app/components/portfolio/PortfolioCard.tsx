@@ -1,8 +1,10 @@
 'use client';
 
-import { PortfolioItem } from 'types';
-import { motion } from 'motion/react';
+import type { PortfolioItem } from 'types';
+
 import { useMediaQuery } from 'react-responsive';
+
+import { motion } from 'motion/react';
 import Image from 'next/image';
 
 export default function PortfolioCard({ name, description, bannerURL, blurDataURL, link }: PortfolioItem) {

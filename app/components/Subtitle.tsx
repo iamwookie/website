@@ -1,6 +1,7 @@
 'use client';
 
 import { useMediaQuery } from 'react-responsive';
+
 import { motion } from 'motion/react';
 
 export default function Subtitle() {
