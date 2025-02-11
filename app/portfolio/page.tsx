@@ -25,7 +25,7 @@ const getImages = async (): Promise<PortfolioItem[]> =>
             const buffer = fs.readFileSync('public' + item.bannerURL);
             const { base64 } = await getPlaiceholder(buffer);
             return { ...item, blurDataURL: base64 };
-        })
+        }),
     );
 
 export default async function Portfolio() {

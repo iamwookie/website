@@ -1,78 +1,35 @@
-'use client';
+import type { Metadata, Viewport } from 'next';
 
-import { useState, useCallback, useRef } from 'react';
+import { Redis } from '@upstash/redis';
 
-import { motion } from 'motion/react';
-import Container from '@components/valentines/Container';
-import Button from '@components/valentines/Button';
-import { Fireworks, FireworksHandlers } from '@fireworks-js/react';
+import { default as ValentinesPrompt } from '@components/valentines/Prompt';
 
-export default function Valentines() {
-    const [response, setResponse] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const fireworksRef = useRef<FireworksHandlers>(null);
+export const metadata: Metadata = {
+    title: '💗',
+    description: 'Will you be my special someone?',
+    openGraph: {
+        title: '💗',
+        description: 'Will you be that special someone?',
+    },
+};
 
-    const handlePrompt = useCallback(() => {
-        const maxX = window.innerWidth - 420;
-        const maxY = window.innerHeight - 220;
+export const viewport: Viewport = {
+    themeColor: '#ff69b4',
+};
 
-        const newX = (Math.random() - 0.5) * maxX;
-        const newY = (Math.random() - 0.5) * maxY;
+const redis = Redis.fromEnv();
 
-        setPosition({ x: newX, y: newY });
-    }, []);
+export default async function Valentines() {
+    let count = await redis.get<number>('valentines:count');
 
-    const handleResponse = () => {
-        fireworksRef.current?.start();
-        setPosition({ x: 0, y: 0 });
-        setResponse(true);
-    };
+    if (!count) {
+        await redis.set('valentines:count', 0);
+        count = 0;
+    }
 
     return (
-        <>
-            <Container position={position}>
-                <div className="relative flex flex-col items-center justify-center h-full text-center p-6">
-                    <h1 className="text-3xl font-bold text-pink-500 mb-6">Will you be my Valentine?</h1>
-
-                    {response ? (
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4 }}
-                            className="text-xl text-pink-500"
-                        >
-                            {response && <p>YAYAYAYAYAYAY! 💘</p>}
-                        </motion.div>
-                    ) : (
-                        <div className="space-y-4 w-full">
-                            <Button onClick={handleResponse} className="w-full bg-pink-500 hover:bg-pink-600 text-white shadow-md shadow-pink-500/50">
-                                Yes 💖
-                            </Button>
-
-                            <Button
-                                onClick={handlePrompt}
-                                className="w-full bg-transparent hover:bg-pink-950 text-pink-500 border border-pink-500 shadow-md shadow-pink-500/50"
-                            >
-                                No 💔
-                            </Button>
-                        </div>
-                    )}
-                </div>
-            </Container>
-
-            {/* Fireworks */}
-            <Fireworks
-                autostart={false}
-                ref={fireworksRef}
-                options={{ hue: { min: 300, max: 350 }, friction: 1, particles: 100 }}
-                style={{
-                    position: 'fixed',
-                    width: '100%',
-                    height: '100%',
-                    top: 0,
-                    left: 0,
-                }}
-            />
-        </>
+        <div className="flex items-center justify-center min-h-screen overflow-hidden bg-black">
+            <ValentinesPrompt count={count} />
+        </div>
     );
 }

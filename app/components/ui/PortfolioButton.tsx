@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
+
 import Link from 'next/link';
 
 const MotionLink = motion(Link);
