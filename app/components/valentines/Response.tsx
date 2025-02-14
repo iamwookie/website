@@ -17,7 +17,7 @@ export default function Response({ onYes, onNo, response }: { onYes: () => void;
                     transition={{ duration: 0.4 }}
                     className="text-lg md:text-xl text-pink-500"
                 >
-                    {response && <p>YAYAYAYAYAYAY! 💘</p>}
+                    {response && <p>AWwww! Never doubted you! 💘</p>}
                 </motion.div>
             ) : (
                 <div className="space-y-4 w-full">
