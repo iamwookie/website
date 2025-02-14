@@ -35,7 +35,7 @@ export default function Prompt({ count }: { count: number }) {
     return (
         <>
             {/* Container */}
-            <Container count={count} position={position} response={response}>
+            <Container count={count} position={position}>
                 <Response onYes={handleResponse} onNo={handlePrompt} response={response} />
             </Container>
 

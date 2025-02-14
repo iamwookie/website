@@ -5,11 +5,10 @@ import { motion } from 'motion/react';
 type ContainerProps = {
     count: number;
     position: { x: number; y: number };
-    response: boolean;
     children: React.ReactNode;
 };
 
-export default function Container({ count, position, response, children }: ContainerProps) {
+export default function Container({ position, children }: ContainerProps) {
     return (
         <motion.div
             animate={{
@@ -31,18 +30,6 @@ export default function Container({ count, position, response, children }: Conta
                 {/* Children */}
                 {children}
             </div>
-
-            {/* Yes count */}
-            {response && (
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-sm text-center font-medium text-pink-500"
-                >
-                    {count.toLocaleString()} others said yes 💗
-                </motion.p>
-            )}
         </motion.div>
     );
 }
