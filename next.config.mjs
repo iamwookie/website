@@ -39,18 +39,14 @@ const nextConfig = {
                     },
                 ],
             },
+        ];
+    },
+    async redirects() {
+        return [
             {
-                source: '/api/avgeek/:path*',
-                headers: [
-                    {
-                        key: 'Access-Control-Allow-Origin',
-                        value: 'https://' + process.env.AVGEEK_HOSTNAME,
-                    },
-                    {
-                        key: 'Access-Control-Allow-Methods',
-                        value: 'POST, OPTIONS',
-                    },
-                ],
+                source: '/valentines',
+                destination: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                permanent: false,
             },
         ];
     },
@@ -71,7 +67,7 @@ const nextConfig = {
                 issuer: fileLoaderRule.issuer,
                 resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
                 use: ['@svgr/webpack'],
-            },
+            }
         );
 
         // Modify the file loader rule to ignore *.svg, since we have it handled now.
