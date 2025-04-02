@@ -9,6 +9,8 @@ import Image from 'next/image';
 
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
 
+// TODO: Update tailwind to v4 and update config & animations
+
 export default function Spotify() {
     const [music, setMusic] = useState<SpotifyData | null>(null);
 
@@ -34,15 +36,20 @@ export default function Spotify() {
     if (!music) return null;
 
     return (
-        <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative bg-zinc-900 shadow-lg rounded-2xl overflow-hidden p-6 mx-auto"
+        <motion.a
+            // motion props
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            // element props
+            href={music.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="relative bg-zinc-900 shadow-lg rounded-xl overflow-hidden p-4 mx-auto"
         >
             <div className="absolute inset-0 bg-gradient-to-br from-spotify/10 to-blue-500/10" />
 
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-row gap-4">
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -59,11 +66,11 @@ export default function Spotify() {
                                 <Image
                                     src={music.image}
                                     alt="Album Cover"
-                                    width={96}
-                                    height={96}
+                                    width={48}
+                                    height={48}
                                     placeholder="blur"
                                     blurDataURL={music.blurDataURL}
-                                    className="rounded-lg shadow-lg w-"
+                                    className="rounded-full shadow-lg"
                                 />
                             </motion.div>
                         )}
@@ -72,7 +79,7 @@ export default function Spotify() {
                             initial={{ scale: 0, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.5, duration: 0.3 }}
-                            className="absolute -right-2 -top-2 rounded-full bg-spotify p-2 shadow-lg"
+                            className="absolute -right-2 -top-2 rounded-full bg-spotify p-1 shadow-lg"
                         >
                             <SpotifyIcon size={16} className="h-4 w-4 text-black" />
                         </motion.div>
@@ -83,17 +90,15 @@ export default function Spotify() {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="flex flex-col justify-center gap-1 text-center md:text-left"
+                    className="flex flex-col justify-center gap-1 md:text-left"
                 >
-                    <h2 className="text-lg font-semibold text-green-400">Now Playing</h2>
+                    <h2 className="text-xs font-semibold text-green-400">Now Playing</h2>
 
-                    <h3 className={cn(' max-w-xs font-medium text-white', music.name && music.name.length > 24 ? 'text-sm md:text-lg' : 'text-lg')}>
-                        {music.name}
-                    </h3>
+                    <h3 className="font-medium text-xs text-white">{music.name}</h3>
 
-                    <h3 className="text-sm text-gray-400">{music.artists}</h3>
+                    <h3 className="text-xs text-gray-400">{music.artists}</h3>
                 </motion.div>
             </div>
-        </motion.div>
+        </motion.a>
     );
 }
