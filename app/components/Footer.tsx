@@ -2,8 +2,8 @@
 
 import { motion } from 'motion/react';
 
-import PKFlag from '../../public/assets/pk_flag.svg';
-import PSFlag from '../../public/assets/ps_flag.svg';
+import PKFlag from '@public/assets/pk_flag.svg';
+import PSFlag from '@public/assets/ps_flag.svg';
 
 export default function Footer() {
     return (

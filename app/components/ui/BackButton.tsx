@@ -1,10 +1,10 @@
 'use client';
 
-import { motion } from '';
+import { motion } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 
-import ArrowLeft from '../../../public/assets/ui/arrow-left-solid.svg';
+import ArrowLeft from '@public/assets/ui/arrow-left-solid.svg';
 
 const MotionLink = motion(Link);
 

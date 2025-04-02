@@ -1,10 +1,7 @@
 import type { Metadata } from 'next';
 
-import Title from '@components/Title';
-import Subtitle from '@components/Subtitle';
 import Socials from '@components/Socials';
-import Spotify from '@components/SpotifyNew';
-import PortfolioButton from '@components/ui/PortfolioButton';
+import Spotify from '@components/Spotify';
 
 export const metadata: Metadata = {
     title: '( ͡° ͜ʖ ͡°)',
