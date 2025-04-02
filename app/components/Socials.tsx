@@ -14,6 +14,8 @@ import DiscordIcon from '../../public/assets/icons/discord.svg';
 
 import data from '@data/social.json';
 
+// element.ref issue
+
 export default function Socials() {
     const copyDiscord = () => {
         navigator.clipboard.writeText(data.discord);

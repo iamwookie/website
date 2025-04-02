@@ -1,5 +1,4 @@
 import './globals.css';
-import 'tippy.js/dist/tippy.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 import { Analytics } from '@vercel/analytics/react';
@@ -7,7 +6,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import type { Metadata, Viewport } from 'next';
 import { Roboto_Mono } from 'next/font/google';
-import Image from 'next/image';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
