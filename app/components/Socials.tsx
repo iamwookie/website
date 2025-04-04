@@ -35,43 +35,43 @@ export default function Socials() {
         <motion.ul variants={container} initial="hidden" animate="show" className="flex justify-center items-center gap-3 w-fit">
             <motion.li variants={item}>
                 <a href={data.linkedin} target="_blank" rel="noreferrer noopener" aria-label="LinkedIn Link">
-                    <LinkedInIcon width={32} height={32} fill="currentColor" />
+                    <LinkedInIcon width={28} height={28} fill="currentColor" />
                 </a>
             </motion.li>
 
             <motion.li variants={item}>
                 <a href={data.github} target="_blank" rel="noreferrer noopener" aria-label="GitHub Link">
-                    <GitHubIcon width={32} height={32} fill="currentColor" />
+                    <GitHubIcon width={28} height={28} fill="currentColor" />
                 </a>
             </motion.li>
 
             <motion.li variants={item}>
                 <a href={data.vsco} target="_blank" rel="noreferrer noopener" aria-label="VSCO Link">
-                    <VSCOIcon width={32} height={32} fill="currentColor" />
+                    <VSCOIcon width={28} height={28} fill="currentColor" />
                 </a>
             </motion.li>
 
             <motion.li variants={item}>
                 <a href={data.steam} target="_blank" rel="noreferrer noopener" aria-label="Steam Link">
-                    <SteamIcon width={32} height={32} fill="currentColor" />
+                    <SteamIcon width={28} height={28} fill="currentColor" />
                 </a>
             </motion.li>
 
             <motion.li variants={item}>
                 <a href={data.twitch} target="_blank" rel="noreferrer noopener" className="text-twitch" aria-label="Twitch Link">
-                    <TwitchIcon width={32} height={32} fill="currentColor" />
+                    <TwitchIcon width={28} height={28} fill="currentColor" />
                 </a>
             </motion.li>
 
             <motion.li variants={item}>
                 <a href={data.spotify} target="_blank" rel="noreferrer noopener" className="text-spotify" aria-label="Spotify Link">
-                    <SpotifyIcon width={32} height={32} fill="currentColor" />
+                    <SpotifyIcon width={28} height={28} fill="currentColor" />
                 </a>
             </motion.li>
 
             <motion.li variants={item}>
-                <button onClick={copyDiscord} className="text-discord" aria-label="Copy Discord Tag">
-                    <DiscordIcon width={40} height={40} fill="currentColor" />
+                <button onClick={copyDiscord} className="flex justify-center items-center text-discord" aria-label="Copy Discord Tag">
+                    <DiscordIcon width={36} height={36} fill="currentColor" />
                 </button>
             </motion.li>
         </motion.ul>
