@@ -16,11 +16,11 @@ export default function Title() {
     const [items, setItems] = useState(letters);
 
     useEffect(() => {
-        setTimeout(() => setItems(letters.filter(({ id }) => id != 3)), 1000);
+        setTimeout(() => setItems(letters.filter(({ id }) => id != 3)), 1500);
     }, []);
 
     return (
-        <div className="flex justify-center items-center text-8xl md:text-9xl">
+        <div className="flex justify-center items-center text-2xl">
             <div className="flex">
                 <AnimatePresence>
                     {items.map(({ id, content }) => (
