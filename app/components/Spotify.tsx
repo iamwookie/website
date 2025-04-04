@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
 
-// TODO: Update tailwind to v4
+// TODO: update tailwind to v4
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 

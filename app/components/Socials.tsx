@@ -13,7 +13,7 @@ import DiscordIcon from '@public/assets/icons/discord.svg';
 
 import data from '@data/social.json';
 
-// TODO: Find new tooltip solution
+// TODO: find new tooltip solution
 
 export default function Socials() {
     const copyDiscord = () => {
