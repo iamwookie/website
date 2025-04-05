@@ -17,13 +17,16 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://bil.al'),
     authors: [{ name: 'Bilal' }],
     openGraph: {
-        type: 'website',
+        title: '( ͡° ͜ʖ ͡°)',
+        description: 'A person on this planet.',
         url: 'https://bil.al',
+        locale: 'en_GB',
+        type: 'website',
     },
 };
 
 export const viewport: Viewport = {
-    themeColor: '#000000',
+    themeColor: 'black',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

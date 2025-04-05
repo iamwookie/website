@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <main className="flex flex-col">
-            <section className="flex flex-col justify-center items-center gap-4 container h-screen mx-auto">
+            <section className="container mx-auto flex h-screen flex-col items-center justify-center gap-4">
                 <h1 className="text-4xl">cooking soon™</h1>
                 <Socials />
             </section>
