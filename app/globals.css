@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 
-@config '../tailwind.config.js';
-
 @theme {
     --color-twitch: #6441a5;
     --color-spotify: #1ed760;
