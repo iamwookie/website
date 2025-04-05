@@ -8,7 +8,7 @@ class Spotify {
     private static refresh_token: string = process.env.SPOTIFY_REFRESH_TOKEN;
     private static access_token?: string;
 
-    private static async refreshToken(): Promise<void> {
+    private static async refreshToken(): Promise {
         try {
             const res = await fetch('https://accounts.spotify.com/api/token', {
                 method: 'POST',
@@ -33,7 +33,7 @@ class Spotify {
         }
     }
 
-    static async currentlyPlaying(): Promise<SpotifyData | undefined> {
+    static async currentlyPlaying(): Promise {
         if (!this.access_token) await this.refreshToken();
 
         try {

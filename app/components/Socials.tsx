@@ -32,7 +32,7 @@ export default function Socials() {
     };
 
     return (
-        <motion.ul variants={container} initial="hidden" animate="show" className="flex justify-center items-center gap-3 w-fit">
+        <motion.ul variants={container} initial="hidden" animate="show" className="flex w-fit items-center justify-center gap-3">
             <motion.li variants={item} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
                 <a href={data.linkedin} target="_blank" rel="noreferrer noopener" aria-label="LinkedIn Link">
                     <LinkedInIcon width={28} height={28} fill="currentColor" />
@@ -70,7 +70,7 @@ export default function Socials() {
             </motion.li>
 
             <motion.li variants={item} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
-                <button onClick={copyDiscord} className="flex justify-center items-center  text-discord" aria-label="Copy Discord Tag">
+                <button onClick={copyDiscord} className="text-discord flex items-center justify-center" aria-label="Copy Discord Tag">
                     <DiscordIcon width={36} height={36} fill="currentColor" />
                 </button>
             </motion.li>
