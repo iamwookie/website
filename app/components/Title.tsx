@@ -12,11 +12,13 @@ const letters = [
     { id: 5, content: 'l' },
 ];
 
+// animation time: ~2s
+
 export default function Title() {
     const [items, setItems] = useState(letters);
 
     useEffect(() => {
-        setTimeout(() => setItems(letters.filter(({ id }) => id != 3)), 1500);
+        setTimeout(() => setItems(letters.filter(({ id }) => id != 3)), 1400);
     }, []);
 
     return (
