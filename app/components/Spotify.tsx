@@ -5,21 +5,23 @@ import type { SpotifyData } from 'types';
 import { useState } from 'react';
 import useSWR from 'swr';
 import { motion } from 'motion/react';
+
 import Image from 'next/image';
 
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export default function Spotify() {
-    const [delay, setDelay] = useState(1.5);
+export default function Spotify({ initial }: { initial: SpotifyData | null }) {
+    const [delay, setDelay] = useState(2);
 
-    const { data: music, error } = useSWR<SpotifyData>('/api/spotify/playing', fetcher, {
+    const { data, error } = useSWR<SpotifyData | null>('/api/spotify/playing', fetcher, {
+        fallbackData: initial,
         refreshInterval: 5_000,
         revalidateOnFocus: false,
     });
 
-    if (!music || error) return null;
+    if (!data || error) return null;
 
     return (
         <motion.a
@@ -30,7 +32,7 @@ export default function Spotify() {
             whileTap={{ opacity: 0.5, scale: 0.98 }}
             onAnimationComplete={() => setDelay(0)}
             // element props
-            href={music.url}
+            href={data.url}
             target="_blank"
             rel="noreferrer noopener"
             className="relative mx-auto overflow-hidden rounded-xl bg-zinc-900 p-4 shadow-lg"
@@ -42,24 +44,24 @@ export default function Spotify() {
                     // motion props
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.7 }}
+                    transition={{ delay: 2.2 }}
                     // element props
                     className="flex items-center justify-center"
                 >
                     <div className="relative">
-                        {music.image && (
+                        {data.image && (
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 1.7, duration: 0.4 }}
+                                transition={{ delay: 2.2, duration: 0.4 }}
                             >
                                 <Image
-                                    src={music.image}
+                                    src={data.image}
                                     alt="Album Cover"
                                     width={52}
                                     height={52}
                                     placeholder="blur"
-                                    blurDataURL={music.blurDataURL}
+                                    blurDataURL={data.blurDataURL}
                                     className="rounded-xl shadow-lg"
                                 />
                             </motion.div>
@@ -69,7 +71,7 @@ export default function Spotify() {
                             // motion props
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 1.9, duration: 0.4 }}
+                            transition={{ delay: 2.4, duration: 0.4 }}
                             // element props
                             className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
                         >
@@ -82,13 +84,13 @@ export default function Spotify() {
                     // motion props
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.9, duration: 0.2 }}
+                    transition={{ delay: 2.4, duration: 0.2 }}
                     // element props
                     className="flex flex-col justify-center gap-1"
                 >
                     <h3 className="text-xs font-semibold text-green-400">Now Playing</h3>
-                    <h3 className="text-xs font-medium text-white">{music.name}</h3>
-                    <h3 className="text-xs text-gray-400">{music.artists}</h3>
+                    <h3 className="text-xs font-medium text-white">{data.name}</h3>
+                    <h3 className="text-xs text-gray-400">{data.artists}</h3>
                 </motion.div>
             </div>
         </motion.a>

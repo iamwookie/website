@@ -1,6 +1,6 @@
 'use client';
 
-import { hover, motion } from 'motion/react';
+import { motion } from 'motion/react';
 import { toast } from 'react-toastify';
 
 import LinkedInIcon from '@public/assets/icons/linkedin.svg';
@@ -13,7 +13,8 @@ import DiscordIcon from '@public/assets/icons/discord.svg';
 
 import data from '@data/social.json';
 
-// TODO: find new tooltip solution
+// animation time: ~1.6s
+// todo: find new tooltip solution
 
 export default function Socials() {
     const copyDiscord = () => {
