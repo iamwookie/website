@@ -14,6 +14,8 @@ export default async function Footer() {
         .then((res) => res.json())
         .catch(() => null);
 
+    console.log(data ? 'data exists' : 'data does not exist');
+
     return (
         <footer className="fixed bottom-0 flex w-full flex-col px-4 md:px-0">
             <Spotify initial={data} />
