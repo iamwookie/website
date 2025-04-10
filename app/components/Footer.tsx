@@ -16,7 +16,6 @@ export default async function Footer() {
 
     return (
         <footer className="fixed bottom-0 flex w-full flex-col px-4 md:px-0">
-            {data && <h1>data exists</h1>}
             <Spotify initial={data} />
 
             <motion.div
