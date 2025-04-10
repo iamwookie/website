@@ -12,13 +12,13 @@ export const dynamic = 'force-dynamic';
 
 export default async function Footer() {
     // initial fetch for rendering the flags
-    const data: SpotifyData | null = await fetch('https://bil.al/api/spotify/playing')
+    const data: SpotifyData | null = await fetch('https://bil.al/api/spotify/playing', { cache: 'no-store' })
         .then((res) => res.json())
         .catch(() => null);
 
     return (
         <footer className="fixed bottom-0 flex w-full flex-col px-4 md:px-0">
-            {data && (<h1>data exists</h1>)}
+            {data && <h1>data exists</h1>}
             <Spotify initial={data} />
 
             <motion.div
