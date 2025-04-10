@@ -8,8 +8,6 @@ import Spotify from './Spotify';
 import PKFlag from '@public/assets/pk_flag.svg';
 import PSFlag from '@public/assets/ps_flag.svg';
 
-export const dynamic = 'force-dynamic';
-
 export default async function Footer() {
     // initial fetch for rendering the flags
     const data: SpotifyData | null = await fetch('https://bil.al/api/spotify/playing', { cache: 'no-store' })
