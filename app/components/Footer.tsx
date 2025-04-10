@@ -10,7 +10,7 @@ import PSFlag from '@public/assets/ps_flag.svg';
 
 export default async function Footer() {
     // initial fetch for rendering the flags
-    const data: SpotifyData | null = await fetch('https://bil.al/api/spotify/playing')
+    const data: SpotifyData | null = await fetch('https://bil.al/api/spotify/playing', { cache: 'no-store' })
         .then((res) => res.json())
         .catch(() => null);
 
