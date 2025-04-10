@@ -13,7 +13,7 @@ import SpotifyIcon from '@public/assets/icons/spotify.svg';
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Spotify({ initial }: { initial: SpotifyData | null }) {
-    const [delay, setDelay] = useState(2);
+    const [loaded, setLoaded] = useState(false);
 
     const { data, error } = useSWR<SpotifyData | null>('/api/spotify/playing', fetcher, {
         fallbackData: initial,
@@ -25,12 +25,12 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
 
     return (
         <motion.a
-            // motion props
+            // motion props'
+            layout
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0, transition: { delay } }}
+            animate={{ opacity: 1, y: 0, transition: { delay: loaded ? 0 : 2 } }}
             whileHover={{ opacity: 0.5, scale: 0.98 }}
             whileTap={{ opacity: 0.5, scale: 0.98 }}
-            onAnimationComplete={() => setDelay(0)}
             // element props
             href={data.url}
             target="_blank"
@@ -42,9 +42,11 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
             <div className="flex flex-row gap-4">
                 <motion.div
                     // motion props
+                    // re-render only when the image changes
+                    key={data.image}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2.2 }}
+                    transition={{ delay: loaded ? 0 : 2.2 }}
                     // element props
                     className="flex items-center justify-center"
                 >
@@ -53,7 +55,7 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 2.2, duration: 0.4 }}
+                                transition={{ delay: loaded ? 0.2 : 2.2, duration: 0.4 }}
                             >
                                 <Image
                                     src={data.image}
@@ -71,7 +73,7 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
                             // motion props
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 2.4, duration: 0.4 }}
+                            transition={{ delay: loaded ? 0.4 : 2.4, duration: 0.4 }}
                             // element props
                             className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
                         >
@@ -82,9 +84,13 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
 
                 <motion.div
                     // motion props
+                    // dual key ensures re-render only when both name and artists change
+                    key={`${data.name}-${data.artists}`}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.4, duration: 0.2 }}
+                    transition={{ delay: loaded ? 0.4 : 2.4, duration: 0.2 }}
+                    // set the loaded flag here as its the last element to animate
+                    onAnimationComplete={() => setLoaded(true)}
                     // element props
                     className="flex flex-col justify-center gap-1"
                 >
