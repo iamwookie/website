@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import { toast } from 'react-toastify';
 
-import LinkedInIcon from '@public/assets/icons/linkedin.svg';
+// import LinkedInIcon from '@public/assets/icons/linkedin.svg';
 import GitHubIcon from '@public/assets/icons/github.svg';
 import VSCOIcon from '@public/assets/icons/vsco.svg';
 import SteamIcon from '@public/assets/icons/steam.svg';
@@ -34,11 +34,11 @@ export default function Socials() {
 
     return (
         <motion.ul variants={container} initial="hidden" animate="show" className="flex w-fit items-center justify-center gap-3">
-            <motion.li variants={item} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
+            {/* <motion.li variants={item} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
                 <a href={data.linkedin} target="_blank" rel="noreferrer noopener" aria-label="LinkedIn Link">
                     <LinkedInIcon width={28} height={28} fill="currentColor" />
                 </a>
-            </motion.li>
+            </motion.li> */}
 
             <motion.li variants={item} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
                 <a href={data.github} target="_blank" rel="noreferrer noopener" aria-label="GitHub Link">
