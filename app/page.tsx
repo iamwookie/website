@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import Socials from '@components/Socials';
 import Button from '@components/ui/Button';
+import Views from '@components/Views';
 
 export const metadata: Metadata = {
     title: '( ͡° ͜ʖ ͡°)',
@@ -23,6 +24,8 @@ export default function Home() {
                 <a href="mailto:mail@bil.al">
                     <Button content="Contact" />
                 </a>
+
+                <Views />
             </section>
         </main>
     );
