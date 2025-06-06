@@ -19,8 +19,8 @@ export default async function Views() {
     }
 
     return (
-        <div className="flex flex-row items-center justify-center gap-1">
-            <EyeIcon width={16} height={16} fill="currentColor" /> {views}
+        <div className="flex flex-row items-center justify-center gap-2">
+            <EyeIcon width={16} height={16} fill="currentColor" /> {views.toLocaleString()}
         </div>
     );
 }
