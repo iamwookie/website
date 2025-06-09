@@ -5,17 +5,17 @@ import EyeIcon from '@public/assets/ui/eye-regular.svg';
 
 const redis = Redis.fromEnv();
 
-export default async function Views() {
+export default async function Views({ id }: { id: string }) {
     const ipAddress = (await headers()).get('x-forwarded-for');
-    const hasViewed = await redis.get(`views:index:${ipAddress}`);
+    const hasViewed = await redis.get(`views:${id}:${ipAddress}`);
 
     let views: number;
 
     if (!hasViewed) {
-        await redis.set(`views:index:${ipAddress}`, '1', { ex: 60 * 60 * 24 }).catch(() => null);
-        views = (await redis.incr('views:index').catch(() => 0)) || 0;
+        await redis.set(`views:${id}:${ipAddress}`, '1', { ex: 60 * 60 * 24 }).catch(() => null);
+        views = (await redis.incr(`views:${id}`).catch(() => 0)) || 0;
     } else {
-        views = (await redis.get<number>('views:index').catch(() => 0)) || 0;
+        views = (await redis.get<number>(`views:${id}`).catch(() => 0)) || 0;
     }
 
     return (
