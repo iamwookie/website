@@ -25,7 +25,7 @@ export default function Home() {
                     <Button content="Contact" />
                 </a>
 
-                <Views />
+                <Views id='index' />
             </section>
         </main>
     );
