@@ -9,6 +9,7 @@ import { Roboto_Mono } from 'next/font/google';
 
 import Header from '@components/Header';
 import Footer from '@components/Footer';
+import Echoes from '@components/Echoes';
 import Toast from '@components/ui/Toast';
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'] });
@@ -33,12 +34,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={robotoMono.className}>
+                {/* Main content */}
                 <Header />
 
                 {children}
 
                 <Footer />
 
+                {/* Echo mask */}
+                <Echoes />
+
+                {/* Extras */}
                 <Toast />
                 <Analytics />
                 <SpeedInsights />
