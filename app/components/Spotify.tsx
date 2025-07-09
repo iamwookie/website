@@ -23,12 +23,14 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
 
     if (!data || error) return null;
 
+    const delay = loaded ? 0 : 2; // base delay for animations
+
     return (
         <motion.a
-            // motion props'
+            // motion props
             layout
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0, transition: { delay: loaded ? 0 : 2 } }}
+            animate={{ opacity: 1, y: 0, transition: { delay } }}
             whileHover={{ opacity: 0.5, scale: 0.98 }}
             whileTap={{ opacity: 0.5, scale: 0.98 }}
             // element props
@@ -37,17 +39,14 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
             rel="noreferrer noopener"
             className="relative mx-auto overflow-hidden rounded-xl bg-zinc-900 p-4 shadow-lg"
         >
+            {/* Background gradient */}
             <div className="from-spotify/10 absolute inset-0 bg-linear-to-br to-blue-500/10" />
 
+            {/* Content */}
             <div className="flex flex-row gap-4">
-                <motion.div
-                    // motion props
-                    // re-render only when the image changes
-                    key={data.image}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: loaded ? 0 : 2.2 }}
-                    // element props
+                {/* Album cover and icon */}
+                <div
+                    key={data.image} // re-render only when the image changes
                     className="flex items-center justify-center"
                 >
                     <div className="relative">
@@ -55,7 +54,7 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: loaded ? 0.2 : 2.2, duration: 0.4 }}
+                                transition={{ delay: delay + 0.2, duration: 0.4 }}
                             >
                                 <Image
                                     src={data.image}
@@ -73,24 +72,23 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
                             // motion props
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: loaded ? 0.4 : 2.4, duration: 0.4 }}
+                            transition={{ delay: delay + 0.4, duration: 0.4 }}
                             // element props
                             className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
                         >
                             <SpotifyIcon size={16} className="h-4 w-4 text-black" />
                         </motion.div>
                     </div>
-                </motion.div>
+                </div>
 
+                {/* Track details */}
                 <motion.div
                     // motion props
-                    // dual key ensures re-render only when both name and artists change
-                    key={`${data.name}-${data.artists}`}
+                    key={`${data.name}-${data.artists}`} // dual key ensures re-render only when both name and artists change
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: loaded ? 0.4 : 2.4, duration: 0.2 }}
-                    // set the loaded flag here as its the last element to animate
-                    onAnimationComplete={() => setLoaded(true)}
+                    transition={{ delay: delay + 0.4, duration: 0.2 }}
+                    onAnimationComplete={() => setLoaded(true)} // set the loaded flag here as its the last element to animate
                     // element props
                     className="flex flex-col justify-center gap-1"
                 >
