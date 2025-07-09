@@ -23,12 +23,14 @@ class Spotify {
                 cache: 'no-cache',
             });
 
+            if (res.status != 200) return;
+
             const data = await res.json();
             this.access_token = data.access_token;
 
             setTimeout(() => (this.access_token = undefined), data.expires_in * 1000);
         } catch (err) {
-            console.error('[Spotify] Error refreshing token');
+            console.error('[Spotify] Failed to refresh token');
             console.error(err);
         }
     }
@@ -45,7 +47,6 @@ class Spotify {
             if (res.status != 200) return;
 
             const data = await res.json();
-
             if (!data?.item) return;
 
             const imageRes = await fetch(data.item.album?.images[0]?.url, { next: { revalidate: data.item.duration_ms / 1000 } });
@@ -60,7 +61,7 @@ class Spotify {
                 blurDataURL: base64,
             };
         } catch (err) {
-            console.error('[Spotify] Error getting currently playing');
+            console.error('[Spotify] Failed to fetch currently playing');
             console.error(err);
         }
     }
