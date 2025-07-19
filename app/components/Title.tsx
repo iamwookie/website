@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 
 const letters = [
     { id: 0, content: 'b' },

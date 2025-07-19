@@ -1,7 +1,7 @@
+import * as motion from 'motion/react-client';
 import React from 'react';
 
 // motion import for server components
-import * as motion from 'motion/react-client';
 
 export default function Button({ content }: { content?: string }) {
     const variants = { active: { scale: 1.05, color: '#000000', backgroundColor: '#ffffff' } };

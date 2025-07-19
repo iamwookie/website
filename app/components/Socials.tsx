@@ -3,17 +3,17 @@
 import { motion } from 'motion/react';
 import { toast } from 'react-toastify';
 
-import Tooltip from './ui/Tooltip';
-
-import LinkedInIcon from '@public/assets/icons/linkedin.svg';
+import data from '@data/social.json';
+import DiscordIcon from '@public/assets/icons/discord.svg';
 import GitHubIcon from '@public/assets/icons/github.svg';
-import VSCOIcon from '@public/assets/icons/vsco.svg';
+import LinkedInIcon from '@public/assets/icons/linkedin.svg';
+import SpotifyIcon from '@public/assets/icons/spotify.svg';
 import SteamIcon from '@public/assets/icons/steam.svg';
 import TwitchIcon from '@public/assets/icons/twitch.svg';
-import SpotifyIcon from '@public/assets/icons/spotify.svg';
-import DiscordIcon from '@public/assets/icons/discord.svg';
+import VSCOIcon from '@public/assets/icons/vsco.svg';
 
-import data from '@data/social.json';
+import Tooltip from './ui/Tooltip';
+
 
 // animation time: ~1.6s
 // todo: find new tooltip solution

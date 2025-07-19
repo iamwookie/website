@@ -3,13 +3,12 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
 import type { Metadata, Viewport } from 'next';
 import { Roboto_Mono } from 'next/font/google';
 
-import Header from '@components/Header';
-import Footer from '@components/Footer';
 import Echoes from '@components/Echoes';
+import Footer from '@components/Footer';
+import Header from '@components/Header';
 import Toast from '@components/ui/Toast';
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'] });

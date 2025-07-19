@@ -1,6 +1,7 @@
 import crypto from 'crypto';
-import { headers } from 'next/headers';
+
 import { Redis } from '@upstash/redis';
+import { headers } from 'next/headers';
 
 import EyeIcon from '@public/assets/ui/eye-regular.svg';
 
