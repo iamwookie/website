@@ -1,14 +1,14 @@
 'use client';
 
-import type { SpotifyData } from 'types';
 
+import { motion } from 'motion/react';
+import Image from 'next/image';
 import { useState } from 'react';
 import useSWR from 'swr';
-import { motion } from 'motion/react';
 
-import Image from 'next/image';
 
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
+import type { SpotifyData } from 'types';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 

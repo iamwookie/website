@@ -1,12 +1,13 @@
-import type { SpotifyData } from 'types';
 
 // motion import for server components
 import * as motion from 'motion/react-client';
 
-import Spotify from './Spotify';
 
 import PKFlag from '@public/assets/pk_flag.svg';
 import PSFlag from '@public/assets/ps_flag.svg';
+import type { SpotifyData } from 'types';
+
+import Spotify from './Spotify';
 
 export default async function Footer() {
     // initial fetch for rendering the flags
