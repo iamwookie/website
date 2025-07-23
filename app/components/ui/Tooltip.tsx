@@ -1,23 +1,37 @@
 // motion import for server components
 import * as motion from 'motion/react-client';
+import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip';
 
-export default function Tooltip({ children, content }: { children: React.ReactNode; content: string }) {
+function TooltipProvider({ children }: { children: React.ReactNode }) {
+    return <BaseTooltip.Provider delay={0}>{children}</BaseTooltip.Provider>;
+}
+
+function TooltipWrapper({ children, content }: { children: React.ReactNode; content: string }) {
     const variants = {
-        initial: { opacity: 0, scale: 0.95, y: -6 },
-        hover: { opacity: 1, scale: 1, y: -10 },
+        hidden: { opacity: 0, scale: 0.95, y: -6 },
+        show: { opacity: 1, scale: 1, y: -10 },
     };
 
-    return (
-        <motion.div className="relative inline-block" initial="initial" whileHover="hover">
-            {children}
+    const MotionPopup = motion.create(BaseTooltip.Popup);
 
-            <motion.div
-                variants={variants}
-                transition={{ duration: 0.2 }}
-                className="pointer-events-none absolute -top-6 left-1/2 w-max max-w-xs -translate-x-1/2 rounded-lg border border-white/20 bg-white px-2 text-sm text-black"
-            >
-                {content}
-            </motion.div>
-        </motion.div>
+    return (
+        <BaseTooltip.Root>
+            <BaseTooltip.Trigger render={<div>{children}</div>} />
+            <BaseTooltip.Portal>
+                <BaseTooltip.Positioner sideOffset={4}>
+                    <MotionPopup
+                        initial="hidden"
+                        animate="show"
+                        exit="hidden"
+                        variants={variants}
+                        className="rounded-lg border border-white/20 bg-white px-2 text-sm text-black"
+                    >
+                        {content}
+                    </MotionPopup>
+                </BaseTooltip.Positioner>
+            </BaseTooltip.Portal>
+        </BaseTooltip.Root>
     );
 }
+
+export default { Provider: TooltipProvider, Wrapper: TooltipWrapper };

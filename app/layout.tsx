@@ -33,20 +33,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={robotoMono.className}>
-                {/* Main content */}
-                <Header />
+                <div className="root">
+                    {/* Main content */}
+                    <Header />
 
-                {children}
+                    {children}
 
-                <Footer />
+                    <Footer />
 
-                {/* Echo mask */}
-                <Echoes />
+                    {/* Echo mask */}
+                    <Echoes />
 
-                {/* Extras */}
-                <Toast />
-                <Analytics />
-                <SpeedInsights />
+                    {/* Extras */}
+                    <Toast />
+                    <Analytics />
+                    <SpeedInsights />
+                </div>
             </body>
         </html>
     );
