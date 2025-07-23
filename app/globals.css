@@ -15,37 +15,17 @@
     }
 }
 
-/* old tailwind.config.js theme extensions */
-
-/* screens: {
-    dt: {
-        raw: '(min-width: 1280px) and (min-height: 720px)',
-    },
-    
-}, */
-
-/* keyframes: {
-    fadeIn: {
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-    },
-},
-animation: {
-    fadeIn: 'fadeIn 1s',
-}, */
-
 body {
     @apply bg-black;
     @apply text-white;
 }
 
-.tippy-box[data-theme~='blur'] {
-    @apply backdrop-blur-xs;
-    background-color: transparent;
+.root {
+    @apply isolate; /* required for base-ui to work properly */
 }
 
 /* min-height overides the height property */
 .Toastify__toast-theme--colored.Toastify__toast--success {
-    @apply rounded-md;
+    @apply rounded-lg;
     @apply min-h-0;
 }
