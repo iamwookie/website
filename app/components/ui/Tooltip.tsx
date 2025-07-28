@@ -1,18 +1,17 @@
-// motion import for server components
-import * as motion from 'motion/react-client';
 import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip';
+import * as motion from 'motion/react-client'; // motion import for server components
 
-function TooltipProvider({ children }: { children: React.ReactNode }) {
+const MotionPopup = motion.create(BaseTooltip.Popup);
+
+const Provider = ({ children }: { children: React.ReactNode }) => {
     return <BaseTooltip.Provider delay={0}>{children}</BaseTooltip.Provider>;
-}
+};
 
-function TooltipWrapper({ children, content }: { children: React.ReactNode; content: string }) {
-    const variants = {
-        hidden: { opacity: 0, scale: 0.95, y: -6 },
-        show: { opacity: 1, scale: 1, y: -10 },
+const Wrapper = ({ children, content }: { children: React.ReactNode; content: string }) => {
+    const popupVariants = {
+        initial: { opacity: 0, scale: 0.95, y: -6 },
+        animate: { opacity: 1, scale: 1, y: -10 },
     };
-
-    const MotionPopup = motion.create(BaseTooltip.Popup);
 
     return (
         <BaseTooltip.Root>
@@ -20,11 +19,11 @@ function TooltipWrapper({ children, content }: { children: React.ReactNode; cont
             <BaseTooltip.Portal>
                 <BaseTooltip.Positioner sideOffset={4}>
                     <MotionPopup
-                        initial="hidden"
-                        animate="show"
-                        exit="hidden"
-                        variants={variants}
-                        className="rounded-lg border border-white/20 bg-white px-2 text-sm text-black"
+                        initial="initial"
+                        animate="animate"
+                        exit="initial"
+                        variants={popupVariants}
+                        className="rounded-lg bg-white px-2 text-sm text-black"
                     >
                         {content}
                     </MotionPopup>
@@ -32,6 +31,6 @@ function TooltipWrapper({ children, content }: { children: React.ReactNode; cont
             </BaseTooltip.Portal>
         </BaseTooltip.Root>
     );
-}
+};
 
-export default { Provider: TooltipProvider, Wrapper: TooltipWrapper };
+export { Provider, Wrapper };

@@ -1,7 +1,4 @@
-
-// motion import for server components
-import * as motion from 'motion/react-client';
-
+import * as motion from 'motion/react-client'; // motion import for server components
 
 import PKFlag from '@public/assets/pk_flag.svg';
 import PSFlag from '@public/assets/ps_flag.svg';

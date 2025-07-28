@@ -1,11 +1,9 @@
 'use client';
 
-
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { useState } from 'react';
 import useSWR from 'swr';
-
 
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
 import type { SpotifyData } from 'types';
