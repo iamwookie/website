@@ -20,12 +20,8 @@ body {
     @apply text-white;
 }
 
-.root {
-    @apply isolate; /* required for base-ui to work properly */
-}
+/* required for base-ui to work properly */
 
-/* min-height overides the height property */
-.Toastify__toast-theme--colored.Toastify__toast--success {
-    @apply rounded-lg;
-    @apply min-h-0;
+.root {
+    @apply isolate;
 }

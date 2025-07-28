@@ -1,5 +1,4 @@
 import './globals.css';
-import 'react-toastify/dist/ReactToastify.min.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -9,13 +8,13 @@ import { Roboto_Mono } from 'next/font/google';
 import Echoes from '@components/Echoes';
 import Footer from '@components/Footer';
 import Header from '@components/Header';
-import Toast from '@components/ui/Toast';
+import * as Toast from '@components/ui/Toast';
 
 const robotoMono = Roboto_Mono({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://bil.al'),
-    authors: [{ name: 'Bilal' }],
+    authors: [{ name: 'Bilal', url: 'https://bil.al' }],
     openGraph: {
         title: '( ͡° ͜ʖ ͡°)',
         description: 'A person on this planet.',
@@ -34,20 +33,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en">
             <body className={robotoMono.className}>
                 <div className="root">
-                    {/* Main content */}
-                    <Header />
+                    <Toast.Provider>
+                        {/* Main content */}
+                        <Header />
 
-                    {children}
+                        {children}
 
-                    <Footer />
+                        <Footer />
 
-                    {/* Echo mask */}
-                    <Echoes />
+                        {/* Echo mask */}
+                        <Echoes />
 
-                    {/* Extras */}
-                    <Toast />
-                    <Analytics />
-                    <SpeedInsights />
+                        {/* UI */}
+                        <Toast.Wrapper />
+
+                        {/* Extras */}
+                        <Analytics />
+                        <SpeedInsights />
+                    </Toast.Provider>
                 </div>
             </body>
         </html>
