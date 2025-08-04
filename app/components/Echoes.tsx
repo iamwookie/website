@@ -4,13 +4,14 @@ import { motion } from 'motion/react';
 import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
+const TEXT = ['☠', '✦', '✧', '☾', '✹', '✶', '✻', '❂', '❉', '❖', '★', '☆', '☼', '影', '夜', '夢', '闇', '空', '零', '死'];
+
 function createEcho(container: HTMLElement): void {
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
 
     const echo = document.createElement('div');
     container.appendChild(echo);
-
     const root = createRoot(echo);
 
     root.render(
@@ -24,7 +25,7 @@ function createEcho(container: HTMLElement): void {
             }}
             className="absolute text-6xl font-extrabold tracking-widest text-white"
         >
-            soon™
+            {TEXT[Math.floor(Math.random() * TEXT.length)]}
         </motion.h1>,
     );
 }
