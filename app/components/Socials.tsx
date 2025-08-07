@@ -40,66 +40,122 @@ export default function Socials() {
         animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
     };
 
+    const iconVariants = {
+        hover: { opacity: 0.5, scale: 0.98 },
+        tap: { opacity: 0.5, scale: 0.98 },
+    };
+
     return (
         <Tooltip.Provider>
             <motion.ul variants={listVariants} initial="initial" animate="animate" className="flex w-fit items-center justify-center gap-3">
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
+                <motion.li variants={itemVariants}>
                     <Tooltip.Wrapper content="LinkedIn">
-                        <a href={data.linkedin} target="_blank" rel="noreferrer noopener" aria-label="LinkedIn Link">
-                            <LinkedInIcon width={28} height={28} fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
-
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
-                    <Tooltip.Wrapper content="GitHub">
-                        <a href={data.github} target="_blank" rel="noreferrer noopener" aria-label="GitHub Link">
-                            <GitHubIcon width={28} height={28} fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
-
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
-                    <Tooltip.Wrapper content="VSCO">
-                        <a href={data.vsco} target="_blank" rel="noreferrer noopener" aria-label="VSCO Link">
-                            <VSCOIcon width={28} height={28} fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
-
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
-                    <Tooltip.Wrapper content="Steam">
-                        <a href={data.steam} target="_blank" rel="noreferrer noopener" aria-label="Steam Link">
-                            <SteamIcon width={28} height={28} fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
-
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
-                    <Tooltip.Wrapper content="Twitch">
-                        <a href={data.twitch} target="_blank" rel="noreferrer noopener" className="text-twitch" aria-label="Twitch Link">
-                            <TwitchIcon width={28} height={28} fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
-
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
-                    <Tooltip.Wrapper content="Spotify">
-                        <a href={data.spotify} target="_blank" rel="noreferrer noopener" className="text-spotify" aria-label="Spotify Link">
-                            <SpotifyIcon width={28} height={28} fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
-
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 0.98 }} whileTap={{ opacity: 0.5, scale: 0.98 }}>
-                    <Tooltip.Wrapper content="Discord">
-                        <button
-                            onClick={copyDiscord}
-                            className="text-discord flex items-center justify-center"
-                            aria-label="Copy Discord Tag"
+                        <motion.a
+                            href={data.linkedin}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            aria-label="LinkedIn Link"
+                            className="h-9 w-9 md:h-7 md:w-7"
+                            variants={iconVariants}
+                            whileHover="hover"
+                            whileTap="tap"
                         >
-                            <DiscordIcon width={36} height={36} fill="currentColor" />
-                        </button>
+                            <LinkedInIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                        </motion.a>
+                    </Tooltip.Wrapper>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <Tooltip.Wrapper content="GitHub">
+                        <motion.a
+                            href={data.github}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            aria-label="GitHub Link"
+                            className="h-9 w-9 md:h-7 md:w-7"
+                            variants={iconVariants}
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            <GitHubIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                        </motion.a>
+                    </Tooltip.Wrapper>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <Tooltip.Wrapper content="VSCO">
+                        <motion.a
+                            href={data.vsco}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            aria-label="VSCO Link"
+                            className="h-9 w-9 md:h-7 md:w-7"
+                            variants={iconVariants}
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            <VSCOIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                        </motion.a>
+                    </Tooltip.Wrapper>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <Tooltip.Wrapper content="Steam">
+                        <motion.a
+                            href={data.steam}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            aria-label="Steam Link"
+                            className="h-9 w-9 md:h-7 md:w-7"
+                            variants={iconVariants}
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            <SteamIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                        </motion.a>
+                    </Tooltip.Wrapper>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <Tooltip.Wrapper content="Twitch">
+                        <motion.a
+                            href={data.twitch}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="text-twitch h-9 w-9 md:h-7 md:w-7"
+                            aria-label="Twitch Link"
+                            variants={iconVariants}
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            <TwitchIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                        </motion.a>
+                    </Tooltip.Wrapper>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <Tooltip.Wrapper content="Spotify">
+                        <motion.a
+                            href={data.spotify}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="text-spotify h-9 w-9 md:h-7 md:w-7"
+                            aria-label="Spotify Link"
+                            variants={iconVariants}
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            <SpotifyIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                        </motion.a>
+                    </Tooltip.Wrapper>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <Tooltip.Wrapper content="Discord">
+                        <motion.button
+                            onClick={copyDiscord}
+                            className="text-discord flex h-11 w-11 items-center justify-center md:h-9 md:w-9"
+                            aria-label="Copy Discord Tag"
+                            variants={iconVariants}
+                            whileHover="hover"
+                            whileTap="tap"
+                        >
+                            <DiscordIcon className="h-11 w-11 md:h-9 md:w-9" fill="currentColor" />
+                        </motion.button>
                     </Tooltip.Wrapper>
                 </motion.li>
             </motion.ul>
