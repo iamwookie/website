@@ -17,7 +17,7 @@ export default function Home() {
     return (
         <main className="flex flex-col">
             <section className="container mx-auto flex h-screen flex-col items-center justify-center gap-4">
-                <h1 className="text-4xl">cooking soon™</h1>
+                <h1 className="text-4xl">cooking something™</h1>
 
                 <Socials />
 
