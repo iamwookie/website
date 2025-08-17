@@ -23,7 +23,7 @@ const Wrapper = ({ children, content }: { children: React.ReactNode; content: st
                         animate="animate"
                         exit="initial"
                         variants={popupVariants}
-                        className="rounded-lg bg-white px-2 text-sm text-black"
+                        className="rounded-lg bg-white px-2 text-sm text-black select-none"
                     >
                         {content}
                     </MotionPopup>

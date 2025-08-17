@@ -32,7 +32,7 @@ class Spotify {
 
             setTimeout(() => (this.access_token = undefined), data.expires_in * 1000);
         } catch (err) {
-            console.error('[Spotify] Failed to refresh token');
+            console.error('[Spotify] Failed To Refresh Token:');
             console.error(err);
         }
     }
@@ -63,7 +63,7 @@ class Spotify {
                 blurDataURL: base64,
             };
         } catch (err) {
-            console.error('[Spotify] Failed to fetch currently playing');
+            console.error('[Spotify] Failed To Fetch Currently Playing:');
             console.error(err);
         }
     }
