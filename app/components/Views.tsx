@@ -40,7 +40,7 @@ export default async function Views({ id }: { id: string }) {
     const views = await fetchViews(id, ff, ua);
 
     return (
-        <div className="flex flex-row items-center justify-center gap-2">
+        <div className="flex flex-row items-center justify-center gap-2 select-none">
             <EyeIcon width={16} height={16} fill="currentColor" /> {views.toLocaleString()}
         </div>
     );

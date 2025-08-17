@@ -9,7 +9,7 @@ export default function Button({ content }: { content?: string }) {
             whileHover="active"
             whileTap="active"
             transition={{ duration: 0.2 }}
-            className="rounded-lg border border-white/20 px-2 text-sm"
+            className="rounded-lg border border-white/20 px-2 text-sm select-none"
         >
             {content}
         </motion.div>

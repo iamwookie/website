@@ -35,7 +35,7 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
             href={data.url}
             target="_blank"
             rel="noreferrer noopener"
-            className="relative mx-auto overflow-hidden rounded-xl bg-zinc-900 p-4 shadow-lg"
+            className="relative mx-auto overflow-hidden rounded-xl bg-zinc-900 p-4 shadow-lg select-none"
         >
             {/* Background gradient */}
             <div className="from-spotify/10 absolute inset-0 bg-linear-to-br to-blue-500/10" />
