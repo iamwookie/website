@@ -29,8 +29,8 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
             layout
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0, transition: { delay } }}
-            whileHover={{ opacity: 0.5, scale: 0.98 }}
-            whileTap={{ opacity: 0.5, scale: 0.98 }}
+            whileHover={{ opacity: 0.5, scale: 1.05 }}
+            whileTap={{ opacity: 0.5, scale: 0.95 }}
             // element props
             href={data.url}
             target="_blank"

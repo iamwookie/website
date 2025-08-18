@@ -38,124 +38,100 @@ export default function Socials() {
     const itemVariants = {
         initial: { opacity: 0, y: 10, transition: { duration: 0.4 } },
         animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-    };
-
-    const iconVariants = {
-        hover: { opacity: 0.5, scale: 0.98 },
-        tap: { opacity: 0.5, scale: 0.98 },
+        hover: { opacity: 0.5, scale: 1.05 },
+        tap: { opacity: 0.5, scale: 0.95 },
     };
 
     return (
         <Tooltip.Provider>
             <motion.ul variants={listVariants} initial="initial" animate="animate" className="flex w-fit items-center justify-center gap-3">
-                <motion.li variants={itemVariants}>
+                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
                     <Tooltip.Wrapper content="LinkedIn">
-                        <motion.a
+                        <a
                             href={data.linkedin}
                             target="_blank"
                             rel="noreferrer noopener"
                             aria-label="LinkedIn Link"
                             className="h-9 w-9 md:h-7 md:w-7"
-                            variants={iconVariants}
-                            whileHover="hover"
-                            whileTap="tap"
                         >
                             <LinkedInIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </motion.a>
+                        </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants}>
+                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
                     <Tooltip.Wrapper content="GitHub">
-                        <motion.a
+                        <a
                             href={data.github}
                             target="_blank"
                             rel="noreferrer noopener"
                             aria-label="GitHub Link"
                             className="h-9 w-9 md:h-7 md:w-7"
-                            variants={iconVariants}
-                            whileHover="hover"
-                            whileTap="tap"
                         >
                             <GitHubIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </motion.a>
+                        </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants}>
+                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
                     <Tooltip.Wrapper content="VSCO">
-                        <motion.a
+                        <a
                             href={data.vsco}
                             target="_blank"
                             rel="noreferrer noopener"
                             aria-label="VSCO Link"
                             className="h-9 w-9 md:h-7 md:w-7"
-                            variants={iconVariants}
-                            whileHover="hover"
-                            whileTap="tap"
                         >
                             <VSCOIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </motion.a>
+                        </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants}>
+                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
                     <Tooltip.Wrapper content="Steam">
-                        <motion.a
+                        <a
                             href={data.steam}
                             target="_blank"
                             rel="noreferrer noopener"
                             aria-label="Steam Link"
                             className="h-9 w-9 md:h-7 md:w-7"
-                            variants={iconVariants}
-                            whileHover="hover"
-                            whileTap="tap"
                         >
                             <SteamIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </motion.a>
+                        </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants}>
+                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
                     <Tooltip.Wrapper content="Twitch">
-                        <motion.a
+                        <a
                             href={data.twitch}
                             target="_blank"
                             rel="noreferrer noopener"
                             className="text-twitch h-9 w-9 md:h-7 md:w-7"
                             aria-label="Twitch Link"
-                            variants={iconVariants}
-                            whileHover="hover"
-                            whileTap="tap"
                         >
                             <TwitchIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </motion.a>
+                        </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants}>
+                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
                     <Tooltip.Wrapper content="Spotify">
-                        <motion.a
+                        <a
                             href={data.spotify}
                             target="_blank"
                             rel="noreferrer noopener"
                             className="text-spotify h-9 w-9 md:h-7 md:w-7"
                             aria-label="Spotify Link"
-                            variants={iconVariants}
-                            whileHover="hover"
-                            whileTap="tap"
                         >
                             <SpotifyIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </motion.a>
+                        </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants}>
+                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
                     <Tooltip.Wrapper content="Discord">
-                        <motion.button
+                        <button
                             onClick={copyDiscord}
                             className="text-discord flex h-11 w-11 items-center justify-center md:h-9 md:w-9"
                             aria-label="Copy Discord Tag"
-                            variants={iconVariants}
-                            whileHover="hover"
-                            whileTap="tap"
                         >
                             <DiscordIcon className="h-11 w-11 md:h-9 md:w-9" fill="currentColor" />
-                        </motion.button>
+                        </button>
                     </Tooltip.Wrapper>
                 </motion.li>
             </motion.ul>
