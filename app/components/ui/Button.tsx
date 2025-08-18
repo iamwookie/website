@@ -1,13 +1,16 @@
 import * as motion from 'motion/react-client'; // motion import for server components
 
 export default function Button({ content }: { content?: string }) {
-    const variants = { active: { scale: 1.05, color: '#000000', backgroundColor: '#ffffff' } };
+    const variants = {
+        hover: { scale: 1.05, color: '#000000', backgroundColor: '#ffffff' },
+        tap: { scale: 0.95, color: '#000000', backgroundColor: '#ffffff' },
+    };
 
     return (
         <motion.div
             variants={variants}
-            whileHover="active"
-            whileTap="active"
+            whileHover="hover"
+            whileTap="tap"
             transition={{ duration: 0.2 }}
             className="rounded-lg border border-white/20 px-2 text-sm select-none"
         >
