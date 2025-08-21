@@ -38,14 +38,12 @@ export default function Socials() {
     const itemVariants = {
         initial: { opacity: 0, y: 10, transition: { duration: 0.4 } },
         animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-        hover: { opacity: 0.5, scale: 1.05 },
-        tap: { opacity: 0.5, scale: 0.95 },
     };
 
     return (
         <Tooltip.Provider>
-            <motion.ul variants={listVariants} initial="initial" animate="animate" className="flex w-fit items-center justify-center gap-3">
-                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
+            <motion.ul variants={listVariants} initial="initial" animate="animate" className="flex w-fit items-center justify-center gap-4">
+                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="LinkedIn">
                         <a
                             href={data.linkedin}
@@ -58,7 +56,7 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
+                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="GitHub">
                         <a
                             href={data.github}
@@ -71,7 +69,7 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
+                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="VSCO">
                         <a
                             href={data.vsco}
@@ -84,7 +82,7 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
+                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="Steam">
                         <a
                             href={data.steam}
@@ -97,7 +95,7 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
+                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="Twitch">
                         <a
                             href={data.twitch}
@@ -110,7 +108,7 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
+                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="Spotify">
                         <a
                             href={data.spotify}
@@ -123,7 +121,7 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants} whileHover="hover" whileTap="tap">
+                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="Discord">
                         <button
                             onClick={copyDiscord}
