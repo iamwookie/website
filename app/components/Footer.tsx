@@ -7,9 +7,9 @@ import type { SpotifyData } from 'types';
 import Spotify from './Spotify';
 
 export default async function Footer() {
-    // initial fetch for rendering the flags
-    const data: SpotifyData | null = await fetch('https://bil.al/api/spotify/playing', { cache: 'no-store' })
-        .then((res) => res.json())
+    // initial fetch for flag animation timing
+    const data = await fetch('/api/spotify/playing', { cache: 'no-store' })
+        .then<SpotifyData>((res) => res.json())
         .catch(() => null);
 
     return (

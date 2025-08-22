@@ -32,12 +32,12 @@ class Spotify {
 
             setTimeout(() => (this.access_token = undefined), data.expires_in * 1000);
         } catch (err) {
-            console.error('[Spotify] Failed To Refresh Token:');
+            console.error('[Spotify] Failed To Refresh Token');
             console.error(err);
         }
     }
 
-    static async currentlyPlaying(): Promise<SpotifyData | undefined> {
+    static async currentlyPlaying(): Promise<SpotifyData | null> {
         if (!this.access_token) await this.refreshToken();
 
         try {
@@ -46,10 +46,10 @@ class Spotify {
                 cache: 'no-cache',
             });
 
-            if (res.status != 200) return;
+            if (res.status != 200) return null;
 
             const data = await res.json();
-            if (!data?.item) return;
+            if (!data?.item) return null;
 
             const imageRes = await fetch(data.item.album?.images[0]?.url, { next: { revalidate: data.item.duration_ms / 1000 } });
             const buffer = Buffer.from(await imageRes.arrayBuffer());
@@ -63,8 +63,9 @@ class Spotify {
                 blurDataURL: base64,
             };
         } catch (err) {
-            console.error('[Spotify] Failed To Fetch Currently Playing:');
+            console.error('[Spotify] Failed To Fetch Currently Playing');
             console.error(err);
+            return null;
         }
     }
 }
