@@ -42,7 +42,12 @@ export default function Socials() {
 
     return (
         <Tooltip.Provider>
-            <motion.ul variants={listVariants} initial="initial" animate="animate" className="flex w-fit items-center justify-center gap-4">
+            <motion.ul
+                variants={listVariants}
+                initial="initial"
+                animate="animate"
+                className="flex w-fit flex-wrap items-center justify-center gap-4"
+            >
                 <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="LinkedIn">
                         <a
