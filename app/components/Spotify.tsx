@@ -10,18 +10,15 @@ import type { SpotifyData } from 'types';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export default function Spotify({ initial }: { initial: SpotifyData | null }) {
-    const [loaded, setLoaded] = useState(false);
-
+export default function Spotify() {
     const { data, error } = useSWR<SpotifyData | null>('/api/spotify/playing', fetcher, {
-        fallbackData: initial,
-        refreshInterval: 5_000,
         revalidateOnFocus: false,
+        refreshInterval: 5_000,
     });
 
     if (!data || error) return null;
 
-    const delay = loaded ? 0 : 2; // base delay for animations
+    const delay = 2; // base delay for animations
 
     return (
         <motion.a
@@ -86,7 +83,6 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: delay + 0.4, duration: 0.2 }}
-                    onAnimationComplete={() => setLoaded(true)} // set the loaded flag here as its the last element to animate
                     // element props
                     className="flex flex-col justify-center gap-1"
                 >

@@ -7,19 +7,14 @@ import type { SpotifyData } from 'types';
 import Spotify from './Spotify';
 
 export default async function Footer() {
-    // initial fetch for flag animation timing
-    const data = await fetch('/api/spotify/playing', { cache: 'no-store' })
-        .then<SpotifyData>((res) => res.json())
-        .catch(() => null);
-
     return (
         <footer className="fixed bottom-0 flex w-full flex-col px-4 md:px-0">
-            <Spotify initial={data} />
+            <Spotify />
 
             <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: data ? 2.8 : 2, duration: 0.4 }}
+                transition={{ delay: 2, duration: 0.4 }}
                 className="flex w-full items-center justify-center gap-2 py-4"
             >
                 <PKFlag width={32} height={24} className="rounded-xs" />
