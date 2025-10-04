@@ -4,13 +4,13 @@ import { Toast } from '@base-ui-components/react/toast';
 import { motion } from 'motion/react';
 
 import data from '@data/social.json';
-import DiscordIcon from '@public/assets/icons/discord.svg';
-import GitHubIcon from '@public/assets/icons/github.svg';
+
 import LinkedInIcon from '@public/assets/icons/linkedin.svg';
-import SpotifyIcon from '@public/assets/icons/spotify.svg';
+import GitHubIcon from '@public/assets/icons/github.svg';
 import SteamIcon from '@public/assets/icons/steam.svg';
-import TwitchIcon from '@public/assets/icons/twitch.svg';
-import VSCOIcon from '@public/assets/icons/vsco.svg';
+import LetterboxdIcon from '@public/assets/icons/letterboxd.svg';
+import SpotifyIcon from '@public/assets/icons/spotify.svg';
+import DiscordIcon from '@public/assets/icons/discord.svg';
 
 import * as Tooltip from './ui/Tooltip';
 
@@ -61,6 +61,7 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
+
                 <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="GitHub">
                         <a
@@ -74,19 +75,7 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
-                    <Tooltip.Wrapper content="VSCO">
-                        <a
-                            href={data.vsco}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            aria-label="VSCO Link"
-                            className="h-9 w-9 md:h-7 md:w-7"
-                        >
-                            <VSCOIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
+
                 <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="Steam">
                         <a
@@ -100,19 +89,21 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
+
                 <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
-                    <Tooltip.Wrapper content="Twitch">
+                    <Tooltip.Wrapper content="Letterboxd">
                         <a
-                            href={data.twitch}
+                            href={data.letterboxd}
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="text-twitch h-9 w-9 md:h-7 md:w-7"
-                            aria-label="Twitch Link"
+                            className="h-9 w-9 md:h-7 md:w-7"
+                            aria-label="Letterboxd Link"
                         >
-                            <TwitchIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                            <LetterboxdIcon className="h-9 w-9 md:h-7 md:w-7" />
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
+
                 <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="Spotify">
                         <a
@@ -126,6 +117,7 @@ export default function Socials() {
                         </a>
                     </Tooltip.Wrapper>
                 </motion.li>
+
                 <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                     <Tooltip.Wrapper content="Discord">
                         <button
