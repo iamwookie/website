@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
 @theme {
-    --color-twitch: #6441a5;
     --color-spotify: #1ed760;
     --color-discord: #7289da;
 }
