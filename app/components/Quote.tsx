@@ -16,7 +16,7 @@ function nextTimestamp(): number {
     return Math.floor(next.getTime() / 1000);
 }
 
-async function getQuote(): Promise<QuoteData> {
+async function fetchQuote(): Promise<QuoteData> {
     let quote: QuoteData | null = await redis.get<QuoteData>('quote:active');
     if (quote) return quote;
 
@@ -27,7 +27,7 @@ async function getQuote(): Promise<QuoteData> {
 }
 
 export default async function Quote() {
-    const quote: QuoteData = await getQuote();
+    const quote: QuoteData = await fetchQuote();
 
     return (
         <div className="flex flex-col gap-2 px-4">
