@@ -1,0 +1,38 @@
+import { redis } from '@lib/redis';
+
+import quotes from '../data/quotes.json';
+
+type QuoteData = {
+    content: string;
+    author: string;
+};
+
+function nextTimestamp(): number {
+    const now = new Date();
+
+    const next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 9, 0, 0, 0));
+    if (now >= next) next.setUTCDate(next.getUTCDate() + 1);
+
+    return Math.floor(next.getTime() / 1000);
+}
+
+async function getQuote(): Promise<QuoteData> {
+    let quote: QuoteData | null = await redis.get<QuoteData>('quote:active');
+    if (quote) return quote;
+
+    quote = quotes[Math.floor(Math.random() * quotes.length)];
+    await redis.set('quote:active', quote, { exat: nextTimestamp() });
+
+    return quote;
+}
+
+export default async function Quote() {
+    const quote: QuoteData = await getQuote();
+
+    return (
+        <div className="flex flex-col gap-2 px-4">
+            <h1 className="text-center text-xl sm:text-2xl md:text-3xl">{quote.content}</h1>
+            <p className="text-center text-xs opacity-50 sm:text-sm md:text-base">{quote.author}</p>
+        </div>
+    );
+}

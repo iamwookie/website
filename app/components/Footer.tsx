@@ -2,7 +2,6 @@ import * as motion from 'motion/react-client'; // motion import for server compo
 
 import PKFlag from '@public/assets/pk_flag.svg';
 import PSFlag from '@public/assets/ps_flag.svg';
-import type { SpotifyData } from 'types';
 
 import Spotify from './Spotify';
 
