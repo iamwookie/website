@@ -1,9 +1,3 @@
-<h1 align="center">
-    <a href="https://bil.al">
-        My Website
-    </a>
-</h1>
-
 <p align="center">
     <a href="https://github.com/iamwookie/website/blob/main/LICENSE">
         <img alt="License" src="https://img.shields.io/github/license/iamwookie/website" />
