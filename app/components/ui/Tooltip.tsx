@@ -1,7 +1,9 @@
-import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip';
-import * as motion from 'motion/react-client'; // motion import for server components
+'use client';
 
-const MotionPopup = motion.create(BaseTooltip.Popup);
+import { motion } from 'motion/react';
+import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip';
+
+const MotionPopup = motion(BaseTooltip.Popup);
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
     return <BaseTooltip.Provider delay={0}>{children}</BaseTooltip.Provider>;

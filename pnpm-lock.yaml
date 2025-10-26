@@ -12,8 +12,8 @@ importers:
     .:
         dependencies:
             '@base-ui-components/react':
-                specifier: 1.0.0-beta.1
-                version: 1.0.0-beta.1(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+                specifier: 1.0.0-beta.4
+                version: 1.0.0-beta.4(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
             '@next/bundle-analyzer':
                 specifier: 15.5.4
                 version: 15.5.4
@@ -63,8 +63,8 @@ importers:
                 specifier: ^2.32.0
                 version: 2.32.0(@typescript-eslint/parser@8.45.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.37.0(jiti@2.6.1))
             motion:
-                specifier: 11.18.2
-                version: 11.18.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+                specifier: 12.23.24
+                version: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
             next:
                 specifier: 15.5.4
                 version: 15.5.4(@babel/core@7.28.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -665,9 +665,19 @@ packages:
         resolution: { integrity: sha512-bkFqkLhh3pMBUQQkpVgWDWq/lqzc2678eUyDlTBhRqhCHFguYYGM0Efga7tYk4TogG/3x0EEl66/OQ+WGbWB/Q== }
         engines: { node: '>=6.9.0' }
 
-    '@base-ui-components/react@1.0.0-beta.1':
-        resolution: { integrity: sha512-7zmGiz4/+HKnv99lWftItoSMqnj2PdSvt2krh0/GP+Rj0xK0NMnFI/gIVvP7CB2G+k0JPUrRWXjXa3y08oiakg== }
+    '@base-ui-components/react@1.0.0-beta.4':
+        resolution: { integrity: sha512-sPYKj26gbFHD2ZsrMYqQshXnMuomBodzPn+d0dDxWieTj232XCQ9QGt9fU9l5SDGC9hi8s24lDlg9FXPSI7T8A== }
         engines: { node: '>=14.0.0' }
+        peerDependencies:
+            '@types/react': 19.2.0
+            react: ^17 || ^18 || ^19
+            react-dom: ^17 || ^18 || ^19
+        peerDependenciesMeta:
+            '@types/react':
+                optional: true
+
+    '@base-ui-components/utils@0.1.2':
+        resolution: { integrity: sha512-aEitDGpMsYO2qnSpYOwZNykn9Rzn2ioyEVk2fyDRH7t+TIHVKpp9CeV7SPTq43M9mMSDxQ+7UeZJVkrj2dCVIQ== }
         peerDependencies:
             '@types/react': 19.2.0
             react: ^17 || ^18 || ^19
@@ -2042,8 +2052,8 @@ packages:
         resolution: { integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg== }
         engines: { node: '>= 0.4' }
 
-    framer-motion@11.18.2:
-        resolution: { integrity: sha512-5F5Och7wrvtLVElIpclDT0CBzMVg3dL22B64aZwHtsIY8RB4mXICLrkajK4G9R+ieSAGcgrLeae2SeUTg2pr6w== }
+    framer-motion@12.23.24:
+        resolution: { integrity: sha512-HMi5HRoRCTou+3fb3h9oTLyJGBxHfW+HnNE25tAXOvVx/IvwMHK0cx7IR4a2ZU6sh3IX1Z+4ts32PcYBOqka8w== }
         peerDependencies:
             '@emotion/is-prop-valid': '*'
             react: ^18.0.0 || ^19.0.0
@@ -2479,14 +2489,14 @@ packages:
         resolution: { integrity: sha512-KZxYo1BUkWD2TVFLr0MQoM8vUUigWD3LlD83a/75BqC+4qE0Hb1Vo5v1FgcfaNXvfXzr+5EhQ6ing/CaBijTlw== }
         engines: { node: '>= 18' }
 
-    motion-dom@11.18.1:
-        resolution: { integrity: sha512-g76KvA001z+atjfxczdRtw/RXOM3OMSdd1f4DL77qCTF/+avrRJiawSG4yDibEQ215sr9kpinSlX2pCTJ9zbhw== }
+    motion-dom@12.23.23:
+        resolution: { integrity: sha512-n5yolOs0TQQBRUFImrRfs/+6X4p3Q4n1dUEqt/H58Vx7OW6RF+foWEgmTVDhIWJIMXOuNNL0apKH2S16en9eiA== }
 
-    motion-utils@11.18.1:
-        resolution: { integrity: sha512-49Kt+HKjtbJKLtgO/LKj9Ld+6vw9BjH5d9sc40R/kVyH8GLAXgT42M2NnuPcJNuA3s9ZfZBUcwIgpmZWGEE+hA== }
+    motion-utils@12.23.6:
+        resolution: { integrity: sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ== }
 
-    motion@11.18.2:
-        resolution: { integrity: sha512-JLjvFDuFr42NFtcVoMAyC2sEjnpA8xpy6qWPyzQvCloznAyQ8FIXioxWfHiLtgYhoVpfUqSWpn1h9++skj9+Wg== }
+    motion@12.23.24:
+        resolution: { integrity: sha512-Rc5E7oe2YZ72N//S3QXGzbnXgqNrTESv8KKxABR20q2FLch9gHLo0JLyYo2hZ238bZ9Gx6cWhj9VO0IgwbMjCw== }
         peerDependencies:
             '@emotion/is-prop-valid': '*'
             react: ^18.0.0 || ^19.0.0
@@ -3856,15 +3866,27 @@ snapshots:
             '@babel/helper-string-parser': 7.27.1
             '@babel/helper-validator-identifier': 7.27.1
 
-    '@base-ui-components/react@1.0.0-beta.1(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+    '@base-ui-components/react@1.0.0-beta.4(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
         dependencies:
             '@babel/runtime': 7.28.4
+            '@base-ui-components/utils': 0.1.2(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
             '@floating-ui/react-dom': 2.1.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
             '@floating-ui/utils': 0.2.10
             react: 19.2.0
             react-dom: 19.2.0(react@19.2.0)
             reselect: 5.1.1
             tabbable: 6.2.0
+            use-sync-external-store: 1.6.0(react@19.2.0)
+        optionalDependencies:
+            '@types/react': 19.2.0
+
+    '@base-ui-components/utils@0.1.2(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+        dependencies:
+            '@babel/runtime': 7.28.4
+            '@floating-ui/utils': 0.2.10
+            react: 19.2.0
+            react-dom: 19.2.0(react@19.2.0)
+            reselect: 5.1.1
             use-sync-external-store: 1.6.0(react@19.2.0)
         optionalDependencies:
             '@types/react': 19.2.0
@@ -5300,10 +5322,10 @@ snapshots:
         dependencies:
             is-callable: 1.2.7
 
-    framer-motion@11.18.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    framer-motion@12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
         dependencies:
-            motion-dom: 11.18.1
-            motion-utils: 11.18.1
+            motion-dom: 12.23.23
+            motion-utils: 12.23.6
             tslib: 2.8.1
         optionalDependencies:
             react: 19.2.0
@@ -5703,15 +5725,15 @@ snapshots:
         dependencies:
             minipass: 7.1.2
 
-    motion-dom@11.18.1:
+    motion-dom@12.23.23:
         dependencies:
-            motion-utils: 11.18.1
+            motion-utils: 12.23.6
 
-    motion-utils@11.18.1: {}
+    motion-utils@12.23.6: {}
 
-    motion@11.18.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    motion@12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
         dependencies:
-            framer-motion: 11.18.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+            framer-motion: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
             tslib: 2.8.1
         optionalDependencies:
             react: 19.2.0
