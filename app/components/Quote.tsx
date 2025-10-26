@@ -1,7 +1,5 @@
 import { redis } from '@lib/redis';
 
-import quotes from '../data/quotes.json';
-
 type QuoteData = {
     content: string;
     author: string;
@@ -17,17 +15,27 @@ function nextTimestamp(): number {
 }
 
 async function fetchQuote(): Promise<QuoteData> {
-    let quote: QuoteData | null = await redis.get<QuoteData>('quote:active');
+    let quote = await redis.get<QuoteData>('quote:active');
     if (quote) return quote;
 
-    quote = quotes[Math.floor(Math.random() * quotes.length)];
+    const list = await redis.get<QuoteData[]>('quote:list');
+
+    if (list) {
+        quote = list[Math.floor(Math.random() * list.length)];
+    } else {
+        quote = {
+            content: 'If you see this, life must be pretty good for you.',
+            author: 'Bilal Baig',
+        };
+    }
+
     await redis.set('quote:active', quote, { exat: nextTimestamp() });
 
     return quote;
 }
 
 export default async function Quote() {
-    const quote: QuoteData = await fetchQuote();
+    const quote = await fetchQuote();
 
     return (
         <div className="flex flex-col gap-2 px-4">

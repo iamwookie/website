@@ -13,7 +13,7 @@
         "update-deps": "pnpm up --latest motion"
     },
     "dependencies": {
-        "@base-ui-components/react": "1.0.0-beta.1",
+        "@base-ui-components/react": "1.0.0-beta.4",
         "@next/bundle-analyzer": "15.5.4",
         "@plaiceholder/next": "^3.0.0",
         "@svgr/webpack": "^8.1.0",
@@ -30,7 +30,7 @@
         "eslint": "^9.37.0",
         "eslint-config-next": "15.5.4",
         "eslint-plugin-import": "^2.32.0",
-        "motion": "11.18.2",
+        "motion": "12.23.24",
         "next": "15.5.4",
         "plaiceholder": "^3.0.0",
         "postcss": "^8.5.6",
