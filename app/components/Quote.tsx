@@ -19,9 +19,10 @@ async function fetchQuote(): Promise<QuoteData> {
     if (quote) return quote;
 
     const list = await redis.get<QuoteData[]>('quote:list');
+    const index = await redis.incr('quote:index');
 
     if (list) {
-        quote = list[Math.floor(Math.random() * list.length)];
+        quote = list[index % list.length];
     } else {
         quote = {
             content: 'If you see this, life must be pretty good for you.',
