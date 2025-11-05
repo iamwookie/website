@@ -1,5 +1,7 @@
 import { redis } from '@lib/redis';
 
+import * as Tooltip from '@components/ui/Tooltip';
+
 type QuoteData = {
     content: string;
     author: string;
@@ -38,10 +40,27 @@ async function fetchQuote(): Promise<QuoteData> {
 export default async function Quote() {
     const quote = await fetchQuote();
 
+    const diff = nextTimestamp() - Math.floor(Date.now() / 1000);
+    const hours = Math.floor(diff / 3600);
+    const minutes = Math.floor((diff % 3600) / 60);
+
+    const plural = (num: number, word: string) => `${num} ${word}${num == 1 ? '' : 's'}`;
+
+    const countdown =
+        diff < 60
+            ? 'Updates in less than a minute'
+            : hours > 0
+              ? `Updates in ${plural(hours, 'hour')} & ${plural(minutes, 'minute')}`
+              : `Updates in ${plural(minutes, 'minute')}`;
+
     return (
-        <div className="flex flex-col gap-2 px-4">
-            <h1 className="text-center text-xl sm:text-2xl md:text-3xl">{quote.content}</h1>
-            <p className="text-center text-xs opacity-50 sm:text-sm md:text-base">{quote.author}</p>
-        </div>
+        <Tooltip.Provider>
+            <div className="flex flex-col gap-2 px-4">
+                <Tooltip.Wrapper content={countdown}>
+                    <h1 className="text-center text-xl sm:text-2xl md:text-3xl">{quote.content}</h1>
+                    <p className="text-center text-xs opacity-50 sm:text-sm md:text-base">{quote.author}</p>
+                </Tooltip.Wrapper>
+            </div>
+        </Tooltip.Provider>
     );
 }
