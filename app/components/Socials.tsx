@@ -12,10 +12,7 @@ import LetterboxdIcon from '@public/assets/icons/letterboxd.svg';
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
 import DiscordIcon from '@public/assets/icons/discord.svg';
 
-import * as Tooltip from './ui/Tooltip';
-
 // animation time: ~1.6s
-// todo: find new tooltip solution
 
 export default function Socials() {
     const toastManager = Toast.useToastManager();
@@ -41,95 +38,69 @@ export default function Socials() {
     };
 
     return (
-        <Tooltip.Provider>
-            <motion.ul
-                variants={listVariants}
-                initial="initial"
-                animate="animate"
-                className="flex w-fit flex-wrap items-center justify-center gap-4"
-            >
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
-                    <Tooltip.Wrapper content="LinkedIn">
-                        <a
-                            href={data.linkedin}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            aria-label="LinkedIn Link"
-                            className="h-9 w-9 md:h-7 md:w-7"
-                        >
-                            <LinkedInIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
+        <motion.ul
+            variants={listVariants}
+            initial="initial"
+            animate="animate"
+            className="flex w-fit flex-wrap items-center justify-center gap-4"
+        >
+            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+                <a
+                    href={data.linkedin}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="LinkedIn Link"
+                    className="h-9 w-9 md:h-7 md:w-7"
+                >
+                    <LinkedInIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                </a>
+            </motion.li>
 
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
-                    <Tooltip.Wrapper content="GitHub">
-                        <a
-                            href={data.github}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            aria-label="GitHub Link"
-                            className="h-9 w-9 md:h-7 md:w-7"
-                        >
-                            <GitHubIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
+            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+                <a href={data.github} target="_blank" rel="noreferrer noopener" aria-label="GitHub Link" className="h-9 w-9 md:h-7 md:w-7">
+                    <GitHubIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                </a>
+            </motion.li>
 
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
-                    <Tooltip.Wrapper content="Steam">
-                        <a
-                            href={data.steam}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            aria-label="Steam Link"
-                            className="h-9 w-9 md:h-7 md:w-7"
-                        >
-                            <SteamIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
+            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+                <a href={data.steam} target="_blank" rel="noreferrer noopener" aria-label="Steam Link" className="h-9 w-9 md:h-7 md:w-7">
+                    <SteamIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                </a>
+            </motion.li>
 
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
-                    <Tooltip.Wrapper content="Letterboxd">
-                        <a
-                            href={data.letterboxd}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="h-9 w-9 md:h-7 md:w-7"
-                            aria-label="Letterboxd Link"
-                        >
-                            <LetterboxdIcon className="h-9 w-9 md:h-7 md:w-7" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
+            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+                <a
+                    href={data.letterboxd}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="h-9 w-9 md:h-7 md:w-7"
+                    aria-label="Letterboxd Link"
+                >
+                    <LetterboxdIcon className="h-9 w-9 md:h-7 md:w-7" />
+                </a>
+            </motion.li>
 
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
-                    <Tooltip.Wrapper content="Spotify">
-                        <a
-                            href={data.spotify}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="text-spotify h-9 w-9 md:h-7 md:w-7"
-                            aria-label="Spotify Link"
-                        >
-                            <SpotifyIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
-                        </a>
-                    </Tooltip.Wrapper>
-                </motion.li>
+            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+                <a
+                    href={data.spotify}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-spotify h-9 w-9 md:h-7 md:w-7"
+                    aria-label="Spotify Link"
+                >
+                    <SpotifyIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                </a>
+            </motion.li>
 
-                <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
-                    <Tooltip.Wrapper content="Discord">
-                        <button
-                            onClick={copyDiscord}
-                            className="text-discord flex h-11 w-11 items-center justify-center md:h-9 md:w-9"
-                            aria-label="Copy Discord Tag"
-                        >
-                            <DiscordIcon className="h-11 w-11 md:h-9 md:w-9" fill="currentColor" />
-                        </button>
-                    </Tooltip.Wrapper>
-                </motion.li>
-            </motion.ul>
-        </Tooltip.Provider>
+            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+                <button
+                    onClick={copyDiscord}
+                    className="text-discord flex h-11 w-11 items-center justify-center md:h-9 md:w-9"
+                    aria-label="Copy Discord Tag"
+                >
+                    <DiscordIcon className="h-11 w-11 md:h-9 md:w-9" fill="currentColor" />
+                </button>
+            </motion.li>
+        </motion.ul>
     );
 }

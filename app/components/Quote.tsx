@@ -55,12 +55,12 @@ export default async function Quote() {
 
     return (
         <Tooltip.Provider>
-            <div className="flex flex-col gap-2 px-4">
-                <Tooltip.Wrapper content={countdown}>
+            <Tooltip.Wrapper content={countdown}>
+                <div className="flex flex-col gap-2 px-4">
                     <h1 className="text-center text-xl sm:text-2xl md:text-3xl">{quote.content}</h1>
                     <p className="text-center text-xs opacity-50 sm:text-sm md:text-base">{quote.author}</p>
-                </Tooltip.Wrapper>
-            </div>
+                </div>
+            </Tooltip.Wrapper>
         </Tooltip.Provider>
     );
 }
