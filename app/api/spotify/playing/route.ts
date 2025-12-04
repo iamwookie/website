@@ -1,4 +1,4 @@
-import { rateLimiter } from '@api/middlewares/limiter.middleware';
+import { rateLimiter } from '@api/middleware/limiter.middleware';
 import Spotify from '@lib/spotify';
 
 export const revalidate = 0;

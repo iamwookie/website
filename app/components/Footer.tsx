@@ -1,3 +1,5 @@
+import type { SpotifyData } from 'types';
+
 import * as motion from 'motion/react-client'; // motion import for server components
 
 import PKFlag from '@public/assets/pk_flag.svg';
@@ -6,9 +8,12 @@ import PSFlag from '@public/assets/ps_flag.svg';
 import Spotify from './Spotify';
 
 export default async function Footer() {
+    const res = await fetch(`${process.env.APP_URL}/api/spotify/playing`);
+    const data: SpotifyData | null = await res.json();
+
     return (
         <footer className="fixed bottom-0 flex w-full flex-col px-4 md:px-0">
-            <Spotify />
+            <Spotify initial={data} />
 
             <motion.div
                 initial={{ opacity: 0, y: 10 }}

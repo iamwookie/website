@@ -23,7 +23,7 @@ const nextConfig = {
     async headers() {
         return [
             {
-                source: '/api/:path*',
+                source: '/api/spotify/:path*',
                 headers: [
                     {
                         key: 'Access-Control-Allow-Origin',
@@ -39,22 +39,9 @@ const nextConfig = {
                     },
                 ],
             },
-            {
-                source: '/api/avgeek/:path*',
-                headers: [
-                    {
-                        key: 'Access-Control-Allow-Origin',
-                        value: 'https://' + process.env.AVGEEK_HOSTNAME,
-                    },
-                    {
-                        key: 'Access-Control-Allow-Methods',
-                        value: 'POST, OPTIONS',
-                    },
-                ],
-            },
         ];
     },
-    // webpack config
+    // svgr webpack config
     webpack(config) {
         // Grab the existing rule that handles SVG imports
         const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
@@ -80,7 +67,6 @@ const nextConfig = {
 
         return config;
     },
-    // turbo config
     turbopack: {
         rules: {
             '*.svg': {
