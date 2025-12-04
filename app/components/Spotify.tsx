@@ -10,6 +10,8 @@ import type { SpotifyData } from 'types';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
+// animation time: ~ 2.8s (first load), ~0.8s (subsequent updates)
+
 export default function Spotify({ initial }: { initial: SpotifyData | null }) {
     const [loaded, setLoaded] = useState(false);
 
@@ -25,13 +27,9 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
 
     return (
         <motion.a
-            // motion props
             layout
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0, transition: { delay } }}
             whileHover={{ opacity: 0.5, scale: 1.05 }}
             whileTap={{ opacity: 0.5, scale: 0.95 }}
-            // element props
             href={data.url}
             target="_blank"
             rel="noreferrer noopener"
@@ -71,6 +69,7 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: delay + 0.4, duration: 0.4 }}
+                            onAnimationComplete={() => setLoaded(true)}
                             // element props
                             className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
                         >
@@ -81,13 +80,10 @@ export default function Spotify({ initial }: { initial: SpotifyData | null }) {
 
                 {/* Track details */}
                 <motion.div
-                    // motion props
                     key={`${data.name}-${data.artists}`} // dual key ensures re-render only when both name and artists change
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: delay + 0.4, duration: 0.2 }}
-                    onAnimationComplete={() => setLoaded(true)}
-                    // element props
                     className="flex flex-col justify-center gap-1"
                 >
                     <h3 className="text-xs font-semibold text-green-400">Now Playing</h3>
