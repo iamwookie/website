@@ -10,12 +10,13 @@ import type { SpotifyData } from 'types';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export default function Spotify() {
+export default function Spotify({ initial }: { initial: SpotifyData | null }) {
     const [loaded, setLoaded] = useState(false);
 
     const { data, error } = useSWR<SpotifyData | null>('/api/spotify/playing', fetcher, {
         revalidateOnFocus: false,
         refreshInterval: 5_000,
+        fallbackData: initial,
     });
 
     if (!data || error) return null;
