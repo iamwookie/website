@@ -12,7 +12,7 @@ import LetterboxdIcon from '@public/assets/icons/letterboxd.svg';
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
 import DiscordIcon from '@public/assets/icons/discord.svg';
 
-// animation time: ~1.6s
+// animation time: ~1.6s (initial load)
 
 export default function Socials() {
     const toastManager = Toast.useToastManager();

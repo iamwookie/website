@@ -12,7 +12,7 @@ const letters = [
     { id: 5, content: 'l' },
 ];
 
-// animation time: ~2s
+// animation time: ~2s (initial load)
 
 export default function Title() {
     const [items, setItems] = useState(letters);

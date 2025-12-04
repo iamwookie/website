@@ -16,20 +16,34 @@ export default function Echoes() {
     const [echoes, setEchoes] = useState<Echo[]>([]);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setEchoes((prev) => {
-                const next: Echo = {
-                    id: Date.now() + Math.random(),
-                    x: Math.random() * window.innerWidth,
-                    y: Math.random() * window.innerHeight,
-                    content: TEXT[Math.floor(Math.random() * TEXT.length)],
-                };
+        let acc = 0;
+        let last = performance.now();
+        let raf: number;
 
-                return prev.length >= 20 ? [...prev.slice(1), next] : [...prev, next];
-            });
-        }, 200);
+        function tick(now: number) {
+            acc += now - last;
+            last = now;
 
-        return () => clearInterval(interval);
+            if (acc >= 200) {
+                acc = 0;
+
+                setEchoes((prev) => {
+                    const next: Echo = {
+                        id: Date.now() + Math.random(),
+                        x: Math.random() * window.innerWidth,
+                        y: Math.random() * window.innerHeight,
+                        content: TEXT[Math.floor(Math.random() * TEXT.length)],
+                    };
+
+                    return prev.length >= 20 ? [...prev.slice(1), next] : [...prev, next];
+                });
+            }
+
+            raf = requestAnimationFrame(tick);
+        }
+
+        raf = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(raf);
     }, []);
 
     return (
