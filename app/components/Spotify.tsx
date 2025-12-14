@@ -12,13 +12,12 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 // animation time: ~ 2.8s (first load), ~0.8s (subsequent updates)
 
-export default function Spotify({ initial }: { initial: SpotifyData | null }) {
+export default function Spotify() {
     const [loaded, setLoaded] = useState(false);
 
     const { data, error } = useSWR<SpotifyData | null>('/api/spotify/playing', fetcher, {
         revalidateOnFocus: false,
         refreshInterval: 5_000,
-        fallbackData: initial,
     });
 
     if (!data || error) return null;
