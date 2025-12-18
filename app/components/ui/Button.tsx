@@ -9,9 +9,9 @@ export default function Button({ content }: { content?: string }) {
     return (
         <motion.div
             variants={variants}
+            transition={{ duration: 0.2 }}
             whileHover="hover"
             whileTap="tap"
-            transition={{ duration: 0.2 }}
             className="rounded-lg border border-white/20 px-2 text-sm select-none"
         >
             {content}
