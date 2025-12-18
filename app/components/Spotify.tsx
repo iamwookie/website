@@ -10,7 +10,7 @@ import type { SpotifyData } from 'types';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-// animation time: ~ 2.8s (first load), ~0.8s (subsequent updates)
+// animation time: ~ 2.6s (first load), ~0.8s (subsequent updates)
 
 export default function Spotify() {
     const [loaded, setLoaded] = useState(false);
@@ -22,7 +22,7 @@ export default function Spotify() {
 
     if (!data || error) return null;
 
-    const delay = loaded ? 0 : 2; // base delay for animations
+    const delay = loaded ? 0.2 : 2; // base delay for animations
 
     return (
         <motion.a
@@ -49,7 +49,7 @@ export default function Spotify() {
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: delay + 0.2, duration: 0.4 }}
+                                transition={{ delay, duration: 0.4 }}
                             >
                                 <Image
                                     src={data.image}
@@ -67,7 +67,7 @@ export default function Spotify() {
                             // motion props
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: delay + 0.4, duration: 0.4 }}
+                            transition={{ delay: delay + 0.2, duration: 0.4 }}
                             onAnimationComplete={() => setLoaded(true)}
                             // element props
                             className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
@@ -82,7 +82,7 @@ export default function Spotify() {
                     key={`${data.name}-${data.artists}`} // dual key ensures re-render only when both name and artists change
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: delay + 0.4, duration: 0.2 }}
+                    transition={{ delay: delay + 0.2, duration: 0.2 }}
                     className="flex flex-col justify-center gap-1"
                 >
                     <h3 className="text-xs font-semibold text-green-400">Now Playing</h3>
