@@ -21,8 +21,8 @@ export default function Socials() {
         navigator.clipboard.writeText(data.discord);
 
         toastManager.add({
-            title: 'copied',
-            description: 'username has been copied.',
+            title: 'Copied!',
+            description: 'Username has been copied to your clipboard.',
             type: 'success',
         });
     };
