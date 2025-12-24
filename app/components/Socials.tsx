@@ -4,13 +4,12 @@ import { Toast } from '@base-ui-components/react/toast';
 import { motion } from 'motion/react';
 
 import data from '@data/social.json';
-
-import LinkedInIcon from '@public/assets/icons/linkedin.svg';
-import GitHubIcon from '@public/assets/icons/github.svg';
-import SteamIcon from '@public/assets/icons/steam.svg';
-import LetterboxdIcon from '@public/assets/icons/letterboxd.svg';
-import SpotifyIcon from '@public/assets/icons/spotify.svg';
 import DiscordIcon from '@public/assets/icons/discord.svg';
+import GitHubIcon from '@public/assets/icons/github.svg';
+import LetterboxdIcon from '@public/assets/icons/letterboxd.svg';
+import LinkedInIcon from '@public/assets/icons/linkedin.svg';
+import SpotifyIcon from '@public/assets/icons/spotify.svg';
+import SteamIcon from '@public/assets/icons/steam.svg';
 
 // animation time: ~1.6s (initial load)
 

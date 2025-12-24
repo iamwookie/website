@@ -1,8 +1,6 @@
-import { redis } from '@lib/redis';
-
 import type { ThoughtData } from '@/types';
-
 import * as Tooltip from '@components/ui/Tooltip';
+import { redis } from '@lib/redis';
 
 const R_THOUGHTS_ACTIVE = 'web:thoughts:active';
 const R_THOUGHTS_APPROVED = 'web:thoughts:approved';
@@ -48,7 +46,7 @@ async function fetchThought(): Promise<ThoughtData> {
 export default async function Thought() {
     const thought = await fetchThought();
 
-    const diff = nextTimestamp() - Math.floor(Date.now() / 1000);
+    const diff = nextTimestamp() - Math.floor(Date.now() / 1000); // future: fix for Date.now() impure call
     const hours = Math.floor(diff / 3600);
     const minutes = Math.floor((diff % 3600) / 60);
 

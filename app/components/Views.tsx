@@ -1,6 +1,6 @@
 import { headers } from 'next/headers';
-import { redis } from '@lib/redis';
 
+import { redis } from '@lib/redis';
 import EyeIcon from '@public/assets/ui/eye-regular.svg';
 
 const crawlers = ['bot', 'crawl', 'spider', 'vercel', 'google', 'facebook', 'slurp', 'bing', 'discord', 'slack'];

@@ -1,9 +1,9 @@
 'use server';
 
-import type { ThoughtData } from '@/types';
-
-import { z } from 'zod';
 import { headers } from 'next/headers';
+import { z } from 'zod';
+
+import type { ThoughtData } from '@/types';
 import { thoughtLimiter } from '@lib/limiter';
 import { redis } from '@lib/redis';
 
