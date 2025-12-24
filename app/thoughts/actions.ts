@@ -7,9 +7,23 @@ import type { ThoughtData } from '@/types';
 import { thoughtLimiter } from '@lib/limiter';
 import { redis } from '@lib/redis';
 
+function sanitise(v: string): string {
+    return v
+        .replace(/[\r\n]+/g, ' ') // remove ALL newlines (CR, LF)
+        .replace(/\s+/g, ' ') // collapse any whitespace to single space
+        .trim();
+}
+
 const schema = z.object({
-    thought: z.string().min(8, 'Be more thoughtful (at least 8 characters)').max(256, 'Keep it concise (max 256 characters)'),
-    author: z.string().max(128, "I don't need your autobiography (max 128 characters)"),
+    thought: z
+        .string()
+        .transform((v) => sanitise(v))
+        .pipe(z.string().min(8, 'Be more thoughtful (at least 8 characters)').max(256, 'Keep it concise (max 256 characters)')),
+    author: z
+        .string()
+        .transform((v) => sanitise(v))
+        .transform((v) => (v == '' ? undefined : v))
+        .pipe(z.string().max(128, "I don't need your autobiography (max 128 characters)").optional()),
 });
 
 export type FormState = {
@@ -48,6 +62,8 @@ export async function createThought(_: FormState, formData: FormData): Promise<F
     if (!success) return { errors: { errors: ['You are submitting too many thoughts.'] } };
 
     const { thought, author } = validated.data;
+
+    console.log(author);
 
     try {
         await redis.lpush<ThoughtData>('web:thoughts:pending', { content: thought, author, timestamp: Date.now() });

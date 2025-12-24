@@ -26,6 +26,6 @@ export type SpotifyData = {
 
 export type ThoughtData = {
     content: string;
-    author: string;
+    author?: string;
     timestamp: number;
 };
