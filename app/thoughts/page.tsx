@@ -1,4 +1,15 @@
+import type { Metadata } from 'next';
+
 import ThoughtForm from '@components/ui/ThoughtForm';
+
+export const metadata: Metadata = {
+    title: 'Thoughts',
+    description: 'Share a thought with me.',
+    openGraph: {
+        title: 'Thoughts',
+        description: 'Share a thought with me.',
+    },
+};
 
 export default function Thoughts() {
     return (
