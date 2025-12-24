@@ -51,19 +51,19 @@ export default function Socials() {
                     aria-label="LinkedIn Link"
                     className="h-9 w-9 md:h-7 md:w-7"
                 >
-                    <LinkedInIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                    <LinkedInIcon fill="currentColor" className="h-9 w-9 md:h-7 md:w-7" />
                 </a>
             </motion.li>
 
             <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                 <a href={data.github} target="_blank" rel="noreferrer noopener" aria-label="GitHub Link" className="h-9 w-9 md:h-7 md:w-7">
-                    <GitHubIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                    <GitHubIcon fill="currentColor" className="h-9 w-9 md:h-7 md:w-7" />
                 </a>
             </motion.li>
 
             <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                 <a href={data.steam} target="_blank" rel="noreferrer noopener" aria-label="Steam Link" className="h-9 w-9 md:h-7 md:w-7">
-                    <SteamIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                    <SteamIcon fill="currentColor" className="h-9 w-9 md:h-7 md:w-7" />
                 </a>
             </motion.li>
 
@@ -72,8 +72,8 @@ export default function Socials() {
                     href={data.letterboxd}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="h-9 w-9 md:h-7 md:w-7"
                     aria-label="Letterboxd Link"
+                    className="h-9 w-9 md:h-7 md:w-7"
                 >
                     <LetterboxdIcon className="h-9 w-9 md:h-7 md:w-7" />
                 </a>
@@ -84,20 +84,20 @@ export default function Socials() {
                     href={data.spotify}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="text-spotify h-9 w-9 md:h-7 md:w-7"
                     aria-label="Spotify Link"
+                    className="text-spotify h-9 w-9 md:h-7 md:w-7"
                 >
-                    <SpotifyIcon className="h-9 w-9 md:h-7 md:w-7" fill="currentColor" />
+                    <SpotifyIcon fill="currentColor" className="h-9 w-9 md:h-7 md:w-7" />
                 </a>
             </motion.li>
 
             <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                 <button
                     onClick={copyDiscord}
-                    className="text-discord flex h-11 w-11 items-center justify-center md:h-9 md:w-9"
                     aria-label="Copy Discord Tag"
+                    className="text-discord flex h-11 w-11 items-center justify-center md:h-9 md:w-9"
                 >
-                    <DiscordIcon className="h-11 w-11 md:h-9 md:w-9" fill="currentColor" />
+                    <DiscordIcon fill="currentColor" className="h-11 w-11 md:h-9 md:w-9" />
                 </button>
             </motion.li>
         </motion.ul>

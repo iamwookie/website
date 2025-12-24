@@ -17,11 +17,11 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <main className="flex flex-col">
-            <section className="container mx-auto flex min-h-dvh flex-col items-center justify-center gap-4">
+            <section className="container mx-auto flex min-h-dvh flex-col items-center justify-center gap-4 px-4">
                 <Thought />
                 <Socials />
 
-                <a href="mailto:mail@bil.al">
+                <a href="mailto:mail@bil.al" aria-label="Contact via Email">
                     <Button>Contact</Button>
                 </a>
 

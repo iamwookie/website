@@ -23,7 +23,7 @@ const schema = z.object({
         .string()
         .transform((v) => sanitise(v))
         .transform((v) => (v == '' ? undefined : v))
-        .pipe(z.string().max(128, "I don't need your autobiography (max 128 characters)").optional()),
+        .pipe(z.string().max(32, "I don't need your autobiography (max 32 characters)").optional()),
 });
 
 export type FormState = {
@@ -63,10 +63,8 @@ export async function createThought(_: FormState, formData: FormData): Promise<F
 
     const { thought, author } = validated.data;
 
-    console.log(author);
-
     try {
-        await redis.lpush<ThoughtData>('web:thoughts:pending', { content: thought, author, timestamp: Date.now() });
+        await redis.rpush<ThoughtData>('web:thoughts:pending', { content: thought, author, timestamp: Date.now() });
     } catch (error) {
         return { errors: { errors: ['Well something definitely broke... try again later?'] } };
     }

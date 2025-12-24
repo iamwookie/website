@@ -1,7 +1,10 @@
 'use client';
 
 import { AnimatePresence, motion } from 'motion/react';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
+
+const MotionLink = motion.create(Link);
 
 const letters = [
     { id: 0, content: 'b' },
@@ -22,16 +25,20 @@ export default function Title() {
     }, []);
 
     return (
-        <div className="flex items-center justify-center text-2xl">
-            <div className="flex">
-                <AnimatePresence>
-                    {items.map(({ id, content }) => (
-                        <motion.span key={id} layout exit={{ opacity: 0 }}>
-                            {content}
-                        </motion.span>
-                    ))}
-                </AnimatePresence>
-            </div>
-        </div>
+        <MotionLink
+            whileHover={{ opacity: 0.5 }}
+            whileTap={{ opacity: 0.5 }}
+            href="/"
+            aria-label="Home"
+            className="flex items-center justify-center text-2xl"
+        >
+            <AnimatePresence>
+                {items.map(({ id, content }) => (
+                    <motion.span key={id} layout exit={{ opacity: 0 }}>
+                        {content}
+                    </motion.span>
+                ))}
+            </AnimatePresence>
+        </MotionLink>
     );
 }
