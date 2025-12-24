@@ -21,7 +21,7 @@ export default function Home() {
                 <Thought />
                 <Socials />
 
-                <a href="mailto:mail@bil.al">
+                <a href="mailto:mail@bil.al" aria-label="Contact via Email">
                     <Button>Contact</Button>
                 </a>
 
