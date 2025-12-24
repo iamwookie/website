@@ -46,7 +46,8 @@ async function fetchThought(): Promise<ThoughtData> {
 export default async function Thought() {
     const thought = await fetchThought();
 
-    const diff = nextTimestamp() - Math.floor(Date.now() / 1000); // future: fix for Date.now() impure call
+    const now = new Date().getTime() / 1000; // watch: possible impure function here, might be eslint bug
+    const diff = nextTimestamp() - now;
     const hours = Math.floor(diff / 3600);
     const minutes = Math.floor((diff % 3600) / 60);
 
@@ -54,14 +55,14 @@ export default async function Thought() {
 
     const countdown =
         diff < 60
-            ? 'Updates in less than a minute'
+            ? 'User submitted thought. Updates in less than a minute'
             : hours > 0
-              ? `Updates in ${plural(hours, 'hour')} & ${plural(minutes, 'minute')}`
-              : `Updates in ${plural(minutes, 'minute')}`;
+              ? `User submitted thought. Updates in ${plural(hours, 'hour')} & ${plural(minutes, 'minute')}`
+              : `User submitted thought. Updates in ${plural(minutes, 'minute')}`;
 
     return (
         <Tooltip.Provider>
-            <Tooltip.Wrapper content={'User submitted thought. ' + countdown}>
+            <Tooltip.Wrapper content={countdown}>
                 <div className="flex flex-col gap-2 px-4">
                     <h1 className="text-center text-xl sm:text-2xl md:text-3xl">{thought.content}</h1>
                     <p className="text-center text-xs opacity-50 sm:text-sm md:text-base">{thought.author}</p>
