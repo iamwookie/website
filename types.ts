@@ -23,3 +23,9 @@ export type SpotifyData = {
     artists?: string;
     blurDataURL?: string;
 };
+
+export type ThoughtData = {
+    content: string;
+    author: string;
+    timestamp: number;
+};

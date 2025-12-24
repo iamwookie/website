@@ -9,6 +9,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "format": "prettier --write .",
         "update-next": "npx @next/codemod@latest upgrade latest",
         "update-deps": "pnpm up --latest motion"
     },
@@ -43,7 +44,8 @@
         "swr": "^2.3.7",
         "tailwind-merge": "^2.6.0",
         "tailwindcss": "^4.1.18",
-        "typescript": "^5.9.3"
+        "typescript": "^5.9.3",
+        "zod": "^4.2.1"
     },
     "pnpm": {
         "overrides": {
