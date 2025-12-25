@@ -29,6 +29,7 @@ export default function Spotify() {
             layout
             whileHover={{ opacity: 0.5, scale: 1.05 }}
             whileTap={{ opacity: 0.5, scale: 0.95 }}
+            onAnimationComplete={() => setLoaded(true)}
             href={data.url}
             target="_blank"
             rel="noreferrer noopener"
@@ -68,7 +69,6 @@ export default function Spotify() {
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: delay + 0.2, duration: 0.4 }}
-                            onAnimationComplete={() => setLoaded(true)}
                             // element props
                             className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
                         >

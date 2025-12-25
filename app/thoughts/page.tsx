@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import ThoughtForm from '@components/ui/ThoughtForm';
+import ThoughtForm from '@/app/components/thoughts/ThoughtForm';
 
 export const metadata: Metadata = {
     title: 'Thoughts',

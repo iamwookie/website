@@ -1,3 +1,5 @@
+import 'server-only';
+
 import qs from 'querystring';
 
 import { getPlaiceholder } from 'plaiceholder';
