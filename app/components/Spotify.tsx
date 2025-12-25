@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import useSWR from 'swr';
 
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
@@ -13,7 +13,8 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 // animation time: ~ 2.6s (first load), ~0.8s (subsequent updates)
 
 export default function Spotify() {
-    const [loaded, setLoaded] = useState(false);
+    const [delay, setDelay] = useState(2);
+    const loaded = useRef(false);
 
     const { data, error } = useSWR<SpotifyData | null>('/api/spotify/playing', fetcher, {
         revalidateOnFocus: false,
@@ -22,14 +23,11 @@ export default function Spotify() {
 
     if (!data || error) return null;
 
-    const delay = loaded ? 0.2 : 2; // base delay for animations
-
     return (
         <motion.a
             layout
             whileHover={{ opacity: 0.5, scale: 1.05 }}
             whileTap={{ opacity: 0.5, scale: 0.95 }}
-            onAnimationComplete={() => setLoaded(true)}
             href={data.url}
             target="_blank"
             rel="noreferrer noopener"
@@ -69,6 +67,12 @@ export default function Spotify() {
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: delay + 0.2, duration: 0.4 }}
+                            onAnimationComplete={() => {
+                                if (!loaded.current) {
+                                    loaded.current = true;
+                                    setDelay(0.2);
+                                }
+                            }}
                             // element props
                             className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
                         >
