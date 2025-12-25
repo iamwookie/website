@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import Thought from '@/app/components/Thought';
+import Thought from '@/app/components/thoughts/Thought';
 import Socials from '@components/Socials';
 import Button from '@components/ui/Button';
 import Views from '@components/Views';

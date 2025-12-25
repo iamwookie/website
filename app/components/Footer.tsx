@@ -13,7 +13,7 @@ export default async function Footer() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2, duration: 0.4 }}
-            className="fixed bottom-0 flex w-full flex-col px-4 md:px-0"
+            className="fixed bottom-0 flex w-full flex-col px-4"
         >
             <Spotify />
 

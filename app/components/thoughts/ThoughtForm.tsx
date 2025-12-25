@@ -1,7 +1,7 @@
 'use client';
 
 import { Toast } from '@base-ui-components/react/toast';
-import { useActionState, useRef, useEffect } from 'react';
+import { useActionState, useState, useRef, useEffect } from 'react';
 
 import { createThought } from '@/app/thoughts/actions';
 import Button from '@components/ui/Button';
@@ -10,6 +10,10 @@ import Button from '@components/ui/Button';
 
 export default function ThoughtForm() {
     const [state, formAction, pending] = useActionState(createThought, {}); // no initial state
+
+    const [thought, setThought] = useState('');
+    const [author, setAuthor] = useState('');
+
     const toastManager = Toast.useToastManager();
     const toastRef = useRef(toastManager);
 
@@ -49,6 +53,8 @@ export default function ThoughtForm() {
                     required
                     rows={3}
                     placeholder="What does your mind ponder?"
+                    value={thought}
+                    onChange={(e) => setThought(e.target.value)}
                     className="w-full rounded-lg border border-white/20 px-3 py-2 text-sm text-white placeholder-white/50 focus:ring-1 focus:ring-white/50 focus:outline-none"
                 />
                 <p className="text-xs text-red-500">{state.errors?.properties?.thought?.errors.join(' ')}</p>
@@ -62,6 +68,8 @@ export default function ThoughtForm() {
                     id="author"
                     name="author"
                     placeholder="Who are you? (leave empty if sus)"
+                    value={author}
+                    onChange={(e) => setAuthor(e.target.value)}
                     className="w-full rounded-lg border border-white/20 px-3 py-2 text-sm text-white placeholder-white/50 focus:ring-1 focus:ring-white/50 focus:outline-none"
                 />
                 <p className="text-xs text-red-500">{state.errors?.properties?.author?.errors.join(' ')}</p>
