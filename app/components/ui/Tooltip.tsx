@@ -3,7 +3,7 @@
 import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip';
 import { motion } from 'motion/react';
 
-const MotionPopup = motion(BaseTooltip.Popup);
+const MotionPopup = motion.create(BaseTooltip.Popup);
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
     return <BaseTooltip.Provider delay={0}>{children}</BaseTooltip.Provider>;
