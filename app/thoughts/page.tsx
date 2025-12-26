@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import ThoughtForm from '@/app/components/thoughts/ThoughtForm';
 
@@ -17,9 +18,16 @@ export default function Thoughts() {
             <section className="container mx-auto flex min-h-dvh flex-col items-center justify-center gap-6 px-4">
                 <h1 className="text-xl text-white sm:text-2xl md:text-3xl">Share a thought</h1>
                 <h3 className="md:text-md max-w-md text-center text-xs text-white/70 sm:text-sm">
-                    A thought is something that lingers in your mind. It could be a quote, an idea, a feeling, or anything worth sharing. A
-                    thought is related to you, not me. Be thoughtful.
+                    A thought is something that comes to mind and is worth sharing. It could be a quote, an idea, a feeling, or something
+                    else. A thought is related to you, not me. Be thoughtful.
                 </h3>
+                <span className="text-center text-xs text-white/40">
+                    Approved thoughts are shared{' '}
+                    <Link href="/" className="text-white/60 transition-opacity hover:opacity-50">
+                        here
+                    </Link>
+                    .
+                </span>
                 <ThoughtForm />
             </section>
         </main>
