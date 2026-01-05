@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { useState, useRef } from 'react';
+import { useEffectEvent, useEffect, useState } from 'react';
 import useSWR from 'swr';
 
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
@@ -14,12 +14,20 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Spotify() {
     const [delay, setDelay] = useState(2);
-    const loaded = useRef(false);
 
     const { data, error } = useSWR<SpotifyData | null>('/api/spotify/playing', fetcher, {
         revalidateOnFocus: false,
         refreshInterval: 5_000,
     });
+
+    const onDataChange = useEffectEvent(() => {
+        if (!data || error) setDelay(0.2);
+    });
+
+    useEffect(() => {
+        const timeout = setTimeout(() => onDataChange(), 5_000); // match SWR refresh interval
+        return () => clearTimeout(timeout);
+    }, [data, error]);
 
     if (!data || error) return null;
 
@@ -67,12 +75,7 @@ export default function Spotify() {
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: delay + 0.2, duration: 0.4 }}
-                            onAnimationComplete={() => {
-                                if (!loaded.current) {
-                                    loaded.current = true;
-                                    setDelay(0.2);
-                                }
-                            }}
+                            onAnimationComplete={() => setDelay(0.2)}
                             // element props
                             className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
                         >
