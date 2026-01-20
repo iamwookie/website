@@ -23,7 +23,7 @@ export default function Thoughts() {
                 </h3>
                 <span className="text-center text-xs text-white/40">
                     Approved thoughts are shared{' '}
-                    <Link href="/" className="text-white/60 transition-opacity hover:opacity-50">
+                    <Link href="/" className="text-white/60 transition-opacity hover:opacity-70">
                         here
                     </Link>
                     .
