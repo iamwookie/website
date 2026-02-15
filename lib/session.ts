@@ -17,11 +17,6 @@ export const sessionOptions: SessionOptions = {
 
 export async function getSession() {
     const session = await getIronSession<SessionData>(await cookies(), sessionOptions);
-
-    if (!session.authenticated || !session.expiresAt || session.expiresAt < Date.now()) {
-        session.authenticated = false;
-        session.expiresAt = 0;
-    }
-
+    if (!session.expiresAt || session.expiresAt < Date.now()) session.authenticated = false;
     return session;
 }
