@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     },
 };
 
+// TODO: session logic can be moved to  a layout if needed
+
 export default async function Thoughts() {
     const session = await getSession();
 
