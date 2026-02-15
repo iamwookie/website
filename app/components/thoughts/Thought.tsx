@@ -51,8 +51,10 @@ export default async function Thought() {
     return (
         <Tooltip.Provider>
             <Tooltip.Wrapper content={countdown}>
-                <h1 className="text-center text-xl sm:text-2xl md:text-3xl">{thought.content}</h1>
-                <p className="text-center text-xs opacity-50 sm:text-sm md:text-base">{thought.author ?? 'Anonymous'}</p>
+                <div className="flex max-w-4xl flex-col gap-2 transition-opacity hover:opacity-70">
+                    <h1 className="text-center text-xl sm:text-2xl md:text-3xl">{thought.content}</h1>
+                    <p className="text-center text-xs opacity-50 sm:text-sm md:text-base">{thought.author ?? 'Anonymous'}</p>
+                </div>
             </Tooltip.Wrapper>
         </Tooltip.Provider>
     );
