@@ -31,6 +31,7 @@
         "eslint": "^9.39.2",
         "eslint-config-next": "16.1.1",
         "eslint-plugin-import": "^2.32.0",
+        "iron-session": "^8.0.4",
         "motion": "12.23.24",
         "next": "16.0.10",
         "plaiceholder": "^3.0.0",

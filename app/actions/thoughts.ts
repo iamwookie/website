@@ -6,6 +6,8 @@ import { z } from 'zod';
 import type { ThoughtData } from '@/types';
 import { thoughtLimiter } from '@lib/limiter';
 import { redis } from '@lib/redis';
+import { getSession } from '@lib/session';
+import { getClientIP } from '@lib/utils';
 
 function sanitise(v: string): string {
     return v
@@ -37,19 +39,13 @@ export type FormState = {
     };
 };
 
-async function getClientIP(): Promise<string> {
-    const headersList = await headers();
-
-    const ff = headersList.get('x-forwarded-for');
-    if (ff) return ff.split(',')[0].trim();
-
-    const raddr = headersList.get('x-real-ip');
-    if (raddr) return raddr.trim();
-
-    return 'unknown';
-}
-
 export async function createThought(_: FormState, formData: FormData): Promise<FormState> {
+    const session = await getSession();
+
+    if (!session.authenticated) {
+        return { errors: { errors: ['You must be authenticated to submit a thought.'] } };
+    }
+
     const validated = schema.safeParse({
         thought: formData.get('thought'),
         author: formData.get('author'),
@@ -57,8 +53,7 @@ export async function createThought(_: FormState, formData: FormData): Promise<F
 
     if (!validated.success) return { errors: z.treeifyError(validated.error) };
 
-    const ip = await getClientIP();
-    const { success } = await thoughtLimiter.limit(`create:${ip}`);
+    const { success } = await thoughtLimiter.limit(`create:${getClientIP(await headers())}`);
     if (!success) return { errors: { errors: ['You are submitting too many thoughts.'] } };
 
     const { thought, author } = validated.data;

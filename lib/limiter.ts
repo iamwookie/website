@@ -11,6 +11,13 @@ export const spotifyLimiter = new Ratelimit({
     analytics: true,
 });
 
+export const authLimiter = new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(5, '1 m'),
+    prefix: 'web:limiter:auth',
+    analytics: true,
+});
+
 export const thoughtLimiter = new Ratelimit({
     redis,
     limiter: Ratelimit.slidingWindow(1, '1 m'),
