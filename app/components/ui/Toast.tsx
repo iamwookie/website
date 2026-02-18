@@ -1,6 +1,6 @@
 'use client';
 
-import { Toast as BaseToast } from '@base-ui-components/react/toast';
+import { Toast as BaseToast } from '@base-ui/react/toast';
 import { motion, AnimatePresence } from 'motion/react';
 
 import { cn } from '@lib/utils';

@@ -1,12 +1,10 @@
 'use client';
 
-import { Toast } from '@base-ui-components/react/toast';
+import { Toast } from '@base-ui/react/toast';
 import { useActionState, useState, useRef, useEffect } from 'react';
 
-import { createThought } from '@/app/thoughts/actions';
+import { createThought } from '@/app/actions/thoughts';
 import Button from '@components/ui/Button';
-
-// animation time: ~0.2s (button hover/tap)
 
 export default function ThoughtForm() {
     const [state, formAction, pending] = useActionState(createThought, {}); // no initial state
@@ -24,8 +22,8 @@ export default function ThoughtForm() {
     useEffect(() => {
         if (state.success) {
             toastRef.current.add({
-                title: 'Thank You!',
-                description: 'Your thought has been recorded.',
+                title: 'Bravo!',
+                description: 'The thought has been recorded.',
                 type: 'success',
             });
         }
