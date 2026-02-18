@@ -1,6 +1,6 @@
 'use client';
 
-import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip';
+import { Tooltip as BaseTooltip } from '@base-ui/react/tooltip';
 import { motion } from 'motion/react';
 
 const MotionPopup = motion.create(BaseTooltip.Popup);

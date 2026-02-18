@@ -1,7 +1,7 @@
 'use client';
 
-import { Toast } from '@base-ui-components/react/toast';
-import { useActionState, useState, useRef, useEffect } from 'react';
+import { Toast } from '@base-ui/react/toast';
+import { useActionState, useRef, useEffect } from 'react';
 
 import { login } from '@/app/actions/auth';
 import Button from '@components/ui/Button';
