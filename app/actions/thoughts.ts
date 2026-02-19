@@ -10,10 +10,7 @@ import { getSession } from '@lib/session';
 import { getClientIP } from '@lib/utils';
 
 function sanitise(v: string): string {
-    return v
-        .replace(/[\r\n]+/g, ' ') // remove ALL newlines (CR, LF)
-        .replace(/\s+/g, ' ') // collapse any whitespace to single space
-        .trim();
+    return v.replace(/\s+/g, ' ').trim();
 }
 
 const schema = z.object({
@@ -24,7 +21,7 @@ const schema = z.object({
     author: z
         .string()
         .transform((v) => sanitise(v))
-        .transform((v) => (v == '' ? undefined : v))
+        .transform((v) => (v === '' ? undefined : v))
         .pipe(z.string().max(32, "I don't need your autobiography (max 32 characters)").optional()),
 });
 
@@ -59,7 +56,7 @@ export async function createThought(_: FormState, formData: FormData): Promise<F
     const { thought, author } = validated.data;
 
     try {
-        await redis.rpush<ThoughtData>('web:thoughts:pending', { content: thought, author, timestamp: Date.now() });
+        await redis.rpush<ThoughtData>('web:thoughts:active', { content: thought, author, timestamp: Date.now() });
     } catch (error) {
         return { errors: { errors: ['Well something definitely broke... try again later?'] } };
     }

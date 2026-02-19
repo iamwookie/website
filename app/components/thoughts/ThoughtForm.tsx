@@ -50,7 +50,7 @@ export default function ThoughtForm() {
                     name="thought"
                     required
                     rows={3}
-                    placeholder="What does your mind ponder?"
+                    placeholder="All this nothing has meant more to me than so many somethings."
                     value={thought}
                     onChange={(e) => setThought(e.target.value)}
                     className="w-full rounded-lg border border-white/20 px-3 py-2 text-sm text-white placeholder-white/50 focus:ring-1 focus:ring-white/50 focus:outline-none"
@@ -65,7 +65,7 @@ export default function ThoughtForm() {
                 <input
                     id="author"
                     name="author"
-                    placeholder="Who are you? (leave empty if sus)"
+                    placeholder="Kathleen, You've Got Mail (1998)"
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
                     className="w-full rounded-lg border border-white/20 px-3 py-2 text-sm text-white placeholder-white/50 focus:ring-1 focus:ring-white/50 focus:outline-none"
