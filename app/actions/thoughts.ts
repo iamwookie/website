@@ -56,7 +56,7 @@ export async function createThought(_: FormState, formData: FormData): Promise<F
     const { thought, author } = validated.data;
 
     try {
-        await redis.rpush<ThoughtData>('web:thoughts:active', { content: thought, author, timestamp: Date.now() });
+        await redis.rpush<ThoughtData>('web:thoughts:approved', { content: thought, author, timestamp: Date.now() });
     } catch (error) {
         return { errors: { errors: ['Well something definitely broke... try again later?'] } };
     }
