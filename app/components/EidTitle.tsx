@@ -22,7 +22,7 @@ export default function EidTitle() {
     const [prefix, showPrefix] = useState(false);
 
     useEffect(() => {
-        const dotTimer = setTimeout(() => setItems(letters.filter(({ id }) => id !== 3)), 1200);
+        const dotTimer = setTimeout(() => setItems(letters.filter(({ id }) => id !== 3)), 800);
         const prefixTimer = setTimeout(() => showPrefix(true), 1800);
 
         return () => {
@@ -37,7 +37,7 @@ export default function EidTitle() {
             whileTap={{ opacity: 0.5 }}
             initial={{ color: '#ffffff' }}
             animate={{ color: 'var(--color-eid-title)' }}
-            transition={{ color: { duration: 0.4, ease: 'easeOut' } }}
+            transition={{ color: { duration: 0.8, ease: 'easeOut' } }}
             href="/"
             aria-label="Home"
             className="flex items-center justify-center text-2xl"
