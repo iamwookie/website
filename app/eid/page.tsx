@@ -111,6 +111,10 @@ export default function Eid() {
                     <motion.p variants={itemVariants} className="text-eid-subtitle/80 max-w-xl text-sm sm:text-base">
                         Wishing you peace, mercy, and joy.
                     </motion.p>
+
+                    <motion.p variants={itemVariants} className="max-w-xl text-sm sm:text-base">
+                        ✨
+                    </motion.p>
                 </motion.div>
             </section>
         </main>
