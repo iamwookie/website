@@ -23,7 +23,7 @@ export default function EidTitle() {
 
     useEffect(() => {
         const dotTimer = setTimeout(() => setItems(letters.filter(({ id }) => id !== 3)), 800);
-        const prefixTimer = setTimeout(() => showPrefix(true), 1800);
+        const prefixTimer = setTimeout(() => showPrefix(true), 1600);
 
         return () => {
             clearTimeout(dotTimer);
@@ -49,7 +49,7 @@ export default function EidTitle() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0 }}
-                        transition={{ delay: 0.2, duration: 0.4 }}
+                        transition={{ delay: 0.4, duration: 0.4 }}
                     >
                         from:&nbsp;
                     </motion.span>
