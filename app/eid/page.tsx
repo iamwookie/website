@@ -92,7 +92,7 @@ export default function Eid() {
                     variants={containerVariants}
                     initial="initial"
                     animate="animate"
-                    className="relative z-10 flex max-w-2xl flex-col items-center gap-4 text-center"
+                    className="relative flex max-w-2xl flex-col items-center gap-4 text-center"
                 >
                     {/* Primary Arabic title */}
                     <motion.h1
