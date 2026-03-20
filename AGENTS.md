@@ -15,6 +15,12 @@
 - Redis-backed features: views (app/components/Views.tsx), thoughts submission (app/thoughts/actions.ts), and hourly thought rotation (app/components/thoughts/Thought.tsx).
 - Server-only modules use `server-only` to prevent client bundling (lib/spotify.ts, lib/limiter.ts, lib/redis.ts).
 
+## Seasonal / Temporary
+
+- Seasonal Eid route lives at app/eid/page.tsx with route-level metadata/viewport theme color.
+- Global Echoes background is excluded on `/eid` via route guard in app/components/Echoes.tsx (`EXCLUDE` list).
+- Eid palette tokens are centralized in app/globals.css under `@theme` (`--color-eid-*` and `--eid-moon-glow-rgb`) and should be reused instead of hard-coded hex in app/eid/page.tsx.
+
 ## Build and Test
 
 - `pnpm dev` (Turbopack dev server)
