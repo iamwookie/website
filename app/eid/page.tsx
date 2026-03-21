@@ -104,7 +104,9 @@ export default function Eid() {
 
                     {/* Supporting subtitle line */}
                     <motion.p variants={itemVariants} className="mt-2 max-w-xl text-base text-white/80 sm:text-lg">
-                        May your nights be calm and your days be bright.
+                        As someone who lives far away from home, the value of Eid is deeply ingrained in my heart. It represents a time of
+                        togetherness, reflection, and gratitude. I hope this Eid brings you closer to your loved ones, fills your home with
+                        joy, and reminds you of the blessings we often take for granted.
                     </motion.p>
 
                     {/* Secondary supporting line */}
