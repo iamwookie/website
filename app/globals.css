@@ -3,21 +3,6 @@
 @theme {
     --color-spotify: #1ed760;
     --color-discord: #7289da;
-
-    --color-eid-glow-top: #cc9a3a;
-    --color-eid-glow-bottom: #6e5320;
-    --color-eid-glow-left: #b98935;
-    --color-eid-star: #f8e2b7;
-
-    --color-eid-moon-from: #ffe9bd;
-    --color-eid-moon-via: #f2c87a;
-    --color-eid-moon-to: #be8736;
-    --color-eid-moon-glow: #f0c472;
-
-    --color-eid-title: #f8e2b7;
-    --color-eid-subtitle: #e7c785;
-
-    --eid-moon-glow-rgb: 240 196 114;
 }
 
 /* default button cursor */
