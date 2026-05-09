@@ -1,9 +1,10 @@
 import * as motion from 'motion/react-client'; // motion import for server components
+import dynamic from 'next/dynamic';
 
 import PKFlag from '@public/assets/pk_flag.svg';
 import PSFlag from '@public/assets/ps_flag.svg';
 
-import Spotify from './Spotify';
+const Spotify = dynamic(() => import('./Spotify')); // lazy loading for performance
 
 // animation time: ~3.2s (initial load + spotify)
 

@@ -5,12 +5,12 @@ import Image from 'next/image';
 import { useState, useRef } from 'react';
 import useSWR from 'swr';
 
+import type { SpotifyData } from '@/types';
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
-import type { SpotifyData } from 'types';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-// animation time: ~ 2.6s (first load), ~0.8s (subsequent updates)
+// animation time: ~ 2.6s (first load synced after footer), ~0.8s (subsequent updates)
 
 export default function Spotify() {
     const [delay, setDelay] = useState(2);

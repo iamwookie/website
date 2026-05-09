@@ -3,9 +3,10 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
+import dynamic from 'next/dynamic';
 import { Roboto_Mono } from 'next/font/google';
 
-import Echoes from '@components/Echoes';
+const Echoes = dynamic(() => import('@components/Echoes'));
 import Footer from '@components/Footer';
 import Header from '@components/Header';
 import * as Toast from '@components/ui/Toast';

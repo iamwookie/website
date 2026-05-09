@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 const TEXT = ['☠', '✦', '✧', '☾', '✹', '✶', '✻', '❂', '❉', '❖', '★', '☆', '☼', '影', '夜', '夢', '闇', '空', '零', '死'];
@@ -13,17 +12,10 @@ interface Echo {
     content: string;
 }
 
-const EXCLUDE = ['/eid'];
-
 export default function Echoes() {
-    const pathname = usePathname();
-    const exclude = EXCLUDE.some((path) => pathname.startsWith(path));
-
     const [echoes, setEchoes] = useState<Echo[]>([]);
 
     useEffect(() => {
-        if (exclude) return;
-
         let acc = 0;
         let last = performance.now();
         let raf: number;
@@ -52,9 +44,7 @@ export default function Echoes() {
 
         raf = requestAnimationFrame(tick);
         return () => cancelAnimationFrame(raf);
-    }, [exclude]);
-
-    if (exclude) return null;
+    }, []);
 
     return (
         <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden select-none">
