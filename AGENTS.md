@@ -31,8 +31,8 @@
 
 ## Integration Points
 
-- Spotify API with refresh-token flow in lib/spotify.ts; requires env vars in env.d.ts.
-- Upstash Redis for views/thoughts and rate limiting in lib/redis.ts + lib/limiter.ts.
+- Spotify API with refresh-token flow in lib/spotify.ts; refresh token cached in memory and persisted to Redis (key: `web:spotify:refresh_token`); clears cache on `invalid_grant` to fetch fresh from Redis; requires SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET env vars.
+- Upstash Redis for Spotify refresh token, views, thoughts, and rate limiting (lib/redis.ts + lib/limiter.ts).
 
 ## Security
 

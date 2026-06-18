@@ -1,5 +1,5 @@
 import { spotifyLimiter } from '@lib/limiter';
-import Spotify from '@lib/spotify';
+import { Spotify } from '@lib/spotify';
 
 export const revalidate = 0;
 
