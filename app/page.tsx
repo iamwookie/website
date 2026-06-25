@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
+import Loading from '@/app/components/thoughts/Loading';
 import Thought from '@/app/components/thoughts/Thought';
 import Socials from '@components/Socials';
 import Button from '@components/ui/Button';
@@ -18,7 +20,10 @@ export default function Home() {
     return (
         <main className="flex flex-col">
             <section className="container mx-auto flex min-h-dvh flex-col items-center justify-center gap-4 px-4">
-                <Thought />
+                <Suspense fallback={<Loading />}>
+                    <Thought />
+                </Suspense>
+
                 <Socials />
 
                 <a href="mailto:mail@bil.al" aria-label="Contact via Email">
