@@ -1,7 +1,7 @@
 'use client';
 
 import { Toast } from '@base-ui/react/toast';
-import { motion } from 'motion/react';
+import { motion, stagger } from 'motion/react';
 
 import data from '@data/social.json';
 import DiscordIcon from '@public/assets/icons/discord.svg';
@@ -11,7 +11,7 @@ import LinkedInIcon from '@public/assets/icons/linkedin.svg';
 import SpotifyIcon from '@public/assets/icons/spotify.svg';
 import SteamIcon from '@public/assets/icons/steam.svg';
 
-// animation time: ~1.6s (initial load)
+// animation time: ~1.4s (initial load)
 
 export default function Socials() {
     const toastManager = Toast.useToastManager();
@@ -27,13 +27,18 @@ export default function Socials() {
     };
 
     const listVariants = {
-        initial: { opacity: 0 },
-        animate: { opacity: 1, transition: { staggerChildren: 0.2 } },
+        initial: {}, // empty object as we don't want to animate the list itself on initial load
+        animate: { transition: { delayChildren: stagger(0.4, { from: 'center' }) } },
     };
 
-    const itemVariants = {
-        initial: { opacity: 0, y: 10, transition: { duration: 0.4 } },
-        animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+    const rightVariants = {
+        initial: { opacity: 0, x: -200 },
+        animate: { opacity: 1, x: 0, transition: { type: 'spring' as const, bounce: 0.2, duration: 0.4 } },
+    };
+
+    const leftVariants = {
+        initial: { opacity: 0, x: 200 },
+        animate: { opacity: 1, x: 0, transition: { type: 'spring' as const, bounce: 0.2, duration: 0.4 } },
     };
 
     return (
@@ -41,9 +46,9 @@ export default function Socials() {
             variants={listVariants}
             initial="initial"
             animate="animate"
-            className="flex w-fit flex-wrap items-center justify-center gap-4"
+            className="flex w-full flex-wrap items-center justify-center gap-4 overflow-hidden"
         >
-            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+            <motion.li variants={rightVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                 <a
                     href={data.linkedin}
                     target="_blank"
@@ -55,19 +60,19 @@ export default function Socials() {
                 </a>
             </motion.li>
 
-            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+            <motion.li variants={rightVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                 <a href={data.github} target="_blank" rel="noreferrer noopener" aria-label="GitHub Link" className="h-9 w-9 md:h-7 md:w-7">
                     <GitHubIcon fill="currentColor" className="h-9 w-9 md:h-7 md:w-7" />
                 </a>
             </motion.li>
 
-            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+            <motion.li variants={rightVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                 <a href={data.steam} target="_blank" rel="noreferrer noopener" aria-label="Steam Link" className="h-9 w-9 md:h-7 md:w-7">
                     <SteamIcon fill="currentColor" className="h-9 w-9 md:h-7 md:w-7" />
                 </a>
             </motion.li>
 
-            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+            <motion.li variants={leftVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                 <a
                     href={data.letterboxd}
                     target="_blank"
@@ -79,7 +84,7 @@ export default function Socials() {
                 </a>
             </motion.li>
 
-            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+            <motion.li variants={leftVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                 <a
                     href={data.spotify}
                     target="_blank"
@@ -91,7 +96,7 @@ export default function Socials() {
                 </a>
             </motion.li>
 
-            <motion.li variants={itemVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
+            <motion.li variants={leftVariants} whileHover={{ opacity: 0.5, scale: 1.05 }} whileTap={{ opacity: 0.5, scale: 0.95 }}>
                 <button
                     onClick={copyDiscord}
                     aria-label="Copy Discord Tag"
