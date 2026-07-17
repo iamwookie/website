@@ -17,7 +17,7 @@ const Wrapper = ({ children, content }: { children: React.ReactNode; content: st
 
     return (
         <BaseTooltip.Root>
-            <BaseTooltip.Trigger render={<div>{children}</div>} />
+            <BaseTooltip.Trigger closeOnClick={false} render={<div>{children}</div>} />
             <BaseTooltip.Portal>
                 <BaseTooltip.Positioner sideOffset={4}>
                     <MotionPopup
