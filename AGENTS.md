@@ -1,6 +1,6 @@
 # Project Guidelines
 
-## Project Conventions & Code Style
+## Conventions & Code Style
 
 - TypeScript + Next.js App Router; server components by default. Mark client components with `'use client'` only when needed (see app/components/Title.tsx).
 - Use `cn()` for class merging (lib/utils.ts) and Tailwind v4 `@theme`/`@layer` patterns (app/globals.css).
@@ -30,7 +30,7 @@
 ### Spotify
 
 - Spotify flow: lib/spotify.ts manages currently playing + token refresh logic; caching is not used; client widget polls with SWR in app/components/Spotify.tsx.
-- Spotify widget delay timing is driven by SWR `onSuccess` and only runs when data is ready (regardless of whether data exists), so initial renders do not affect animation or update cadence.
+- Spotify widget delay timing is driven by SWR `onSuccess` and only runs when data is ready (regardless of whether data exists), so initial renders do not affect animation or update cadence. `setTimeout` sequences delay update for next tick which allows the initial render to use the initial delay.
 
 ## Security
 
