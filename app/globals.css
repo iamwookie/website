@@ -3,6 +3,7 @@
 @theme {
     --color-spotify: #1ed760;
     --color-discord: #7289da;
+    --color-muted-foreground: #d1d5db;
 }
 
 /* default button cursor */

@@ -10,10 +10,10 @@ import SpotifyIcon from '@public/assets/icons/spotify.svg';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-// animation time: ~ 2.6s (first load synced after footer), ~0.8s (subsequent updates)
+// animation time: ~3.0s (first load), ~0.8s (subsequent updates)
 
 export default function Spotify() {
-    const [delay, setDelay] = useState(2);
+    const [delay, setDelay] = useState(2.4);
     const initialSuccessRef = useRef(false);
 
     const { data, error } = useSWR<SpotifyData | null>('/api/spotify/playing', fetcher, {
@@ -28,70 +28,77 @@ export default function Spotify() {
 
     if (!data || error) return null;
 
+    const transition = { delay: delay, duration: 0.4, ease: 'easeOut' as const }; // due to stupid motion applying transition to everything
+
     return (
         <motion.a
-            layout
-            whileHover={{ opacity: 0.5, scale: 1.05 }}
-            whileTap={{ opacity: 0.5, scale: 0.95 }}
             href={data.url}
             target="_blank"
             rel="noreferrer noopener"
-            className="relative mx-auto overflow-hidden rounded-xl bg-zinc-900 p-4 shadow-lg select-none"
+            className="mx-auto block overflow-hidden select-none"
+            initial={{ height: 0, marginTop: -16 }} // -16px margin to offset gap-4 on the container
+            animate={{ height: 'auto', marginTop: 0 }}
+            transition={{ height: transition, marginTop: transition }} // due to stupid motion applying transition to everything
+            whileHover={{ opacity: 0.5, scale: 1.05 }}
+            whileTap={{ opacity: 0.5, scale: 0.95 }}
+            layout
         >
-            {/* Background gradient */}
-            <div className="from-spotify/10 absolute inset-0 bg-linear-to-br to-blue-500/10" />
+            <div className="relative overflow-hidden rounded-xl bg-zinc-900 p-4 shadow-lg">
+                {/* Background gradient */}
+                <div className="from-spotify/10 absolute inset-0 bg-linear-to-br to-blue-500/10" />
 
-            {/* Content */}
-            <div className="flex flex-row gap-4">
-                {/* Album cover and icon */}
-                <div
-                    key={data.image} // re-render only when the image changes
-                    className="flex items-center justify-center"
-                >
-                    <div className="relative">
-                        {data.image && (
+                {/* Content */}
+                <div className="relative z-10 flex flex-row gap-4">
+                    {/* Album cover and icon */}
+                    <div
+                        key={data.image} // re-render only when the image changes
+                        className="flex items-center justify-center"
+                    >
+                        <div className="relative">
+                            {data.image && (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: delay, duration: 0.4 }}
+                                >
+                                    <Image
+                                        src={data.image}
+                                        alt="Album Cover"
+                                        width={52}
+                                        height={52}
+                                        placeholder="blur"
+                                        blurDataURL={data.blurDataURL}
+                                        className="rounded-xl shadow-lg"
+                                    />
+                                </motion.div>
+                            )}
+
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
+                                // element props
+                                className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
+                                // motion props
+                                initial={{ opacity: 0, scale: 0 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay, duration: 0.4 }}
+                                transition={{ delay: delay + 0.2, duration: 0.4 }}
                             >
-                                <Image
-                                    src={data.image}
-                                    alt="Album Cover"
-                                    width={52}
-                                    height={52}
-                                    placeholder="blur"
-                                    blurDataURL={data.blurDataURL}
-                                    className="rounded-xl shadow-lg"
-                                />
+                                <SpotifyIcon size={16} className="h-4 w-4 text-black" />
                             </motion.div>
-                        )}
-
-                        <motion.div
-                            // motion props
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: delay + 0.2, duration: 0.4 }}
-                            // element props
-                            className="bg-spotify absolute -top-2 -right-2 rounded-full p-1 shadow-lg"
-                        >
-                            <SpotifyIcon size={16} className="h-4 w-4 text-black" />
-                        </motion.div>
+                        </div>
                     </div>
-                </div>
 
-                {/* Track details */}
-                <motion.div
-                    key={`${data.name}-${data.artists}`} // dual key ensures re-render only when both name and artists change
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: delay + 0.2, duration: 0.2 }}
-                    className="flex flex-col justify-center gap-1"
-                >
-                    <h3 className="text-xs font-semibold text-green-400">Now Playing</h3>
-                    <h3 className="text-xs font-medium text-white">{data.name}</h3>
-                    <h3 className="text-xs text-gray-400">{data.artists}</h3>
-                </motion.div>
+                    {/* Track details */}
+                    <motion.div
+                        key={`${data.name}-${data.artists}`} // dual key ensures re-render only when both name and artists change
+                        className="flex flex-col justify-center gap-1"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: delay + 0.2, duration: 0.2 }}
+                    >
+                        <h3 className="text-xs font-semibold text-green-400">Now Playing</h3>
+                        <h3 className="text-xs font-medium text-white">{data.name}</h3>
+                        <h3 className="text-xs text-gray-400">{data.artists}</h3>
+                    </motion.div>
+                </div>
             </div>
         </motion.a>
     );

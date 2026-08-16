@@ -1,12 +1,9 @@
 import * as motion from 'motion/react-client'; // motion import for server components
-import dynamic from 'next/dynamic';
 
 import PKFlag from '@public/assets/pk_flag.svg';
 import PSFlag from '@public/assets/ps_flag.svg';
 
-const Spotify = dynamic(() => import('./Spotify')); // lazy loading for performance
-
-// animation time: ~3.2s (initial load + spotify)
+// animation time: ~2.4s (initial load)
 
 export default async function Footer() {
     return (
@@ -14,11 +11,11 @@ export default async function Footer() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2, duration: 0.4 }}
-            className="fixed bottom-0 z-10 flex w-full flex-col px-4"
+            className="fixed bottom-0 z-10 flex w-full flex-col gap-4 px-4 py-4"
         >
-            <Spotify />
+            <p className="text-muted-foreground text-center text-xs">engineered by a human</p>
 
-            <div className="flex w-full items-center justify-center gap-2 py-4">
+            <div className="flex w-full items-center justify-center gap-2">
                 <PKFlag width={32} height={24} className="rounded-xs" />
                 <PSFlag width={32} height={24} className="rounded-xs" />
             </div>
