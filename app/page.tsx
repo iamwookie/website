@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
 import Loading from '@/app/components/thoughts/Loading';
@@ -6,6 +7,8 @@ import Thought from '@/app/components/thoughts/Thought';
 import Socials from '@components/Socials';
 import Button from '@components/ui/Button';
 import Views from '@components/Views';
+
+const Spotify = dynamic(() => import('./components/Spotify')); // lazy loaded
 
 export const metadata: Metadata = {
     title: '( ͡° ͜ʖ ͡°)',
@@ -31,6 +34,8 @@ export default function Home() {
                 </a>
 
                 <Views id="index" />
+
+                <Spotify />
             </section>
         </main>
     );
