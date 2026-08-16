@@ -41,7 +41,7 @@ export default function Spotify() {
             transition={{ height: transition, marginTop: transition }} // due to stupid motion applying transition to everything
             whileHover={{ opacity: 0.5, scale: 1.05 }}
             whileTap={{ opacity: 0.5, scale: 0.95 }}
-            layout
+            layout={delay == 0.2 ? true : false} // only animate layout on subsequent updates
         >
             <div className="relative overflow-hidden rounded-xl bg-zinc-900 p-4 shadow-lg">
                 {/* Background gradient */}
