@@ -6,11 +6,11 @@ export function cn(...inputs: ClassValue[]): string {
 }
 
 export function getClientIP(headers: Headers): string {
-    const ff = headers.get('x-forwarded-for');
-    if (ff) return ff.split(',')[0].trim();
+    const forwardedFor = headers.get('x-forwarded-for');
+    if (forwardedFor) return forwardedFor.split(',')[0].trim();
 
-    const raddr = headers.get('x-real-ip');
-    if (raddr) return raddr.trim();
+    const xRealIp = headers.get('x-real-ip');
+    if (xRealIp) return xRealIp.trim();
 
     return 'unknown';
 }

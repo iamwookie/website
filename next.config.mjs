@@ -1,4 +1,5 @@
 import withPlaiceholder from '@plaiceholder/next';
+import { withBotId } from 'botid/next/config';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -72,4 +73,4 @@ const nextConfig = {
     },
 };
 
-export default withPlaiceholder(nextConfig);
+export default withBotId(withPlaiceholder(nextConfig));
