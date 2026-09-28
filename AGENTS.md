@@ -6,6 +6,7 @@
 - Use `cn()` for class merging (lib/utils.ts) and Tailwind v4 `@theme`/`@layer` patterns (app/globals.css).
 - SVG imports: component via `@public/.../icon.svg`, URL via `@public/.../icon.svg?url`.
 - Path aliases: `@/*`, `@components/*`, `@lib/*`, `@api/*`, `@data/*`, `@public/*`.
+- Prefer one-line statements when they improve readability; use blocks when the logic needs multiple statements or a single line would be hard to scan.
 - Base UI requires `.root` wrapper in app/globals.css.
 
 ### Motion
