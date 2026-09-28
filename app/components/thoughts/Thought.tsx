@@ -1,5 +1,5 @@
 import type { ThoughtData } from '@/types';
-import * as Tooltip from '@components/ui/Tooltip';
+import Popover from '@components/ui/Popover';
 import { redis } from '@lib/redis';
 
 const R_THOUGHTS_ACTIVE = 'web:thoughts:active';
@@ -40,7 +40,7 @@ async function fetchThought(): Promise<ThoughtData> {
 export default async function Thought() {
     const thought = await fetchThought();
 
-    const now = new Date().getTime() / 1000; // watch: possible impure function here, might be eslint bug
+    const now = new Date().getTime() / 1000;
     const delta = nextTimestamp() - now;
     const minutes = Math.floor((delta % 3600) / 60);
 
@@ -49,13 +49,11 @@ export default async function Thought() {
     const countdown = delta < 60 ? 'Updates in less than a minute' : `Updates in ${plural(minutes, 'minute')}`;
 
     return (
-        <Tooltip.Provider>
-            <Tooltip.Wrapper content={countdown}>
-                <div className="flex max-w-4xl flex-col gap-2">
-                    <h1 className="text-center text-xl sm:text-2xl md:text-3xl">{thought.content}</h1>
-                    <p className="text-center text-xs opacity-50 sm:text-sm md:text-base">{thought.author ?? 'Anonymous'}</p>
-                </div>
-            </Tooltip.Wrapper>
-        </Tooltip.Provider>
+        <Popover content={countdown} label="time until the next thought">
+            <div className="flex max-w-4xl flex-col gap-2">
+                <h1 className="text-center text-xl sm:text-2xl md:text-3xl">{thought.content}</h1>
+                <p className="text-center text-xs opacity-50 sm:text-sm md:text-base">{thought.author ?? 'Anonymous'}</p>
+            </div>
+        </Popover>
     );
 }
